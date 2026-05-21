@@ -1,58 +1,36 @@
 ---
 title: "SQLite MCP Server"
-description: "A Model Context Protocol server that exposes SQLite databases securely, allowing AI Agents to inspect schemas, execute read-only queries, and analyze structures."
+description: "AI 에이전트가 SQLite 스키마를 살펴보고 읽기 전용 쿼리를 실행할 수 있게 하는 MCP 서버입니다."
 category: "mcp-server"
-icon: "Database"
-author: "modelcontextprotocol"
+tags: ["mcp", "sqlite", "database", "sql", "data-analysis"]
 githubUrl: "https://github.com/modelcontextprotocol/servers"
+author: "modelcontextprotocol"
 installCommand: "npx -y @modelcontextprotocol/server-sqlite --db /path/to/my-database.sqlite"
 compatibleAgents: ["Claude", "Gemini", "Cursor"]
-tags: ["mcp", "sqlite", "database", "sql", "data-analysis"]
 featured: true
+icon: "Database"
 ---
 
 # SQLite MCP Server
 
-The **SQLite Model Context Protocol (MCP) Server** provides AI agents (such as Claude Desktop, Gemini Code Assist, or Cursor) with safe, local, and read-only database interaction capabilities. 
+SQLite MCP Server는 Claude Desktop, Gemini Code Assist, Cursor 같은 AI 에이전트가 로컬 SQLite 데이터베이스를 안전하게 읽고 분석할 수 있게 합니다.
 
-By utilizing this server, your AI assistants can answer database-related questions, auto-generate complex SQL queries, inspect table definitions, and preview raw data directly within your developer chat session.
+## 핵심 기능
 
-## Core Capabilities
+- **스키마 확인**: 테이블, 인덱스, 컬럼, 외래 키 정보를 확인합니다.
+- **SQL 분석**: 읽기 전용 SELECT 쿼리로 데이터를 집계하고 탐색합니다.
+- **안전한 실행 환경**: INSERT, UPDATE, DELETE, DROP 같은 변경 쿼리를 차단합니다.
+- **메타데이터 탐색**: 데이터베이스 구조를 빠르게 파악합니다.
 
-- **Schema Inspection**: Safely inspects list of tables, custom indexes, columns, and foreign key definitions.
-- **SQL Analysis**: Executes raw `SELECT` queries to analyze and aggregate local tables without compromising data integrity.
-- **Safe Run Environment**: Strictly intercepts queries to block modifications (`INSERT`, `UPDATE`, `DELETE`, `DROP`) safeguarding local storage.
-- **Metadata Discovery**: Lists schema changes and updates automatically.
-
-## How to Configure in Claude Desktop
-
-Add this configuration snippet to your `claude_desktop_config.json` configuration file:
+## Claude Desktop 설정
 
 ```json
 {
   "mcpServers": {
     "sqlite": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sqlite",
-        "--db",
-        "/Users/username/data/production.sqlite"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "--db", "/Users/username/data.sqlite"]
     }
   }
 }
 ```
-
-## How to Configure in Cursor
-
-1. Open **Cursor Settings** &rarr; **Features** &rarr; **MCP**.
-2. Click **+ Add New MCP Server**.
-3. Choose **command** mode.
-4. Name it `sqlite-mcp`.
-5. Enter Command: `npx -y @modelcontextprotocol/server-sqlite --db /Users/username/data/production.sqlite`
-6. Click **Save** and verify the green status light glows!
-
-## Security
-
-This MCP server executes locally on your machine. Data never leaves your computer, and strictly complies with the read-only sandbox mode initialized at server launch.
