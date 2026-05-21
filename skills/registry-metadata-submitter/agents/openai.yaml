@@ -1,6 +1,0 @@
-interface:
-  display_name: "Registry Metadata Submitter"
-  short_description: "AgentHub 등록 요청을 조사해 metadata.json에 추가"
-  default_prompt: "Use $registry-metadata-submitter to research this requested skill, plugin, MCP server, or browser extension and add it to AgentHub's public/metadata.json."
-policy:
-  allow_implicit_invocation: true
