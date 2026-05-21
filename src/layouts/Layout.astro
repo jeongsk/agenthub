@@ -9,13 +9,13 @@ interface Props {
 }
 
 const { 
-  title = "AgentHub - Skills, MCP Tools & Plugins Directory", 
-  description = "Discover and share open-source Agent skills, Model Context Protocol (MCP) servers, browser extensions, and plugins. Fully database-free and community-driven."
+  title = "AgentHub - AI 에이전트 스킬, MCP 도구 & 플러그인 디렉토리", 
+  description = "오픈소스 AI 에이전트 스킬, Model Context Protocol (MCP) 서버, 브라우저 확장 프로그램, 플러그인을 발견하고 공유하세요. 데이터베이스 없이 커뮤니티 기반으로 운영됩니다."
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,12 +30,17 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:site_name" content="AgentHub" />
+    <meta property="og:site_name" content="AgentHub - AI 에이전트 스킬 레지스트리" />
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:site" content="@agenthub" />
+    
+    <!-- Naver / Daum SEO -->
+    <meta name="keywords" content="AI 에이전트, MCP 서버, 에이전트 스킬, 플러그인, 오픈소스, Claude, Gemini" />
+    <meta property="og:locale" content="ko_KR" />
   </head>
   <body>
     <!-- Background glowing ambient blobs -->
