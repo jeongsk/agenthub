@@ -1,17 +1,17 @@
 ---
-title: "Registry Metadata Submitter"
+title: "Registry Content Submitter"
 description: "스킬, 플러그인, MCP 서버, 브라우저 확장 등록 요청을 조사해 AgentHub 콘텐츠 컬렉션에 검증된 항목을 추가하는 에이전트 스킬입니다."
 category: "agent-skill"
-tags: ["agenthub", "registry", "metadata", "gitops", "research", "submission"]
-githubUrl: "https://github.com/jeongsk/agenthub/tree/main/skills/registry-metadata-submitter"
+tags: ["agenthub", "registry", "content", "gitops", "research", "submission"]
+githubUrl: "https://github.com/jeongsk/agenthub/tree/main/.codex/skills/registry-content-submitter"
 author: "jeongsk"
-installCommand: "npx skills add jeongsk/agenthub --skill registry-metadata-submitter"
+installCommand: "npx skills add jeongsk/agenthub --skill registry-content-submitter"
 compatibleAgents: ["Claude", "Gemini", "OpenAI", "Codex"]
 featured: false
 icon: "ListPlus"
 ---
 
-# Registry Metadata Submitter
+# Registry Content Submitter
 
 사용자가 AgentHub에 스킬, 플러그인, MCP 서버, 브라우저 확장을 등록해 달라고 요청하면 공식 저장소와 문서를 조사해 `src/content/skills/*.md`에 검증된 레지스트리 항목을 추가합니다.
 
