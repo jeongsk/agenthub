@@ -1,49 +1,23 @@
 ---
 title: "Cursor VSCode Helper"
-description: "A productivity plugin designed for Cursor and VSCode editor environments that syncs active files, manages project folders, and structures refactoring checklists."
+description: "Cursor와 VSCode 환경에서 활성 파일, 프로젝트 폴더, 리팩터링 체크리스트를 에이전트에 연결하는 생산성 플러그인입니다."
 category: "plugin"
-icon: "Cpu"
-author: "cursor-owner"
+tags: ["cursor", "vscode", "editor", "plugin", "productivity"]
 githubUrl: "https://github.com/cursor-owner/vscode-helper-plugin"
+author: "cursor-owner"
 installCommand: "code --install-extension cursor-copilot-plugin"
 compatibleAgents: ["Cursor", "VSCode"]
-tags: ["cursor", "vscode", "editor", "plugin", "productivity"]
 featured: false
+icon: "Cpu"
 ---
 
 # Cursor VSCode Helper
 
-The **Cursor VSCode Helper** extension is an editor-agent interface designed to accelerate code review and streamline refactoring loops. It syncs the editor's active tab context, cursor selection ranges, and file hierarchies directly to your sidebar agent, skipping manual copy-pasting.
+Cursor VSCode Helper는 편집기의 활성 탭, 선택 범위, 파일 구조를 사이드바 에이전트와 연결해 코드 리뷰와 리팩터링 흐름을 빠르게 만듭니다.
 
-## Features
+## 기능
 
-- **Context Autopilot**: Syncs current cursor line numbers and open editor buffers to active chatbot contexts instantly.
-- **Git Diff Scanner**: Scans unstaged files and drafts precise commit logs based on semantic analysis.
-- **Auto-refactoring Checklists**: Automatically parses selected functions and drafts step-by-step implementation tasks.
-- **Quick Commands**: Trigger key agent routines directly from VSCode's Command Palette (`Cmd+Shift+P`).
-
-## Installation
-
-Install directly via the VSCode command line:
-
-```bash
-code --install-extension cursor-copilot-plugin
-```
-
-Or search for **Cursor Helper** inside the Extension Marketplace (`Cmd+Shift+X`).
-
-## Configuration
-
-Add your custom API endpoint and sync intervals in your global `settings.json`:
-
-```json
-{
-  "cursorHelper.syncIntervalMs": 500,
-  "cursorHelper.enableGitHooks": true,
-  "cursorHelper.themeMode": "match-editor"
-}
-```
-
-## Community
-
-Contributions are welcome! If you encounter any bugs or have feature requests, please submit an issue on our GitHub repository.
+- **컨텍스트 동기화**: 현재 파일과 커서 위치를 에이전트 컨텍스트로 전달합니다.
+- **Git Diff 스캔**: 변경사항을 분석하고 커밋 메시지 초안을 만듭니다.
+- **리팩터링 체크리스트**: 선택한 코드에 맞는 작업 단계를 정리합니다.
+- **빠른 명령**: VSCode Command Palette에서 에이전트 작업을 실행합니다.

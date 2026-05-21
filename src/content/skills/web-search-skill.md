@@ -1,58 +1,23 @@
 ---
 title: "Gemini Web Search Skill"
-description: "Equip your Google Gemini agent with live web search capabilities, enabling real-time search queries, URL parsing, and semantic text extraction."
+description: "Gemini 에이전트에 실시간 웹 검색, URL 파싱, 본문 추출 기능을 추가하는 에이전트 스킬입니다."
 category: "agent-skill"
-icon: "Search"
-author: "google-gemini"
+tags: ["google", "gemini", "search", "web-crawler", "api"]
 githubUrl: "https://github.com/google-gemini/gemini-skills"
+author: "google-gemini"
 installCommand: "npm install @gemini/web-search-skill"
 compatibleAgents: ["Gemini"]
-tags: ["google", "gemini", "search", "web-crawler", "api"]
 featured: true
+icon: "Search"
 ---
 
 # Gemini Web Search Skill
 
-The **Gemini Web Search Skill** is a custom tools library designed for the Gemini API (using Google Vertex AI or Gemini Developer API). It equips your LLM runtime context with real-time web exploration, link crawling, and markdown page text conversion.
+Gemini Web Search Skill은 Gemini 런타임에 실시간 웹 탐색, 링크 크롤링, Markdown 본문 추출 기능을 추가합니다.
 
-By adding this skill, your Gemini agent can search for breaking news, crawl specific documentation pages, and formulate answers with precise inline web link citations.
+## 기능
 
-## Features
-
-- **Google Search API Integration**: Execute queries directly against Google Search index.
-- **Deep Content Extraction**: Follow links and extract raw body content in clean, semantic Markdown.
-- **Auto-Chunking & RAG**: Automatically chunks long HTML documents to fit cleanly inside Gemini's active context window.
-- **Citation Engine**: Automatically formats outputs with correct author references and hyperlink citations.
-
-## How to Configure
-
-Import the package and define the tool array during your Gemini Client initialization:
-
-```javascript
-import { GoogleGenAI } from '@google/genai';
-import { WebSearchSkill } from '@gemini/web-search-skill';
-
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-const webSearch = new WebSearchSkill({
-  apiKey: process.env.SEARCH_API_KEY,
-  maxResults: 5
-});
-
-const response = await ai.models.generateContent({
-  model: 'gemini-3.5-flash',
-  contents: 'What is the current stock price of Google and what are the top news headlines today?',
-  config: {
-    // Add the webSearch skill directly as a system tool!
-    tools: [webSearch.asToolDefinition()]
-  }
-});
-
-console.log(response.text);
-```
-
-## Setup Options
-
-Configurable parameters:
-- `maxResults`: Number of search hits to fetch (1-10, default: 3).
-- `allowedDomains`: Restrict crawler to specific sites (e.g. `['github.com', 'developer.chrome.com']`).
-- `parseJavascript`: Enable dynamic rendering for React-heavy documentation sites.
+- **Google Search API 연동**: 검색 인덱스에 직접 질의합니다.
+- **본문 추출**: 링크를 따라가 핵심 본문을 Markdown으로 정리합니다.
+- **자동 청킹**: 긴 문서를 에이전트 컨텍스트에 맞게 나눕니다.
+- **인용 처리**: 답변에 필요한 링크와 출처 정보를 구성합니다.
