@@ -1,43 +1,68 @@
 ---
 name: analog-reading-note-image
-description: Generate a Korean prompt for creating a Pinterest/Instagram-style analog reading journal image from a book title, author, finish date, rating, and optional notes. Use when the user wants a one-page handwritten scrapbook-style book memo image for Codex, OpenClaw, Hermes Agent, or an image generation model.
+description: Generate a Pinterest/Instagram-style analog Korean reading journal image from a book title, author, finish date, rating, and optional notes. Use when the user wants a one-page handwritten scrapbook-style book memo image. Ask for missing required information first, then create the image directly with the available image generation capability.
 metadata:
-  short-description: Korean analog book journal image prompts
+  short-description: Korean analog book journal image generator
 ---
 
 # Analog Reading Note Image
 
-Use this skill to turn book metadata into a polished image-generation prompt for a vertical Korean reading journal page. The output should be ready for an image tool such as Codex image generation, OpenClaw, Hermes Agent, or another text-to-image model.
+Use this skill to create a finished vertical Korean reading journal image from book metadata. The assistant should not merely print the prompt by default. It should gather the necessary details, compose the internal image-generation prompt, and send that prompt to the active image generation capability such as gpt-5.5 image generation, Codex image generation, OpenClaw, Hermes Agent, or another text-to-image model.
+
+Only output the final prompt when the user explicitly asks for a prompt, says not to generate an image, or the current environment has no image generation capability.
 
 ## Inputs
 
-Collect or infer these fields:
+Collect these fields before image generation:
 
 - `책 제목`: required from the user.
-- `저자`: use the user-provided author if present. If unknown, say `저자 미상` or infer only when widely known.
-- `완독일`: use the user-provided date. If missing, use today's date in `YYYY.MM.DD`.
-- `평점`: use the user-provided rating. If missing, choose a natural rating such as `★★★★☆` unless the user's sentiment suggests otherwise.
+- `저자`: required unless the user says they do not know it.
+- `완독일`: required unless the user asks you to use today's date.
+- `평점`: required unless the user asks you to choose it.
+- `왜 읽었는지` 또는 짧은 감상/메모: required unless the user asks you to infer a neutral note.
+
+Infer these fields when reasonable:
+
 - `분류`: infer a broad category from the book when reasonably clear; otherwise use `독서/에세이 메모`.
-- `왜 읽었는지`: write one short, natural Korean note. Avoid claiming personal facts the user did not give.
+- `포인트 컬러`: if not provided, choose 1-2 soft accent colors from: 연한 하늘색, 연보라, 베이지, 옅은 노랑.
 
 If the book is obscure or details are uncertain, avoid fabricating plot points, quotes, or author biography. Use safe phrasing such as "이 책이 던지는 질문", "읽으며 떠올린 생각", or "작품의 분위기".
 
+## Missing Information Behavior
+
+If any required user-provided input is missing, ask one concise Korean question before generating the image. Ask for all missing fields at once.
+
+Example:
+
+```text
+이미지를 만들기 위해 아래 정보를 알려주세요.
+- 책 제목:
+- 저자:
+- 완독일:
+- 평점:
+- 짧은 감상 또는 왜 읽었는지:
+```
+
+If the user already provided enough information, do not ask follow-up questions. Proceed to image generation.
+
 ## Workflow
 
-1. Normalize missing metadata.
-2. Decide 1-2 soft accent colors from: 연한 하늘색, 연보라, 베이지, 옅은 노랑.
-3. Generate 4-6 keywords. Prefer real themes if known; otherwise use safe, general concepts tied to the book title and category.
-4. Write short Korean text blocks that fit inside an image:
+1. Check whether the user explicitly asked for prompt-only output. If yes, return the prompt and do not generate an image.
+2. Check whether required information is missing. If missing, ask for it and stop until the user answers.
+3. Normalize metadata.
+4. Decide 1-2 soft accent colors from: 연한 하늘색, 연보라, 베이지, 옅은 노랑.
+5. Generate 4-6 keywords. Prefer real themes if known; otherwise use safe, general concepts tied to the book title and category.
+6. Write short Korean text blocks that fit inside an image:
    - Why this book: 1-2 short sentences.
    - Keyword descriptions: each 1 short phrase or sentence.
    - Summary: 2-3 short sentences.
    - Favorite line: do not invent a verbatim quote unless provided by the user. Instead use `기억하고 싶은 문장:` followed by a clearly original paraphrase or reflective sentence.
    - Note: 1 concise reaction.
-5. Produce one final prompt only, unless the user asks for explanation.
+7. Send the final prompt to the active image generation capability and return the generated image. Do not display the prompt unless the user explicitly asks for it or image generation is unavailable.
 
 ## Image Prompt Template
 
-Replace bracketed fields before sending to the image generator.
+Replace bracketed fields internally before sending to the image generator.
 
 ```text
 세로형 4:5 또는 A4 세로 비율의 초고해상도 이미지. 깨끗한 화이트 노트 한 페이지 위에 실제 대학생이 손으로 정리한 듯한 감성 독서 메모를 그린다. 은은한 종이 질감, 넓은 여백, 정돈된 정보 배치, 검은 펜 손글씨 중심. 포인트 컬러는 [ACCENT_COLORS]만 사용. 전체 분위기는 Pinterest/Instagram 스타일의 아날로그 독서기록, 미니멀하고 감성적이며 과하게 화려하지 않다.
@@ -86,7 +111,9 @@ Replace bracketed fields before sending to the image generator.
 
 ## Output Format
 
-Return the final image prompt in Korean. If useful, include a compact metadata block before the prompt:
+Default output: generate and return the image only.
+
+Prompt-only fallback: if image generation is unavailable or the user explicitly requests the prompt, return the final image prompt in Korean. If useful, include a compact metadata block before the prompt:
 
 ```text
 책 제목: ...
@@ -95,4 +122,4 @@ Return the final image prompt in Korean. If useful, include a compact metadata b
 평점: ...
 ```
 
-When directly using an image generation tool, pass only the final prompt.
+When directly using an image generation model or tool, pass only the final prompt.
