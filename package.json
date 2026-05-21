@@ -8,11 +8,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "validate:metadata": "node scripts/validate-metadata.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@lucide/astro": "^1.16.0",
-    "astro": "^6.3.6"
+    "astro": "^6.3.6",
+    "dompurify": "^3.4.5",
+    "marked": "^18.0.4"
   }
 }
