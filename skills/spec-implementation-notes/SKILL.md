@@ -19,10 +19,10 @@ The notes are not a final report. Treat them as a working artifact that is updat
 
 Create or update `implementation-notes.html` at the project root unless the user specifies another path. The file must include these sections:
 
-- `설계 결정`: Choices made because the spec was ambiguous.
-- `편차`: Intentional places where the implementation does not follow the spec, with reasons.
-- `트레이드오프`: Alternatives considered and why the chosen approach won.
-- `미결 질문`: Items that still need confirmation or may require later changes.
+- `Design Decisions`: Choices made because the spec was ambiguous.
+- `Deviations`: Intentional places where the implementation does not follow the spec, with reasons.
+- `Tradeoffs`: Alternatives considered and why the chosen approach won.
+- `Open Questions`: Items that still need confirmation or may require later changes.
 
 Each entry should include:
 
@@ -59,12 +59,7 @@ The notes file should be standalone and readable in a browser:
 When this skill is used after `grill-me`, proceed with:
 
 ```text
-<SPEC>을 구현하십시오. 작업을 진행하면서 구현 방식이 명세와 달라지거나 해석이 필요한 모든 내용을 기록하는 실시간 implementation-notes.html 파일을 유지하십시오. 여기에는 다음 내용이 포함되어야 합니다:
-- 설계 결정: 명세가 모호하여 본인이 내린 선택들
-- 편차: 의도적으로 명세를 따르지 않은 부분과 그 이유
-- 트레이드오프: 고려했던 대안들과 현재 방식을 선택한 이유
-- 미결 질문: 확인이나 수정이 필요한 사항들
-상세한 사양을 작성하더라도 언제나 모호한 점이나 예상치 못한 변수가 발생하기 마련입니다. 이러한 상황에서 모델이 스스로 판단을 내리되, 사용자에게 내용을 공유하여 지속적으로 피드백을 받을 수 있는 구조로 만들어줍니다.
+Implement the <SPEC>. While working, maintain a live implementation-notes.html file recording every meaningful point where the implementation differs from, interprets, or extends the specification. Record entries under the sections defined in the Required Notes above. No spec is complete — ambiguities and unexpected constraints always arise. Make reasonable judgments and keep them visible for continuous feedback.
 ```
 
 ## Completion Criteria

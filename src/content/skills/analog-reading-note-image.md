@@ -3,8 +3,8 @@ title: "Analog Reading Note Image"
 description: "Generate a Korean prompt for creating a Pinterest/Instagram-style analog reading journal image from a book title, author, finish date, rating, and optional notes."
 category: "agent-skill"
 icon: "Image"
-author: "anpigon"
-githubUrl: "https://github.com/anpigon/agenthub"
+author: "jeongsk"
+githubUrl: "https://github.com/jeongsk/agenthub"
 compatibleAgents: ["Claude", "Gemini", "OpenAI", "Codex"]
 tags: ["korean", "book-journal", "image-generation", "prompt-engineering", "analog", "reading"]
 featured: false
