@@ -1,0 +1,483 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Terminal, Copy, Check, GitPullRequest, FileCode, CheckCircle2 } from '@lucide/astro';
+---
+
+<Layout 
+  title="Register Skill - AgentHub"
+  description="Submit your own open-source Agent skills or Model Context Protocol tools to AgentHub registry. Learn our DB-free GitOps PR registry flow."
+>
+  <div class="container submit-container">
+    <section class="submit-hero">
+      <div class="hero-badge">
+        <GitPullRequest size={14} class="rose-icon" />
+        <span>GitOps Submission</span>
+      </div>
+      <h1 class="submit-title">Register Your <span class="text-gradient">Asset</span></h1>
+      <p class="submit-subtitle">
+        AgentHub runs entirely without a database. To list your skill or MCP tool, simply fill out the form below to generate a Markdown file, then submit a Pull Request to our GitHub repository.
+      </p>
+    </section>
+
+    <!-- Step Timeline Section -->
+    <section class="timeline-section glass-card">
+      <h2 class="section-heading">How It Works</h2>
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Generate Markdown</h3>
+            <p>Fill out the metadata builder form below. We'll instantly format it into an Astro-compatible Markdown template.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Create a File</h3>
+            <p>Fork our GitHub repo and create a new file named <code>your-asset-name.md</code> under <code>src/content/skills/</code> directory.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Send Pull Request</h3>
+            <p>Paste the generated Markdown code, commit the file, and open a Pull Request. Once approved, it goes live instantly!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Builder Form Grid -->
+    <div class="builder-grid">
+      <!-- Input Form Card -->
+      <section class="form-card glass-card">
+        <h2 class="panel-heading">1. Metadata Builder Form</h2>
+        
+        <form id="submission-form" class="builder-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="input-title">Asset Title *</label>
+            <input type="text" id="input-title" class="glass-input" placeholder="e.g. SQLite MCP Server" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="input-desc">Short Description *</label>
+            <input type="text" id="input-desc" class="glass-input" placeholder="e.g. A Model Context Protocol server that exposes SQLite databases securely" required />
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="input-category">Category *</label>
+              <select id="input-category" class="glass-input select-input" required>
+                <option value="mcp-server">MCP Server</option>
+                <option value="agent-skill">Agent Skill</option>
+                <option value="plugin">Plugin</option>
+                <option value="browser-extension">Extension</option>
+              </select>
+            </div>
+            
+            <div class="form-group flex-1">
+              <label for="input-icon">Lucide Icon Name *</label>
+              <input type="text" id="input-icon" class="glass-input" placeholder="e.g. Database, Search, Terminal, Cpu" value="Terminal" required />
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="input-author">GitHub Username *</label>
+              <input type="text" id="input-author" class="glass-input" placeholder="e.g. anpigon" required />
+            </div>
+            <div class="form-group flex-1">
+              <label for="input-github">GitHub Repo URL *</label>
+              <input type="url" id="input-github" class="glass-input" placeholder="https://github.com/username/repo" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input-install">Installation Command (Optional)</label>
+            <input type="text" id="input-install" class="glass-input" placeholder="e.g. npm install @modelcontextprotocol/server-sqlite" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="input-agents">Compatible Agents (Comma separated)</label>
+              <input type="text" id="input-agents" class="glass-input" placeholder="e.g. Claude, Gemini, Cursor" value="Gemini, Claude" />
+            </div>
+            <div class="form-group flex-1">
+              <label for="input-tags">Tags (Comma separated)</label>
+              <input type="text" id="input-tags" class="glass-input" placeholder="e.g. mcp, sqlite, databases" />
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Output Code Preview Card -->
+      <section class="preview-card glass-card">
+        <div class="preview-header">
+          <h2 class="panel-heading m-0">2. Generated Markdown Template</h2>
+          <button class="btn-grad text-xs" id="copy-markdown-btn" aria-label="Copy Markdown code">
+            <Copy size={14} id="copy-md-icon" />
+            <Check size={14} id="check-md-icon" class="hide" />
+            <span>Copy Code</span>
+          </button>
+        </div>
+        
+        <div class="code-wrapper">
+          <pre class="code-block"><code id="markdown-code-output"></code></pre>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<!-- Client Side Interactive Generator Script -->
+<script>
+  // Get Form Fields
+  const inputTitle = document.getElementById('input-title') as HTMLInputElement;
+  const inputDesc = document.getElementById('input-desc') as HTMLInputElement;
+  const inputCategory = document.getElementById('input-category') as HTMLSelectElement;
+  const inputIcon = document.getElementById('input-icon') as HTMLInputElement;
+  const inputAuthor = document.getElementById('input-author') as HTMLInputElement;
+  const inputGithub = document.getElementById('input-github') as HTMLInputElement;
+  const inputInstall = document.getElementById('input-install') as HTMLInputElement;
+  const inputAgents = document.getElementById('input-agents') as HTMLInputElement;
+  const inputTags = document.getElementById('input-tags') as HTMLInputElement;
+  
+  // Get Preview Nodes
+  const codeOutput = document.getElementById('markdown-code-output');
+  const copyBtn = document.getElementById('copy-markdown-btn');
+  const copyIcon = document.getElementById('copy-md-icon');
+  const checkIcon = document.getElementById('check-md-icon');
+
+  function updateMarkdown() {
+    if (!codeOutput) return;
+
+    // Standard fallback strings
+    const title = inputTitle.value.trim() || 'Awesome SQLite MCP';
+    const description = inputDesc.value.trim() || 'A brief summary of what your amazing tool does.';
+    const category = inputCategory.value || 'mcp-server';
+    const icon = inputIcon.value.trim() || 'Terminal';
+    const author = inputAuthor.value.trim() || 'your-github-id';
+    const githubUrl = inputGithub.value.trim() || 'https://github.com/username/repo';
+    const installCommand = inputInstall.value.trim() ? `\ninstallCommand: "${inputInstall.value.trim().replace(/"/g, '\\"')}"` : '';
+    
+    // Parse arrays
+    const agents = inputAgents.value.split(',')
+      .map(s => s.trim())
+      .filter(s => s.length > 0)
+      .map(s => `"${s.replace(/"/g, '\\"')}"`)
+      .join(', ');
+      
+    const tags = inputTags.value.split(',')
+      .map(s => s.trim())
+      .filter(s => s.length > 0)
+      .map(s => `"${s.replace(/"/g, '\\"')}"`)
+      .join(', ');
+
+    const markdownTemplate = `---
+title: "${title.replace(/"/g, '\\"')}"
+description: "${description.replace(/"/g, '\\"')}"
+category: "${category}"
+icon: "${icon}"
+author: "${author}"
+githubUrl: "${githubUrl}"${installCommand}
+compatibleAgents: [${agents || '"Gemini", "Claude"'}]
+tags: [${tags || '"mcp", "tool"'}]
+featured: false
+---
+
+# ${title}
+
+Introduce your tool in detail here. Explain why it is useful, what problems it solves, and how developers can utilize it inside their Agent environments.
+
+## Features
+
+- **Feature One**: Detailed description of what makes this feature remarkable.
+- **Feature Two**: Describe another core capability.
+
+## How to Configure
+
+Provide details on how to set this up inside Cursor, Claude Desktop, or Gemini workflows:
+
+\`\`\`json
+{
+  "mcpServers": {
+    "${title.toLowerCase().replace(/\s+/g, '-')}-mcp": {
+      "command": "npx",
+      "args": ["-y", "@username/mcp-server-name"]
+    }
+  }
+}
+\`\`\`
+
+## License
+
+MIT License. Feel free to use and contribute!
+`;
+
+    codeOutput.textContent = markdownTemplate;
+  }
+
+  // Bind key inputs
+  const inputs = [
+    inputTitle, inputDesc, inputCategory, inputIcon, 
+    inputAuthor, inputGithub, inputInstall, inputAgents, inputTags
+  ];
+
+  inputs.forEach(input => {
+    if (input) {
+      input.addEventListener('input', updateMarkdown);
+    }
+  });
+
+  // Copy button handler
+  if (copyBtn && codeOutput && copyIcon && checkIcon) {
+    copyBtn.addEventListener('click', () => {
+      const codeText = codeOutput.textContent || '';
+      
+      navigator.clipboard.writeText(codeText).then(() => {
+        copyIcon.classList.add('hide');
+        checkIcon.classList.remove('hide');
+        copyBtn.classList.add('success');
+        
+        setTimeout(() => {
+          copyIcon.classList.remove('hide');
+          checkIcon.classList.add('hide');
+          copyBtn.classList.remove('success');
+        }, 2000);
+      });
+    });
+  }
+
+  // Initial call
+  updateMarkdown();
+</script>
+
+<style>
+  .submit-container {
+    padding-top: 40px;
+    margin-bottom: 80px;
+  }
+
+  .submit-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rose-icon {
+    color: hsl(var(--rose-point));
+    fill: hsl(var(--rose-point));
+  }
+
+  .submit-title {
+    font-size: 3rem;
+    font-weight: 850;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .submit-subtitle {
+    font-size: 1.1rem;
+    color: hsl(var(--text-secondary));
+    line-height: 1.6;
+  }
+
+  /* Timeline */
+  .timeline-section {
+    padding: 36px;
+    margin-bottom: 40px;
+  }
+
+  .section-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .timeline-step {
+    display: flex;
+    gap: 16px;
+  }
+
+  .step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--grad-primary);
+    color: hsl(var(--bg-base));
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+  }
+
+  .step-content h3 {
+    font-size: 1.05rem;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .step-content p {
+    font-size: 0.85rem;
+    color: hsl(var(--text-secondary));
+    line-height: 1.5;
+  }
+
+  /* Builder Grid */
+  .builder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+  }
+
+  .form-card, .preview-card {
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .panel-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+  }
+
+  .m-0 {
+    margin: 0 !important;
+    border: none;
+    padding: 0;
+  }
+
+  .builder-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 16px;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: hsl(var(--text-secondary));
+  }
+
+  /* Custom styling for select box styling */
+  .select-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    padding-right: 40px !important;
+  }
+  .select-input option {
+    background-color: hsl(var(--bg-card));
+    color: white;
+  }
+
+  /* Preview area */
+  .preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+  }
+
+  .text-xs {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .code-wrapper {
+    flex-grow: 1;
+    display: flex;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 580px;
+  }
+
+  .code-block {
+    width: 100%;
+    padding: 20px;
+    overflow: auto;
+    margin: 0;
+  }
+
+  #markdown-code-output {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    color: hsl(var(--text-secondary));
+    line-height: 1.5;
+    white-space: pre;
+  }
+
+  .success {
+    background: linear-gradient(135deg, rgb(34, 197, 94) 0%, rgb(21, 128, 61) 100%) !important;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3) !important;
+  }
+
+  .success #check-md-icon {
+    display: inline-block;
+  }
+  
+  #copy-markdown-btn .hide {
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .timeline {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .builder-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .form-row {
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+</style>

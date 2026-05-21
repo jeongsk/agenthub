@@ -1,0 +1,64 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "AgentHub - Skills, MCP Tools & Plugins Directory", 
+  description = "Discover and share open-source Agent skills, Model Context Protocol (MCP) servers, browser extensions, and plugins. Fully database-free and community-driven."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- SEO Optimization -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="AgentHub" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body>
+    <!-- Background glowing ambient blobs -->
+    <div class="glow-blob glow-cyan"></div>
+    <div class="glow-blob glow-violet"></div>
+    
+    <!-- Header component -->
+    <Header />
+    
+    <!-- Main page wrapper -->
+    <main>
+      <slot />
+    </main>
+    
+    <!-- Footer component -->
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    min-height: calc(100vh - 80px - 200px); /* header & footer spacing */
+    padding-top: 100px; /* offset for fixed header */
+    padding-bottom: 60px;
+  }
+</style>
