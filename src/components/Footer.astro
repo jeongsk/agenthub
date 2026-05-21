@@ -1,0 +1,149 @@
+---
+import { Heart, Cpu } from '@lucide/astro';
+---
+
+<footer class="main-footer">
+  <div class="container footer-content">
+    <div class="footer-brand">
+      <div class="logo-footer">
+        <span class="logo-text">Agent<span class="text-gradient">Hub</span></span>
+      </div>
+      <p class="brand-desc">
+        The ultimate open-source registry for AI Agent skills, Model Context Protocol tools, and plugins.
+      </p>
+    </div>
+    
+    <div class="footer-links">
+      <div class="link-group">
+        <h4>Explore</h4>
+        <a href="/">Browse Directory</a>
+        <a href="/submit">Register Skill</a>
+      </div>
+      <div class="link-group">
+        <h4>Community</h4>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://modelcontextprotocol.org" target="_blank" rel="noopener noreferrer">MCP Spec</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container footer-bottom">
+    <p class="copyright">
+      &copy; {new Date().getFullYear()} AgentHub. Powered by 
+      <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="footer-stack-link">Astro</a> & 
+      <a href="https://pages.cloudflare.com" target="_blank" rel="noopener noreferrer" class="footer-stack-link">Cloudflare Pages</a>.
+    </p>
+    <p class="made-with">
+      Made with <Heart size={12} class="heart-icon" /> for the Agentic Era.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .main-footer {
+    background: rgba(10, 15, 30, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 0 30px 0;
+    backdrop-filter: blur(10px);
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand {
+    max-width: 400px;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .brand-desc {
+    margin-top: 12px;
+    color: hsl(var(--text-muted));
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+  }
+
+  .link-group h4 {
+    color: hsl(var(--text-primary));
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .link-group a {
+    display: block;
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+  }
+
+  .link-group a:hover {
+    color: hsl(var(--cyan-point));
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: hsl(var(--text-muted));
+    font-size: 0.8rem;
+  }
+
+  .footer-stack-link {
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer-stack-link:hover {
+    color: white;
+  }
+
+  .made-with {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .heart-icon {
+    color: hsl(var(--rose-point));
+    fill: hsl(var(--rose-point));
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .footer-links {
+      justify-content: flex-start;
+      gap: 40px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+  }
+</style>
