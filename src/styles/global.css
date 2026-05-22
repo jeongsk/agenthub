@@ -213,6 +213,11 @@ body::before {
   border-color: rgba(139, 92, 246, 0.3);
   color: rgb(167, 139, 250);
 }
+.badge-harness {
+  background: rgba(20, 184, 166, 0.1);
+  border-color: rgba(20, 184, 166, 0.3);
+  color: rgb(45, 212, 191);
+}
 .badge-plugin {
   background: rgba(244, 63, 94, 0.1);
   border-color: rgba(244, 63, 94, 0.3);
