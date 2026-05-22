@@ -45,6 +45,12 @@ const data = skill.data;
               <GitHub size={18} />
               <span>GitHub 저장소 보기</span>
             </a>
+            {data.chromeWebStoreUrl && (
+              <a href={data.chromeWebStoreUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <ExternalLink size={18} />
+                <span>Chrome Web Store 열기</span>
+              </a>
+            )}
             {data.installCommand && (
               <div class="copy-command-wrapper glass-panel">
                 <code class="command-code" id="command-text">{data.installCommand}</code>

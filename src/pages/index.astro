@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import { Search, Compass, Terminal, Cpu, Sparkles, Puzzle } from '@lucide/astro';
+import { Search, Compass, Terminal, Cpu, Sparkles, Puzzle, Layers3 } from '@lucide/astro';
 import { getCollection } from 'astro:content';
 
 const skillEntries = await getCollection('skills');
@@ -55,6 +55,10 @@ const sortedSkills = [...skillEntries]
         <button class="tab-btn" data-category="agent-skill" id="tab-agent-skill">
           <Sparkles size={16} />
           <span>에이전트 스킬</span>
+        </button>
+        <button class="tab-btn" data-category="agent-harness" id="tab-agent-harness">
+          <Layers3 size={16} />
+          <span>에이전트 하네스</span>
         </button>
         <button class="tab-btn" data-category="plugin" id="tab-plugin">
           <Cpu size={16} />

@@ -5,7 +5,7 @@ import { ArrowUpRight } from '@lucide/astro';
 interface Props {
   title: string;
   description: string;
-  category: 'mcp-server' | 'agent-skill' | 'plugin' | 'browser-extension';
+  category: 'mcp-server' | 'agent-skill' | 'agent-harness' | 'plugin' | 'browser-extension';
   tags: string[];
   author: string;
   compatibleAgents: string[];
@@ -22,6 +22,7 @@ const IconComponent = (Icons as any)[icon] || Icons.Terminal;
 const categoryLabels = {
   'mcp-server': 'MCP Server',
   'agent-skill': 'Agent Skill',
+  'agent-harness': 'Agent Harness',
   'plugin': 'Plugin',
   'browser-extension': 'Extension'
 };
@@ -29,6 +30,7 @@ const categoryLabels = {
 const badgeClasses = {
   'mcp-server': 'badge-mcp',
   'agent-skill': 'badge-skill',
+  'agent-harness': 'badge-harness',
   'plugin': 'badge-plugin',
   'browser-extension': 'badge-extension'
 };
@@ -125,6 +127,11 @@ const badgeClasses = {
     color: rgb(167, 139, 250);
     background: rgba(139, 92, 246, 0.06);
     border-color: rgba(139, 92, 246, 0.15);
+  }
+  .card-icon-wrapper.agent-harness {
+    color: rgb(45, 212, 191);
+    background: rgba(20, 184, 166, 0.06);
+    border-color: rgba(20, 184, 166, 0.15);
   }
   .card-icon-wrapper.plugin {
     color: rgb(251, 113, 133);
