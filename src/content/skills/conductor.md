@@ -1,10 +1,11 @@
 ---
 title: "Conductor"
-description: "Mac에서 Claude Code와 Codex 같은 코딩 에이전트를 병렬로 실행해 격리된 작업공간에서 관리하고, 변경 검토와 병합까지 이어주는 에이전트 하네스입니다."
+description: "Mac에서 Claude Code와 Codex 같은 코딩 에이전트를 병렬로 실행해 격리된 작업공간에서 관리하고, 변경 검토와 병합까지 이어주는 독립 데스크톱 앱입니다. 오픈소스로 공개되어 있지 않습니다."
 category: "agent-harness"
-tags: ["ai-agent", "macos", "parallel-agents", "workspaces", "claude-code", "codex"]
-githubUrl: "https://github.com/NielsdaWheelz/agency"
-author: "NielsdaWheelz"
+tags: ["ai-agent", "macos", "parallel-agents", "workspaces", "claude-code", "codex", "desktop-app"]
+githubUrl: "https://www.conductor.build/"
+githubStars: 0
+author: "meltylabs"
 compatibleAgents: ["Claude Code", "Codex"]
 featured: true
 icon: "Workflow"
@@ -12,7 +13,7 @@ icon: "Workflow"
 
 # Conductor
 
-Conductor는 Mac에서 Claude Code, Codex 같은 코딩 에이전트를 병렬로 돌리기 위한 도구입니다. 에이전트마다 격리된 작업공간을 만들고, 진행 상황을 한눈에 보면서 마지막에는 변경 사항을 검토하고 병합할 수 있게 해줍니다.
+Conductor는 Mac에서 Claude Code, Codex 같은 코딩 에이전트를 병렬로 돌리기 위한 독립 데스크톱 앱입니다. 이 앱 자체의 핵심 코드는 오픈소스로 공개되어 있지 않으나, 에이전트마다 격리된 작업공간을 만들고 진행 상황을 한눈에 보면서 마지막에는 변경 사항을 검토하고 병합할 수 있게 해줍니다.
 
 ## 언제 쓰나
 
@@ -27,8 +28,4 @@ Conductor는 Mac에서 Claude Code, Codex 같은 코딩 에이전트를 병렬�
 - 각 에이전트를 격리된 워크스페이스에서 관리합니다.
 - 진행 상황, 체크포인트, diff 검토 흐름을 함께 제공합니다.
 - GitHub PR 중심으로 변경을 마무리하는 흐름을 지원합니다.
-
-## 참고
-
-- 이 프로젝트는 단일 프롬프트 도구보다 **에이전트 운영 하네스**에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 자연스럽습니다.
+- macOS 전용 데스크톱 앱으로 제공됩니다.
