@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import { Search, Compass, Terminal, Cpu, Sparkles, Puzzle, Layers3 } from '@lucide/astro';
+import { Search, Compass, Terminal, Cpu, Sparkles, Puzzle, Layers3, Monitor } from '@lucide/astro';
 import { getCollection } from 'astro:content';
 
 const skillEntries = await getCollection('skills');
@@ -27,7 +27,7 @@ const sortedSkills = [...skillEntries]
         <span class="text-gradient">AI 에이전트</span>를 위한 오픈소스 스킬 레지스트리
       </h1>
       <p class="hero-subtitle">
-        MCP 서버, 플러그인, 커스텀 스킬을 한곳에서 찾아보세요. 등록 데이터는 GitHub PR로 관리되는 Markdown 파일에서 생성됩니다.
+        MCP 서버, 에이전트 스킬, 하네스, 데스크톱 유틸리티를 한곳에서 찾아보세요. 등록 데이터는 GitHub PR로 관리되는 Markdown 파일에서 생성됩니다.
       </p>
     </section>
 
@@ -59,6 +59,10 @@ const sortedSkills = [...skillEntries]
         <button class="tab-btn" data-category="agent-harness" id="tab-agent-harness">
           <Layers3 size={16} />
           <span>에이전트 하네스</span>
+        </button>
+        <button class="tab-btn" data-category="desktop-utility" id="tab-desktop-utility">
+          <Monitor size={16} />
+          <span>데스크톱 유틸리티</span>
         </button>
         <button class="tab-btn" data-category="plugin" id="tab-plugin">
           <Cpu size={16} />
@@ -267,6 +271,23 @@ const sortedSkills = [...skillEntries]
   @media (max-width: 640px) {
     .hero-title { font-size: 2.35rem; }
     .directory-grid { grid-template-columns: 1fr; }
-    .tab-btn { flex: 1; justify-content: center; }
+    .category-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: 100%;
+    }
+
+    .tab-btn {
+      width: 100%;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .tab-btn span {
+      min-width: 0;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.2;
+    }
   }
 </style>

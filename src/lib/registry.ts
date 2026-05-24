@@ -1,4 +1,4 @@
-export const categories = ['mcp-server', 'agent-skill', 'agent-harness', 'plugin', 'browser-extension'] as const;
+export const categories = ['mcp-server', 'agent-skill', 'agent-harness', 'desktop-utility', 'plugin', 'browser-extension'] as const;
 
 export type Category = (typeof categories)[number];
 
@@ -20,6 +20,7 @@ export function categoryLabel(category: Category): string {
     'mcp-server': 'MCP 서버',
     'agent-skill': '에이전트 스킬',
     'agent-harness': '에이전트 하네스',
+    'desktop-utility': '데스크톱 유틸리티',
     plugin: '플러그인',
     'browser-extension': '브라우저 확장',
   }[category];
@@ -30,6 +31,7 @@ export function badgeClass(category: Category): string {
     'mcp-server': 'badge-mcp',
     'agent-skill': 'badge-skill',
     'agent-harness': 'badge-harness',
+    'desktop-utility': 'badge-utility',
     plugin: 'badge-plugin',
     'browser-extension': 'badge-extension',
   }[category];
