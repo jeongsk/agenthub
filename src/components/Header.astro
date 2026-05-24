@@ -44,16 +44,19 @@ import GitHub from './icons/GitHub.astro';
 
   .header-container {
     width: 100%;
+    max-width: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
+    min-width: 0;
   }
 
   .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    min-width: 0;
     text-decoration: none;
     color: white;
     font-size: 1.35rem;
@@ -86,12 +89,14 @@ import GitHub from './icons/GitHub.astro';
 
   .logo-text {
     letter-spacing: -0.03em;
+    white-space: nowrap;
   }
 
   .nav-links {
     display: flex;
     align-items: center;
     gap: 30px;
+    min-width: 0;
   }
 
   .nav-link {
@@ -131,11 +136,59 @@ import GitHub from './icons/GitHub.astro';
 
   /* Responsive styles */
   @media (max-width: 640px) {
+    .main-header {
+      left: 12px;
+      right: 12px;
+      height: 64px;
+      border-radius: 18px !important;
+    }
+    .header-container {
+      padding: 0 14px;
+      gap: 12px;
+    }
+    .logo {
+      gap: 8px;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+    }
     .nav-links {
-      gap: 16px;
+      gap: 12px;
+      justify-content: flex-end;
+      flex: 1;
+    }
+    .nav-link {
+      font-size: 0.88rem;
+      white-space: nowrap;
     }
     .header-action {
       display: none; /* hide CTA button on mobile */
+    }
+  }
+
+  @media (max-width: 390px) {
+    .main-header {
+      left: 10px;
+      right: 10px;
+    }
+    .header-container {
+      padding: 0 12px;
+      gap: 10px;
+    }
+    .logo-text {
+      max-width: 116px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav-links {
+      gap: 10px;
+    }
+    .nav-link {
+      font-size: 0.82rem;
     }
   }
 </style>

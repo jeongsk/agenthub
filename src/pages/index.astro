@@ -215,7 +215,7 @@ const sortedSkills = [...skillEntries]
     align-items: center;
     margin-bottom: 34px;
   }
-  .search-bar-wrapper { position: relative; flex: 1; }
+  .search-bar-wrapper { position: relative; flex: 1; min-width: 0; }
   .search-icon {
     position: absolute;
     left: 16px;
@@ -224,7 +224,7 @@ const sortedSkills = [...skillEntries]
     color: hsl(var(--text-muted));
   }
   .search-input-field { width: 100%; padding-left: 48px; }
-  .category-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+  .category-tabs { display: flex; gap: 8px; flex-wrap: wrap; min-width: 0; }
   .tab-btn {
     display: inline-flex;
     align-items: center;
@@ -237,6 +237,7 @@ const sortedSkills = [...skillEntries]
     cursor: pointer;
     font-family: inherit;
     font-weight: 600;
+    min-width: 0;
   }
   .tab-btn.active, .tab-btn:hover {
     color: white;
@@ -269,7 +270,23 @@ const sortedSkills = [...skillEntries]
     .search-filter-section { flex-direction: column; align-items: stretch; }
   }
   @media (max-width: 640px) {
-    .hero-title { font-size: 2.35rem; }
+    .main-container {
+      padding-top: 28px;
+    }
+    .hero-section {
+      margin-bottom: 36px;
+    }
+    .hero-title {
+      font-size: 2.1rem;
+      overflow-wrap: keep-all;
+    }
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    .search-filter-section {
+      padding: 14px;
+      gap: 12px;
+    }
     .directory-grid { grid-template-columns: 1fr; }
     .category-tabs {
       display: grid;
@@ -280,7 +297,10 @@ const sortedSkills = [...skillEntries]
     .tab-btn {
       width: 100%;
       justify-content: center;
+      padding: 10px 8px;
+      min-height: 46px;
       min-width: 0;
+      text-align: center;
     }
 
     .tab-btn span {
@@ -288,6 +308,16 @@ const sortedSkills = [...skillEntries]
       white-space: normal;
       text-align: center;
       line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .hero-title {
+      font-size: 1.95rem;
+    }
+    .section-title {
+      font-size: 1.35rem;
     }
   }
 </style>
