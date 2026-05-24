@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import { Search, Compass, Terminal, Cpu, Sparkles, Puzzle, Layers3, Monitor } from '@lucide/astro';
+import { Search, X, Compass, Terminal, Cpu, Sparkles, Puzzle, Layers3, Monitor } from '@lucide/astro';
 import { getCollection } from 'astro:content';
 
 const skillEntries = await getCollection('skills');
@@ -44,6 +44,9 @@ const sortedSkills = [...skillEntries]
           class="glass-input search-input-field"
           autocomplete="off"
         />
+        <button type="button" id="clear-search" class="search-clear-btn" aria-label="검색어 지우기" hidden>
+          <X size={14} />
+        </button>
       </div>
 
       <div class="category-tabs">
@@ -121,6 +124,7 @@ const sortedSkills = [...skillEntries]
 
 <script>
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const clearSearchButton = document.getElementById('clear-search') as HTMLButtonElement;
   const tabButtons = document.querySelectorAll('.tab-btn');
   const gridItems = document.querySelectorAll('.grid-item');
   const directoryGrid = document.getElementById('directory-grid');
@@ -190,6 +194,11 @@ const sortedSkills = [...skillEntries]
     });
   }
 
+  function syncClearSearchButton() {
+    if (!clearSearchButton || !searchInput) return;
+    clearSearchButton.hidden = searchInput.value.trim().length === 0;
+  }
+
   function filterItems() {
     let visibleCount = 0;
 
@@ -221,6 +230,7 @@ const sortedSkills = [...skillEntries]
     searchQuery = query;
     activeCategory = category;
     if (searchInput) searchInput.value = query;
+    syncClearSearchButton();
     activateTab(category);
     updateUrlState();
     persistState();
@@ -233,6 +243,19 @@ const sortedSkills = [...skillEntries]
       updateUrlState();
       persistState();
       filterItems();
+      syncClearSearchButton();
+    });
+  }
+
+  if (clearSearchButton && searchInput) {
+    clearSearchButton.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      syncClearSearchButton();
+      updateUrlState();
+      persistState();
+      filterItems();
+      searchInput.focus();
     });
   }
 
@@ -308,7 +331,35 @@ const sortedSkills = [...skillEntries]
     transform: translateY(-50%);
     color: hsl(var(--text-muted));
   }
-  .search-input-field { width: 100%; padding-left: 48px; }
+  .search-input-field { width: 100%; padding-left: 48px; padding-right: 44px; }
+  .search-clear-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: hsl(var(--text-secondary));
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .search-clear-btn:hover,
+  .search-clear-btn:focus-visible {
+    color: white;
+    border-color: rgba(6, 182, 212, 0.35);
+    background: rgba(6, 182, 212, 0.16);
+  }
+  .search-clear-btn:focus-visible {
+    outline: 2px solid rgba(6, 182, 212, 0.5);
+    outline-offset: 2px;
+  }
+  .search-clear-btn[hidden] { display: none; }
   .category-tabs { display: flex; gap: 8px; flex-wrap: wrap; min-width: 0; }
   .tab-btn {
     display: inline-flex;
