@@ -1,7 +1,7 @@
 ---
 title: "CodeWhale"
 description: "터미널에서 실행되는 DeepSeek 모델 전용 코딩 에이전트입니다. Rust 기반 TUI로 가볍고 빠르며, DeepSeek 모델에 최적화된 코드 생성 및 편집 환경을 제공합니다."
-category: "agent-harness"
+category: "agent-framework"
 tags: ["coding-agent", "deepseek", "cli", "tui", "rust", "terminal"]
 githubUrl: "https://github.com/Hmbown/CodeWhale"
 githubStars: 33960

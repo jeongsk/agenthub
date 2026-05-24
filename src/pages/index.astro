@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import { Search, X, Compass, Terminal, Cpu, Sparkles, Puzzle, Layers3, Monitor } from '@lucide/astro';
+import * as Icons from '@lucide/astro';
 import { getCollection } from 'astro:content';
+import { CATEGORIES, CATEGORY_IDS } from '../lib/registry';
 
 const skillEntries = await getCollection('skills');
 const sortedSkills = [...skillEntries]
@@ -13,6 +14,17 @@ const sortedSkills = [...skillEntries]
     if (starDifference !== 0) return starDifference;
     return a.data.title.localeCompare(b.data.title, 'ko-KR');
   });
+
+interface TabDef {
+  id: string;
+  label: string;
+  icon: any;
+}
+const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
+  const cfg = CATEGORIES[cid];
+  const IconCmp = (Icons as any)[cfg.icon] || Icons.Terminal;
+  return { id: cid, label: cfg.label, icon: IconCmp };
+});
 ---
 
 <Layout
@@ -22,7 +34,7 @@ const sortedSkills = [...skillEntries]
   <div class="container main-container">
     <section class="hero-section">
       <div class="hero-badge">
-        <Sparkles size={14} class="rose-icon" />
+        <Icons.Sparkles size={14} class="rose-icon" />
         <span>AI 에이전트 레지스트리</span>
       </div>
       <h1 class="hero-title">
@@ -30,13 +42,13 @@ const sortedSkills = [...skillEntries]
         오픈소스 도구 디렉토리
       </h1>
       <p class="hero-subtitle">
-        MCP 서버, 에이전트 스킬, 하네스, 데스크톱 유틸리티, 플러그인, 브라우저 확장을 한곳에서 찾아보세요.
+        MCP 서버, 에이전트 스킬, 프레임워크, 하네스, 컴포넌트, 데스크톱 유틸리티, CLI 유틸리티, 플러그인, 브라우저 확장을 한곳에서 찾아보세요.
       </p>
     </section>
 
     <section class="search-filter-section glass-panel">
       <div class="search-bar-wrapper">
-        <Search size={20} class="search-icon" />
+        <Icons.Search size={20} class="search-icon" />
         <input
           type="text"
           id="search-input"
@@ -45,39 +57,21 @@ const sortedSkills = [...skillEntries]
           autocomplete="off"
         />
         <button type="button" id="clear-search" class="search-clear-btn" aria-label="검색어 지우기" hidden>
-          <X size={14} />
+          <Icons.X size={14} />
         </button>
       </div>
 
       <div class="category-tabs">
         <button class="tab-btn active" data-category="all" id="tab-all">
-          <Compass size={16} />
+          <Icons.Compass size={16} />
           <span>전체</span>
         </button>
-        <button class="tab-btn" data-category="mcp-server" id="tab-mcp">
-          <Terminal size={16} />
-          <span>MCP 서버</span>
-        </button>
-        <button class="tab-btn" data-category="agent-skill" id="tab-agent-skill">
-          <Sparkles size={16} />
-          <span>에이전트 스킬</span>
-        </button>
-        <button class="tab-btn" data-category="agent-harness" id="tab-agent-harness">
-          <Layers3 size={16} />
-          <span>에이전트 하네스</span>
-        </button>
-        <button class="tab-btn" data-category="desktop-utility" id="tab-desktop-utility">
-          <Monitor size={16} />
-          <span>데스크톱 유틸리티</span>
-        </button>
-        <button class="tab-btn" data-category="plugin" id="tab-plugin">
-          <Cpu size={16} />
-          <span>플러그인</span>
-        </button>
-        <button class="tab-btn" data-category="browser-extension" id="tab-browser-extension">
-          <Puzzle size={16} />
-          <span>브라우저 확장</span>
-        </button>
+        {categoryTabs.map((tab) => (
+          <button class="tab-btn" data-category={tab.id} id={`tab-${tab.id}`}>
+            <tab.icon size={16} />
+            <span>{tab.label}</span>
+          </button>
+        ))}
       </div>
     </section>
 
@@ -114,7 +108,7 @@ const sortedSkills = [...skillEntries]
       </div>
 
       <div class="empty-state glass-card hide" id="no-search-results">
-        <Search size={48} class="muted-icon" />
+        <Icons.Search size={48} class="muted-icon" />
         <h3>검색 결과가 없습니다</h3>
         <p>철자를 확인하거나 필터를 조정해보세요.</p>
       </div>

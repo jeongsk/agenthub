@@ -1,7 +1,7 @@
 ---
 title: "12-Factor Agents"
 description: "프로덕션용 LLM 에이전트를 만들 때 필요한 원칙을 정리한 가이드 저장소입니다. 스펙, 프롬프트, 컨텍스트, 도구, 실행 상태를 분리해 더 안정적인 에이전트 설계를 돕습니다."
-category: "agent-harness"
+category: "agent-component"
 tags: ["agent-harness", "framework", "context-engineering", "tdd", "llm"]
 githubUrl: "https://github.com/humanlayer/12-factor-agents"
 githubStars: 21936

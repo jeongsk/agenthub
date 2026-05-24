@@ -1,7 +1,7 @@
 ---
 title: "Herm"
 description: "Hermes Agent를 탭형 TUI로 다루는 대시보드입니다. 세션과 운영 요소를 한 화면에서 관리하고 싶을 때 유용합니다."
-category: "agent-harness"
+category: "desktop-utility"
 tags: ["hermes-agent", "tui", "dashboard", "terminal", "workflow"]
 githubUrl: "https://github.com/liftaris/herm"
 githubStars: 197

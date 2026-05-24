@@ -1,7 +1,7 @@
 ---
 title: "OpenClaw"
 description: "내 기기에서 직접 실행하는 개인 AI 어시스턴트입니다. WhatsApp, Telegram, Discord, Slack, iMessage 등 20개 이상의 채널에서 음성, 영상, 캔버스까지 지원하는 로컬 퍼스트 AI 비서입니다."
-category: "agent-harness"
+category: "agent-framework"
 tags: ["ai-assistant", "personal-ai", "multi-channel", "open-source", "local-first", "voice", "canvas", "chat"]
 githubUrl: "https://github.com/openclaw/openclaw"
 githubStars: 374221

@@ -1,7 +1,7 @@
 ---
 title: "Hermes Agent"
 description: "함께 성장하는 AI 에이전트 프레임워크입니다. 900개 이상의 내장 스킬, 플러그인 시스템, 멀티 플랫폼 게이트웨이(Telegram, Discord, Slack 등), 칸반 기반 멀티 에이전트 오케스트레이션을 갖춘 확장 가능한 에이전트 런타임입니다."
-category: "agent-harness"
+category: "agent-framework"
 tags: ["ai-agent", "agent-framework", "multi-agent", "skills", "plugins", "gateway", "kanban", "hermes", "open-source"]
 githubUrl: "https://github.com/NousResearch/hermes-agent"
 githubStars: 164633

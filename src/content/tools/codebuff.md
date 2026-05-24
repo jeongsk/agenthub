@@ -1,7 +1,7 @@
 ---
 title: "Codebuff"
 description: "터미널에서 자연어로 코드베이스를 수정하게 해 주는 멀티 에이전트 코딩 어시스턴트입니다. 계획, 편집, 검토를 나눠 더 정교한 변경이 필요할 때 유용합니다."
-category: "agent-harness"
+category: "agent-framework"
 tags: ["cli", "coding-assistant", "multi-agent", "typescript", "openrouter", "workflow"]
 githubUrl: "https://github.com/CodebuffAI/codebuff"
 githubStars: 5783

@@ -2,11 +2,12 @@
 import * as Icons from '@lucide/astro';
 import { ArrowUpRight, Star } from '@lucide/astro';
 import { formatStarCount } from '../lib/github';
+import { CATEGORIES, categoryLabel, categoryColor, categoryBg } from '../lib/registry';
 
 interface Props {
   title: string;
   description: string;
-  category: 'mcp-server' | 'agent-skill' | 'agent-harness' | 'desktop-utility' | 'plugin' | 'browser-extension';
+  category: 'mcp-server' | 'agent-skill' | 'agent-framework' | 'agent-harness' | 'agent-component' | 'desktop-utility' | 'cli-utility' | 'plugin' | 'browser-extension';
   tags: string[];
   author: string;
   compatibleAgents: string[];
@@ -20,35 +21,21 @@ const { title, description, category, tags, author, compatibleAgents, icon, slug
 // Dynamically select Lucide icon component based on string input
 const IconComponent = (Icons as any)[icon] || Icons.Terminal;
 
-// Generate beautiful category display text
-const categoryLabels = {
-  'mcp-server': 'MCP Server',
-  'agent-skill': 'Agent Skill',
-  'agent-harness': 'Agent Harness',
-  'desktop-utility': 'Desktop Utility',
-  'plugin': 'Plugin',
-  'browser-extension': 'Extension'
-};
-
-const badgeClasses = {
-  'mcp-server': 'badge-mcp',
-  'agent-skill': 'badge-skill',
-  'agent-harness': 'badge-harness',
-  'desktop-utility': 'badge-utility',
-  'plugin': 'badge-plugin',
-  'browser-extension': 'badge-extension'
-};
+const cfg = CATEGORIES[category];
+const pointColor = cfg?.color ?? 'rgb(148, 163, 184)';
+const pointBg = cfg?.bg ?? 'rgba(255, 255, 255, 0.03)';
+const pointBorder = cfg?.border ?? 'rgba(255, 255, 255, 0.06)';
 ---
 
 <article class="glass-card tool-card">
   <a href={`/tools/${slug}`} class="card-link" aria-label={`View details for ${title}`}>
     <div class="card-header">
-      <div class={`card-icon-wrapper ${category}`}>
+      <div class="card-icon-wrapper" style={`color: ${pointColor}; background: ${pointBg}; border-color: ${pointBorder};`}>
         <IconComponent size={22} />
       </div>
       <div class="header-badges">
-        <span class={`badge ${badgeClasses[category]}`}>
-          {categoryLabels[category]}
+        <span class="badge" style={`--badge-color: ${pointColor}; --badge-bg: ${pointBg}; --badge-border: ${pointBorder};`}>
+          {categoryLabel(category)}
         </span>
         <span class="stars-pill" title="GitHub stars">
           <Star size={14} />
@@ -150,38 +137,6 @@ const badgeClasses = {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
     transition: all 0.3s ease;
-  }
-
-  /* Dynamic point-color styling based on category */
-  .card-icon-wrapper.mcp-server {
-    color: rgb(34, 211, 238);
-    background: rgba(6, 182, 212, 0.06);
-    border-color: rgba(6, 182, 212, 0.15);
-  }
-  .card-icon-wrapper.agent-skill {
-    color: rgb(167, 139, 250);
-    background: rgba(139, 92, 246, 0.06);
-    border-color: rgba(139, 92, 246, 0.15);
-  }
-  .card-icon-wrapper.agent-harness {
-    color: rgb(45, 212, 191);
-    background: rgba(20, 184, 166, 0.06);
-    border-color: rgba(20, 184, 166, 0.15);
-  }
-  .card-icon-wrapper.desktop-utility {
-    color: rgb(251, 191, 36);
-    background: rgba(245, 158, 11, 0.06);
-    border-color: rgba(245, 158, 11, 0.15);
-  }
-  .card-icon-wrapper.plugin {
-    color: rgb(251, 113, 133);
-    background: rgba(244, 63, 94, 0.06);
-    border-color: rgba(244, 63, 94, 0.15);
-  }
-  .card-icon-wrapper.browser-extension {
-    color: rgb(253, 224, 71);
-    background: rgba(234, 179, 8, 0.06);
-    border-color: rgba(234, 179, 8, 0.15);
   }
 
   .tool-card:hover .card-icon-wrapper {

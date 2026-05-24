@@ -1,7 +1,7 @@
 ---
 title: "CloakBrowser"
 description: "브라우저 지문을 조정한 스텔스 Chromium으로, Playwright/Puppeteer 기반 웹 자동화를 더 안정적으로 돌리게 돕습니다."
-category: "agent-harness"
+category: "agent-component"
 tags: ["browser-automation", "chromium", "playwright", "puppeteer", "stealth"]
 githubUrl: "https://github.com/CloakHQ/CloakBrowser"
 githubStars: 19568

@@ -1,7 +1,7 @@
 ---
 title: "gbrain"
 description: "AI 에이전트에게 영속적인 지식과 검색 능력을 부여하는 브레인 시스템입니다. 146,646페이지, 24,585명, 5,339개 기업을 기억하며 하이브리드 검색과 자기-배선 지식 그래프로 정확한 답변을 찾아줍니다."
-category: "agent-harness"
+category: "agent-component"
 tags: ["ai-agents", "knowledge-graph", "memory", "rag", "vector-search", "hermes-agent", "openclaw"]
 githubUrl: "https://github.com/garrytan/gbrain"
 githubStars: 18537
