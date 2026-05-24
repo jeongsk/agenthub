@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Markdown이 데이터베이스 역할을 합니다',
         paragraphs: [
-          'AgentHub는 별도 데이터베이스 없이 `src/content/skills`의 Markdown 파일을 레지스트리 데이터로 사용합니다. YAML frontmatter는 목록과 검색에 필요한 구조화된 필드가 됩니다.',
+          'AgentHub는 별도 데이터베이스 없이 `src/content/tools`의 Markdown 파일을 레지스트리 데이터로 사용합니다. YAML frontmatter는 목록과 검색에 필요한 구조화된 필드가 됩니다.',
           '이 방식은 기여자가 브라우저에서 파일 하나를 추가해 Pull Request를 만들 수 있다는 장점이 있습니다.',
         ],
       },

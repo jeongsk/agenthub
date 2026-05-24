@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { CheckCircle2, FileCode, GitPullRequest, Terminal } from '@lucide/astro';
 import GitHub from '../components/icons/GitHub.astro';
 
-const editUrl = 'https://github.com/jeongsk/agenthub/new/main/src/content/skills';
+const editUrl = 'https://github.com/jeongsk/agenthub/new/main/src/content/tools';
 const repoUrl = 'https://github.com/jeongsk/agenthub';
 const exampleMarkdown = `---
 title: "My Agent Skill"
@@ -27,7 +27,7 @@ icon: "Terminal"
 
 <Layout
   title="GitHub PR로 등록하기 - AgentHub"
-  description="AgentHub는 데이터베이스 없이 src/content/skills Markdown 파일에 항목을 추가하는 GitHub PR 방식으로 운영됩니다."
+  description="AgentHub는 데이터베이스 없이 src/content/tools Markdown 파일에 항목을 추가하는 GitHub PR 방식으로 운영됩니다."
 >
   <div class="container submit-container">
     <section class="submit-hero">
@@ -58,7 +58,7 @@ icon: "Terminal"
           <div class="step-num">1</div>
           <div class="step-content">
             <h3>Markdown 파일 추가</h3>
-            <p><code>src/content/skills/my-agent-skill.md</code>처럼 고유한 kebab-case 파일을 추가합니다.</p>
+            <p><code>src/content/tools/my-agent-skill.md</code>처럼 고유한 kebab-case 파일을 추가합니다.</p>
           </div>
         </div>
         <div class="timeline-step">
@@ -106,7 +106,7 @@ icon: "Terminal"
     <section class="source-note glass-panel">
       <Terminal size={18} />
       <p>
-        사이트는 <code>src/content/skills/*.md</code>를 Astro Content Collections로 읽어 정적 디렉토리와 상세 페이지를 생성합니다.
+        사이트는 <code>src/content/tools/*.md</code>를 Astro Content Collections로 읽어 정적 디렉토리와 상세 페이지를 생성합니다.
       </p>
     </section>
   </div>
