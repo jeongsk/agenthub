@@ -8,6 +8,7 @@ export interface SkillData {
   category: Category;
   tags: string[];
   githubUrl: string;
+  githubStars: number;
   author: string;
   installCommand?: string;
   compatibleAgents: string[];

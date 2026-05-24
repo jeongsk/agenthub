@@ -4,6 +4,7 @@ description: "수천 개 사이트에서 오디오와 비디오를 내려받는 
 category: "agent-harness"
 tags: ["downloader", "video", "audio", "cli", "media"]
 githubUrl: "https://github.com/yt-dlp/yt-dlp"
+githubStars: 164966
 author: "yt-dlp"
 installCommand: "python -m pip install -U yt-dlp"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]

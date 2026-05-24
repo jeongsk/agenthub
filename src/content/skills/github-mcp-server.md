@@ -4,6 +4,7 @@ description: "이슈, PR, 코드 검색, 저장소 운영을 에이전트에서 
 category: "mcp-server"
 tags: ["github", "issues", "pull-requests", "code-review", "mcp", "official"]
 githubUrl: "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+githubStars: 86140
 author: "modelcontextprotocol"
 installCommand: "npx -y @modelcontextprotocol/server-github"
 compatibleAgents: ["Claude", "Cursor", "Continue", "Cline"]

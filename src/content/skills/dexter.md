@@ -4,6 +4,7 @@ description: "재무 데이터와 실시간 시장 정보를 바탕으로 깊이
 category: "agent-harness"
 tags: ["finance", "research", "autonomous-agent", "typescript", "market-data", "analysis"]
 githubUrl: "https://github.com/virattt/dexter"
+githubStars: 26265
 author: "virattt"
 installCommand: "bun install"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini"]

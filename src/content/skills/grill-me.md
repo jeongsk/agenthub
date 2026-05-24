@@ -4,6 +4,7 @@ description: "계획이나 디자인을 끊임없이 질문하며 결함을 찾�
 category: "agent-skill"
 tags: ["productivity", "planning", "design", "interview", "decision-tree", "code-review"]
 githubUrl: "https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md"
+githubStars: 102416
 author: "mattpocock"
 installCommand: "npx skills add mattpocock/skills --skill grill-me"
 compatibleAgents: ["Claude", "Gemini", "Codex"]

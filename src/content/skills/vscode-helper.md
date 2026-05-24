@@ -4,6 +4,7 @@ description: "Cursor와 VSCode 환경에서 활성 파일, 프로젝트 폴더, 
 category: "plugin"
 tags: ["cursor", "vscode", "editor", "plugin", "productivity"]
 githubUrl: "https://github.com/cursor-owner/vscode-helper-plugin"
+githubStars: 0
 author: "cursor-owner"
 installCommand: "code --install-extension cursor-copilot-plugin"
 compatibleAgents: ["Cursor", "VSCode"]

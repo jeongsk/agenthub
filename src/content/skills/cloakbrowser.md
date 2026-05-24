@@ -4,6 +4,7 @@ description: "브라우저 지문을 조정한 스텔스 Chromium으로, Playwri
 category: "agent-harness"
 tags: ["browser-automation", "chromium", "playwright", "puppeteer", "stealth"]
 githubUrl: "https://github.com/CloakHQ/CloakBrowser"
+githubStars: 19568
 author: "CloakHQ"
 installCommand: "pip install cloakbrowser"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]

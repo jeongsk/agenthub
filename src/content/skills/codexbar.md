@@ -4,6 +4,7 @@ description: "macOS 메뉴바에서 AI 코딩 도구의 사용량과 리셋 시�
 category: "desktop-utility"
 tags: ["macos", "menu-bar", "usage-monitoring", "claude-code", "codex", "privacy"]
 githubUrl: "https://github.com/steipete/CodexBar"
+githubStars: 13205
 author: "steipete"
 installCommand: "brew install --cask steipete/tap/codexbar"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "Gemini", "GitHub Copilot"]

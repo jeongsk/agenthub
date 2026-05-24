@@ -9,13 +9,15 @@ const sortedSkills = [...skillEntries]
   .sort((a, b) => {
     if (a.data.featured && !b.data.featured) return -1;
     if (!a.data.featured && b.data.featured) return 1;
+    const starDifference = b.data.githubStars - a.data.githubStars;
+    if (starDifference !== 0) return starDifference;
     return a.data.title.localeCompare(b.data.title, 'ko-KR');
   });
 ---
 
 <Layout
-  title="AgentHub - AI 에이전트 스킬, MCP 도구 & 플러그인 디렉토리"
-  description="오픈소스 MCP 서버, 에이전트 스킬, AI 플러그인을 발견하고 공유하세요. 데이터베이스가 필요 없는 GitHub PR 기반 레지스트리입니다."
+  title="AgentHub - AI 에이전트 도구 & 리소스 디렉토리"
+  description="오픈소스 MCP 서버, 에이전트 스킬, 하네스, 유틸리티, 플러그인, 브라우저 확장을 발견하고 공유하세요. 데이터베이스가 필요 없는 GitHub PR 기반 레지스트리입니다."
 >
   <div class="container main-container">
     <section class="hero-section">
@@ -24,10 +26,11 @@ const sortedSkills = [...skillEntries]
         <span>AI 에이전트 레지스트리</span>
       </div>
       <h1 class="hero-title">
-        <span class="text-gradient">AI 에이전트</span>를 위한 오픈소스 스킬 레지스트리
+        <span class="text-gradient">AI 에이전트</span>를 위한<br />
+        오픈소스 도구 디렉토리
       </h1>
       <p class="hero-subtitle">
-        MCP 서버, 에이전트 스킬, 하네스, 데스크톱 유틸리티를 한곳에서 찾아보세요. 등록 데이터는 GitHub PR로 관리되는 Markdown 파일에서 생성됩니다.
+        MCP 서버, 에이전트 스킬, 하네스, 데스크톱 유틸리티, 플러그인, 브라우저 확장을 한곳에서 찾아보세요.
       </p>
     </section>
 
@@ -101,6 +104,7 @@ const sortedSkills = [...skillEntries]
               compatibleAgents={skill.data.compatibleAgents}
               icon={skill.data.icon}
               slug={skill.id}
+              stars={skill.data.githubStars}
             />
           </div>
         ))}
@@ -200,8 +204,9 @@ const sortedSkills = [...skillEntries]
   .hero-title {
     font-size: 3.5rem;
     font-weight: 850;
-    line-height: 1.15;
+    line-height: 1.12;
     margin-bottom: 20px;
+    text-wrap: balance;
   }
   .hero-subtitle {
     font-size: 1.15rem;

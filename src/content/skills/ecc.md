@@ -4,6 +4,7 @@ description: "에이전트의 규칙, 메모리, 보안, 리서치, 설치 흐�
 category: "agent-harness"
 tags: ["agent-harness", "claude-code", "cursor", "codex", "orchestration"]
 githubUrl: "https://github.com/affaan-m/ECC"
+githubStars: 189198
 author: "affaan-m"
 installCommand: "git clone https://github.com/affaan-m/ECC.git && cd ECC && ./install.sh --profile minimal --target claude"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode"]

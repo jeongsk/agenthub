@@ -4,6 +4,7 @@ description: "프로덕션용 LLM 에이전트를 만들 때 필요한 원칙을
 category: "agent-harness"
 tags: ["agent-harness", "framework", "context-engineering", "tdd", "llm"]
 githubUrl: "https://github.com/humanlayer/12-factor-agents"
+githubStars: 21936
 author: "humanlayer"
 installCommand: "git clone https://github.com/humanlayer/12-factor-agents.git"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "Gemini", "OpenCode"]
@@ -32,4 +33,3 @@ icon: "BookOpen"
 ## 참고
 
 - 이 저장소는 특정 런타임용 플러그인이라기보다, 에이전트 설계를 다루는 *방법론*에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 더 자연스럽습니다.

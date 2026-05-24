@@ -1,6 +1,7 @@
 ---
 import * as Icons from '@lucide/astro';
-import { ArrowUpRight } from '@lucide/astro';
+import { ArrowUpRight, Star } from '@lucide/astro';
+import { formatStarCount } from '../lib/github';
 
 interface Props {
   title: string;
@@ -11,9 +12,10 @@ interface Props {
   compatibleAgents: string[];
   icon: string;
   slug: string;
+  stars?: number | null;
 }
 
-const { title, description, category, tags, author, compatibleAgents, icon, slug } = Astro.props;
+const { title, description, category, tags, author, compatibleAgents, icon, slug, stars } = Astro.props;
 
 // Dynamically select Lucide icon component based on string input
 const IconComponent = (Icons as any)[icon] || Icons.Terminal;
@@ -44,9 +46,15 @@ const badgeClasses = {
       <div class={`card-icon-wrapper ${category}`}>
         <IconComponent size={22} />
       </div>
-      <span class={`badge ${badgeClasses[category]}`}>
-        {categoryLabels[category]}
-      </span>
+      <div class="header-badges">
+        <span class={`badge ${badgeClasses[category]}`}>
+          {categoryLabels[category]}
+        </span>
+        <span class="stars-pill" title="GitHub stars">
+          <Star size={14} />
+          <span>{formatStarCount(stars)}</span>
+        </span>
+      </div>
     </div>
     
     <div class="card-body">
@@ -104,9 +112,31 @@ const badgeClasses = {
   .card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     margin-bottom: 20px;
+  }
+
+  .header-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .stars-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgb(253, 224, 71);
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+    border-radius: 9999px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
   }
 
   .card-icon-wrapper {
@@ -297,6 +327,10 @@ const badgeClasses = {
     .card-header {
       align-items: flex-start;
       margin-bottom: 16px;
+    }
+
+    .header-badges {
+      max-width: calc(100% - 58px);
     }
 
     .badge {

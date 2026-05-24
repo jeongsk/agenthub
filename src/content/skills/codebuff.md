@@ -4,6 +4,7 @@ description: "터미널에서 자연어로 코드베이스를 수정하게 해 �
 category: "agent-harness"
 tags: ["cli", "coding-assistant", "multi-agent", "typescript", "openrouter", "workflow"]
 githubUrl: "https://github.com/CodebuffAI/codebuff"
+githubStars: 5783
 author: "CodebuffAI"
 installCommand: "npm install -g codebuff"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode"]

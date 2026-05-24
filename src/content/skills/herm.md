@@ -4,6 +4,7 @@ description: "Hermes Agent를 탭형 TUI로 다루는 대시보드입니다. 세
 category: "agent-harness"
 tags: ["hermes-agent", "tui", "dashboard", "terminal", "workflow"]
 githubUrl: "https://github.com/liftaris/herm"
+githubStars: 197
 author: "liftaris"
 installCommand: "bun add -g herm-tui"
 compatibleAgents: ["Hermes Agent", "OpenCode", "Claude Code", "Cursor", "Codex"]
