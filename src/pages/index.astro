@@ -313,11 +313,12 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
   .search-filter-section {
     padding: 18px;
     display: flex;
+    flex-direction: column;
     gap: 16px;
-    align-items: center;
+    align-items: stretch;
     margin-bottom: 34px;
   }
-  .search-bar-wrapper { position: relative; flex: 1; min-width: 0; }
+  .search-bar-wrapper { position: relative; width: 100%; min-width: 0; }
   .search-icon {
     position: absolute;
     left: 16px;
@@ -397,7 +398,6 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
   .muted-icon { color: hsl(var(--text-muted)); }
   @media (max-width: 992px) {
     .directory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .search-filter-section { flex-direction: column; align-items: stretch; }
   }
   @media (max-width: 640px) {
     .main-container {
