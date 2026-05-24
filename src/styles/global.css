@@ -218,6 +218,11 @@ body::before {
   border-color: rgba(20, 184, 166, 0.3);
   color: rgb(45, 212, 191);
 }
+.badge-utility {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: rgb(251, 191, 36);
+}
 .badge-plugin {
   background: rgba(244, 63, 94, 0.1);
   border-color: rgba(244, 63, 94, 0.3);
