@@ -1,0 +1,460 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ArrowRight, BookOpenText, CalendarDays, Clock3, Newspaper, Sparkles } from '@lucide/astro';
+import { blogPosts as posts } from '../lib/blog';
+
+const featuredPost = posts[0];
+---
+
+<Layout
+  title="블로그 - AgentHub"
+  description="AgentHub 블로그에서 AI 에이전트 도구, MCP 서버, 에이전트 스킬, GitOps 레지스트리 운영 노트를 확인하세요."
+>
+  <div class="container blog-container">
+    <section class="blog-hero">
+      <div class="hero-badge">
+        <Newspaper size={14} class="rose-icon" />
+        <span>AgentHub Blog</span>
+      </div>
+      <h1 class="blog-title">
+        에이전트 도구를 더 잘 고르고<br />
+        <span class="text-gradient">더 오래 운영하는 방법</span>
+      </h1>
+      <p class="blog-subtitle">
+        MCP 서버, 에이전트 스킬, 플러그인, 브라우저 확장을 실제 워크플로에 붙일 때 필요한 운영 노트를 모았습니다.
+      </p>
+    </section>
+
+    <section class="featured-section glass-panel" aria-labelledby="featured-heading">
+      <a href={`/blog/${featuredPost.slug}`} class="featured-copy featured-copy-link" aria-label={`${featuredPost.title} 상세 보기`}>
+        <div class="section-kicker">
+          <Sparkles size={15} />
+          <span>추천 글</span>
+        </div>
+        <h2 id="featured-heading">{featuredPost.title}</h2>
+        <p>{featuredPost.description}</p>
+        <div class="featured-footer">
+          <div class="post-meta">
+            <span>
+              <CalendarDays size={15} />
+              {featuredPost.date}
+            </span>
+            <span>
+              <Clock3 size={15} />
+              {featuredPost.readTime}
+            </span>
+          </div>
+          <span class="featured-read-more">
+            읽기
+            <ArrowRight size={16} />
+          </span>
+        </div>
+      </a>
+      <div class="featured-panel">
+        <BookOpenText size={34} />
+        <span>{featuredPost.category}</span>
+      </div>
+    </section>
+
+    <section class="post-section" aria-labelledby="latest-heading">
+      <div class="section-header">
+        <h2 id="latest-heading" class="section-title">최신 글</h2>
+        <span class="results-count">{posts.length}개</span>
+      </div>
+
+      <div class="post-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="post-card-link" aria-label={`${post.title} 상세 보기`}>
+            <article class="post-card glass-card">
+              <div class="post-card-top">
+                <span class="post-category">{post.category}</span>
+                <span class="post-read-time">
+                  <Clock3 size={14} />
+                  {post.readTime}
+                </span>
+              </div>
+              <h3>{post.title}</h3>
+              <p>{post.description}</p>
+              <div class="tag-list" aria-label={`${post.title} 태그`}>
+                {post.tags.map((tag) => (
+                  <span class="tag-pill">#{tag}</span>
+                ))}
+              </div>
+              <div class="post-footer">
+                <span>
+                  <CalendarDays size={14} />
+                  {post.date}
+                </span>
+                <span class="read-more">
+                  읽기
+                  <ArrowRight size={15} />
+                </span>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="editor-note glass-panel">
+      <Newspaper size={18} />
+      <p>
+        블로그 글은 현재 정적 목록으로 제공됩니다. 추후 <code>src/content/blog</code> 컬렉션으로 옮기면 Markdown 기반 발행 흐름으로 자연스럽게 확장할 수 있습니다.
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .blog-container {
+    padding-top: 40px;
+    margin-bottom: 80px;
+  }
+
+  .blog-hero {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px solid rgba(244, 63, 94, 0.25);
+    color: rgb(251, 113, 133);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .rose-icon {
+    color: hsl(var(--rose-point));
+  }
+
+  .blog-title {
+    font-size: 3.25rem;
+    font-weight: 850;
+    line-height: 1.14;
+    margin-bottom: 18px;
+    text-wrap: balance;
+  }
+
+  .blog-subtitle {
+    font-size: 1.12rem;
+    color: hsl(var(--text-secondary));
+    line-height: 1.65;
+    max-width: 720px;
+  }
+
+  .featured-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 28px;
+    align-items: stretch;
+    padding: 28px;
+    margin-bottom: 36px;
+  }
+
+  .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: rgb(34, 211, 238);
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .featured-copy-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 14px;
+    padding: 4px;
+    min-width: 0;
+  }
+
+  .featured-copy-link *,
+  .post-card-link * {
+    text-decoration: none;
+  }
+
+  .featured-copy-link:hover h2,
+  .post-card-link:hover h3 {
+    color: rgb(34, 211, 238);
+  }
+
+  .featured-copy-link:focus-visible {
+    outline: 2px solid rgba(6, 182, 212, 0.75);
+    outline-offset: 5px;
+  }
+
+  .featured-copy h2 {
+    color: hsl(var(--text-primary));
+    font-size: 2rem;
+    line-height: 1.22;
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
+  }
+
+  .featured-copy p {
+    color: hsl(var(--text-secondary));
+    line-height: 1.65;
+    max-width: 760px;
+  }
+
+  .featured-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 18px;
+    margin-top: 22px;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    color: hsl(var(--text-muted));
+    font-size: 0.92rem;
+  }
+
+  .featured-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgb(34, 211, 238);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+  }
+
+  .featured-copy-link:hover .featured-read-more,
+  .post-card-link:hover .read-more {
+    transform: translateX(3px);
+  }
+
+  .post-meta span,
+  .post-read-time,
+  .post-footer span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .featured-panel {
+    min-height: 190px;
+    border-radius: 16px;
+    border: 1px solid rgba(6, 182, 212, 0.22);
+    background:
+      linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(139, 92, 246, 0.08)),
+      rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px;
+    color: rgb(34, 211, 238);
+  }
+
+  .featured-panel span {
+    color: hsl(var(--text-primary));
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .results-count {
+    color: hsl(var(--text-muted));
+    font-size: 0.95rem;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .post-card-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    min-width: 0;
+  }
+
+  .post-card-link,
+  .post-card-link:visited,
+  .featured-copy-link,
+  .featured-copy-link:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .post-card-link:focus-visible {
+    outline: 2px solid rgba(6, 182, 212, 0.75);
+    outline-offset: 4px;
+    border-radius: 20px;
+  }
+
+  .post-card {
+    height: 100%;
+    min-height: 320px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+
+  .post-category {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 5px 11px;
+    border-radius: 9999px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    background: rgba(6, 182, 212, 0.1);
+    color: rgb(34, 211, 238);
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .post-read-time {
+    color: hsl(var(--text-muted));
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .post-card h3 {
+    color: hsl(var(--text-primary));
+    font-size: 1.22rem;
+    line-height: 1.32;
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
+  }
+
+  .post-card p {
+    color: hsl(var(--text-secondary));
+    line-height: 1.58;
+    font-size: 0.95rem;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .tag-pill {
+    color: hsl(var(--text-muted));
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 9999px;
+    padding: 4px 9px;
+    font-size: 0.78rem;
+  }
+
+  .post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 22px;
+    color: hsl(var(--text-muted));
+    font-size: 0.86rem;
+  }
+
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgb(34, 211, 238);
+    font-weight: 700;
+    transition: transform 0.2s ease;
+  }
+
+  .editor-note {
+    margin-top: 24px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: hsl(var(--text-secondary));
+    line-height: 1.55;
+  }
+
+  code {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 5px;
+    padding: 2px 5px;
+    color: white;
+  }
+
+  @media (max-width: 992px) {
+    .featured-section,
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blog-container {
+      padding-top: 28px;
+    }
+
+    .blog-title {
+      font-size: 2.05rem;
+      overflow-wrap: keep-all;
+    }
+
+    .blog-subtitle {
+      font-size: 1rem;
+    }
+
+    .featured-section,
+    .post-card {
+      padding: 22px;
+    }
+
+    .featured-footer {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .featured-copy h2 {
+      font-size: 1.55rem;
+    }
+
+    .featured-panel {
+      min-height: 150px;
+    }
+  }
+</style>

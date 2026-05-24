@@ -1,6 +1,13 @@
 ---
 import { Terminal, Plus } from '@lucide/astro';
 import GitHub from './icons/GitHub.astro';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const isActive = (path: string) => {
+  if (path === '/') return currentPath === '/';
+  return currentPath === path || currentPath.startsWith(`${path}/`);
+};
 ---
 
 <header class="main-header glass-panel">
@@ -13,8 +20,9 @@ import GitHub from './icons/GitHub.astro';
     </a>
     
     <nav class="nav-links">
-      <a href="/" class="nav-link" id="nav-home">둘러보기</a>
-      <a href="/submit" class="nav-link" id="nav-submit-guide">등록하기</a>
+      <a href="/" class:list={['nav-link', { active: isActive('/') }]} id="nav-home">둘러보기</a>
+      <a href="/blog" class:list={['nav-link', { active: isActive('/blog') }]} id="nav-blog">블로그</a>
+      <a href="/submit" class:list={['nav-link', { active: isActive('/submit') }]} id="nav-submit-guide">등록하기</a>
       <a href="https://github.com/jeongsk/agenthub" target="_blank" rel="noopener noreferrer" class="nav-icon-link" aria-label="GitHub Repository">
         <GitHub size={20} />
       </a>
@@ -107,8 +115,25 @@ import GitHub from './icons/GitHub.astro';
     transition: color 0.2s ease;
   }
 
-  .nav-link:hover {
+  .nav-link:hover,
+  .nav-link.active {
     color: hsl(var(--text-primary));
+  }
+
+  .nav-link.active {
+    position: relative;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+    border-radius: 9999px;
+    background: var(--grad-primary);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.35);
   }
 
   .nav-icon-link {
@@ -126,6 +151,16 @@ import GitHub from './icons/GitHub.astro';
   .header-action {
     display: flex;
     align-items: center;
+  }
+
+  .header-action .btn-grad {
+    color: white !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .header-action .btn-grad span,
+  .header-action .btn-grad svg {
+    color: white !important;
   }
 
   .text-sm {
@@ -189,6 +224,16 @@ import GitHub from './icons/GitHub.astro';
     }
     .nav-link {
       font-size: 0.82rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .logo-text {
+      display: none;
+    }
+
+    .nav-links {
+      gap: 8px;
     }
   }
 </style>

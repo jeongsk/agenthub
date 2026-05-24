@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { ArrowLeft, CalendarDays, Clock3, Newspaper } from '@lucide/astro';
+import { blogPosts, type BlogPost } from '../../lib/blog';
+
+interface Props {
+  post: BlogPost;
+}
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={`${post.title} - AgentHub 블로그`} description={post.description}>
+  <div class="container article-container">
+    <a href="/blog" class="back-link">
+      <ArrowLeft size={16} />
+      <span>블로그로 돌아가기</span>
+    </a>
+
+    <article class="article-shell">
+      <header class="article-header glass-panel">
+        <div class="hero-badge">
+          <Newspaper size={14} class="rose-icon" />
+          <span>{post.category}</span>
+        </div>
+        <h1>{post.title}</h1>
+        <p>{post.description}</p>
+        <div class="article-meta">
+          <span>
+            <CalendarDays size={15} />
+            {post.date}
+          </span>
+          <span>
+            <Clock3 size={15} />
+            {post.readTime}
+          </span>
+        </div>
+        <div class="tag-list" aria-label={`${post.title} 태그`}>
+          {post.tags.map((tag) => (
+            <span class="tag-pill">#{tag}</span>
+          ))}
+        </div>
+      </header>
+
+      <div class="article-body glass-card">
+        {post.sections.map((section) => (
+          <section>
+            <h2>{section.heading}</h2>
+            {section.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+            {section.bullets && (
+              <ul>
+                {section.bullets.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .article-container {
+    padding-top: 40px;
+    margin-bottom: 80px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 22px;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: rgb(34, 211, 238);
+  }
+
+  .article-shell {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .article-header {
+    padding: 34px;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px solid rgba(244, 63, 94, 0.25);
+    color: rgb(251, 113, 133);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+
+  .rose-icon {
+    color: hsl(var(--rose-point));
+  }
+
+  .article-header h1 {
+    font-size: 3rem;
+    line-height: 1.16;
+    margin-bottom: 16px;
+    text-wrap: balance;
+  }
+
+  .article-header p {
+    color: hsl(var(--text-secondary));
+    font-size: 1.08rem;
+    line-height: 1.65;
+    max-width: 760px;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 22px;
+    color: hsl(var(--text-muted));
+    font-size: 0.92rem;
+  }
+
+  .article-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .tag-pill {
+    color: hsl(var(--text-secondary));
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 9999px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .article-body {
+    padding: 34px;
+  }
+
+  .article-body:hover {
+    transform: none;
+  }
+
+  .article-body section + section {
+    margin-top: 34px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .article-body h2 {
+    font-size: 1.45rem;
+    margin-bottom: 14px;
+  }
+
+  .article-body p {
+    color: hsl(var(--text-secondary));
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+
+  .article-body p + p {
+    margin-top: 12px;
+  }
+
+  .article-body ul {
+    margin-top: 16px;
+    padding-left: 20px;
+    color: hsl(var(--text-secondary));
+    line-height: 1.75;
+  }
+
+  .article-body li + li {
+    margin-top: 8px;
+  }
+
+  code {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 5px;
+    padding: 2px 5px;
+    color: white;
+  }
+
+  @media (max-width: 640px) {
+    .article-container {
+      padding-top: 28px;
+    }
+
+    .article-header,
+    .article-body {
+      padding: 24px;
+    }
+
+    .article-header h1 {
+      font-size: 2.05rem;
+      overflow-wrap: keep-all;
+    }
+  }
+</style>

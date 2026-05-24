@@ -266,3 +266,36 @@ body::before {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* Blog links are card surfaces, not inline blue browser links. */
+a.featured-copy-link,
+a.featured-copy-link:visited,
+a.post-card-link,
+a.post-card-link:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.featured-copy-link *,
+a.post-card-link * {
+  text-decoration: none;
+}
+
+a.featured-copy-link h2,
+a.post-card-link h3 {
+  color: hsl(var(--text-primary));
+}
+
+a.featured-copy-link:hover h2,
+a.post-card-link:hover h3 {
+  color: rgb(34, 211, 238);
+}
+
+a.featured-copy-link .featured-read-more,
+a.post-card-link .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgb(34, 211, 238);
+  text-decoration: none;
+}
