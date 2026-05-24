@@ -1,1 +1,2 @@
-/skills/* /skills/index.html 200
+# Legacy redirects — /skills/* → /tools/*
+/skills/* /tools/:splat 301

@@ -3,7 +3,7 @@ import { z, defineCollection } from 'astro:content';
 
 const skillsCollection = defineCollection({
   // Use new glob loader for Astro v5+ content layers
-  loader: glob({ pattern: '**/[^_]*.md', base: "./src/content/skills" }),
+  loader: glob({ pattern: '**/[^_]*.md', base: "./src/content/tools" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
