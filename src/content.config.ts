@@ -10,6 +10,7 @@ const skillsCollection = defineCollection({
     category: z.enum(['mcp-server', 'agent-skill', 'agent-harness', 'desktop-utility', 'plugin', 'browser-extension']),
     tags: z.array(z.string()),
     githubUrl: z.string().url(),
+    websiteUrl: z.string().url().optional(),
     githubStars: z.number().int().nonnegative().default(0),
     chromeWebStoreUrl: z.string().url().optional(),
     author: z.string(), // GitHub Username

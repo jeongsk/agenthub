@@ -38,6 +38,10 @@ export function badgeClass(category: Category): string {
   }[category];
 }
 
+export function isGitHubUrl(url: string): boolean {
+  return url.startsWith('https://github.com/');
+}
+
 export function searchableText(item: SkillData): string {
   return [item.title, item.description, item.author, ...item.tags, ...item.compatibleAgents]
     .join(' ')

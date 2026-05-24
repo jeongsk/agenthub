@@ -3,8 +3,9 @@ title: "Conductor"
 description: "Mac에서 Claude Code와 Codex 같은 코딩 에이전트를 병렬로 실행해 격리된 작업공간에서 관리하고, 변경 검토와 병합까지 이어주는 독립 데스크톱 앱입니다. 오픈소스로 공개되어 있지 않습니다."
 category: "agent-harness"
 tags: ["ai-agent", "macos", "parallel-agents", "workspaces", "claude-code", "codex", "desktop-app"]
-githubUrl: "https://www.conductor.build/"
+githubUrl: "https://github.com/meltylabs/conductor-docs"
 githubStars: 0
+websiteUrl: "https://www.conductor.build/"
 author: "meltylabs"
 compatibleAgents: ["Claude Code", "Codex"]
 featured: true

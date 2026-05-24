@@ -1,10 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { ArrowLeft, Copy, ExternalLink, Star } from '@lucide/astro';
+import { ArrowLeft, Copy, ExternalLink, Globe, Star } from '@lucide/astro';
 import { getCollection, render } from 'astro:content';
 import GitHub from '../../components/icons/GitHub.astro';
 import { formatStarCount } from '../../lib/github';
-import { badgeClass, categoryLabel } from '../../lib/registry';
+import { badgeClass, categoryLabel, isGitHubUrl } from '../../lib/registry';
 
 export async function getStaticPaths() {
   const skills = await getCollection('skills');
@@ -31,10 +31,12 @@ const data = skill.data;
         <div class="detail-header-card glass-card">
           <div class="header-meta">
             <span class={`badge ${badgeClass(data.category)}`}>{categoryLabel(data.category)}</span>
-            <span class="stars-pill" title="GitHub stars">
-              <Star size={14} />
-              <span>{formatStarCount(data.githubStars)}</span>
-            </span>
+            {data.githubStars > 0 && isGitHubUrl(data.githubUrl) && (
+              <span class="stars-pill" title="GitHub stars">
+                <Star size={14} />
+                <span>{formatStarCount(data.githubStars)}</span>
+              </span>
+            )}
           </div>
 
           <div class="title-row">
@@ -46,10 +48,23 @@ const data = skill.data;
           </div>
 
           <div class="action-row">
-            <a href={data.githubUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <GitHub size={18} />
-              <span>GitHub 저장소 보기</span>
-            </a>
+            {isGitHubUrl(data.githubUrl) ? (
+              <a href={data.githubUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <GitHub size={18} />
+                <span>GitHub 저장소 보기</span>
+              </a>
+            ) : (
+              <a href={data.githubUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <Globe size={18} />
+                <span>웹사이트 방문하기</span>
+              </a>
+            )}
+            {data.websiteUrl && (
+              <a href={data.websiteUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <ExternalLink size={18} />
+                <span>웹사이트 방문하기</span>
+              </a>
+            )}
             {data.chromeWebStoreUrl && (
               <a href={data.chromeWebStoreUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary">
                 <ExternalLink size={18} />
@@ -90,6 +105,7 @@ const data = skill.data;
             </a>
           </div>
 
+          {isGitHubUrl(data.githubUrl) && (
           <div class="sidebar-section">
             <span class="section-label">GitHub Stars</span>
             <a href={data.githubUrl} target="_blank" rel="noopener noreferrer" class="stat-link">
@@ -97,6 +113,7 @@ const data = skill.data;
               <span>{formatStarCount(data.githubStars)}</span>
             </a>
           </div>
+          )}
 
           <div class="sidebar-section">
             <span class="section-label">호환 에이전트</span>
