@@ -1,7 +1,7 @@
 ---
 title: "Dexter"
 description: "재무 데이터와 실시간 시장 정보를 바탕으로 깊이 있는 리서치를 수행하는 자율형 금융 분석 에이전트입니다. 복잡한 종목 질문을 단계적으로 조사할 때 유용합니다."
-category: "agent-harness"
+category: "agent-framework"
 tags: ["finance", "research", "autonomous-agent", "typescript", "market-data", "analysis"]
 githubUrl: "https://github.com/virattt/dexter"
 githubStars: 26265

@@ -1,7 +1,7 @@
 ---
 title: "goose"
 description: "코드 작업, 워크플로, 자동화를 다루는 오픈소스 AI 에이전트입니다. 데스크톱 앱, CLI, API로 로컬에서 에이전트를 운영하고 싶을 때 유용합니다."
-category: "agent-harness"
+category: "agent-framework"
 tags: ["ai-agent", "desktop-app", "cli", "api", "automation", "multi-provider"]
 githubUrl: "https://github.com/aaif-goose/goose"
 author: "aaif-goose"

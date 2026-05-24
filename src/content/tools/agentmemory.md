@@ -1,7 +1,7 @@
 ---
 title: "AgentMemory"
 description: "AI 코딩 에이전트를 위한 영속적 메모리 시스템입니다. 실제 벤치마크 기반으로 설계되어 Claude Code, Codex, Cursor, Copilot 등 다양한 에이전트가 대화 컨텍스트를 넘어 지식을 유지할 수 있게 해줍니다."
-category: "agent-harness"
+category: "agent-component"
 tags: ["memory", "agent-memory", "persistent-memory", "claude-code", "codex", "cursor", "copilot", "hermes", "openclaw"]
 githubUrl: "https://github.com/rohitg00/agentmemory"
 githubStars: 16930

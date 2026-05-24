@@ -1,7 +1,7 @@
 ---
 title: "OpenHands"
 description: "AI-driven development을 위한 에이전트 플랫폼입니다. CLI, 로컬 GUI, SDK로 코드 작업을 계획·실행·검증하는 데 유용합니다."
-category: "agent-harness"
+category: "agent-framework"
 tags: ["ai-development", "agent-platform", "cli", "gui", "sdk", "automation"]
 githubUrl: "https://github.com/OpenHands/OpenHands"
 githubStars: 74658

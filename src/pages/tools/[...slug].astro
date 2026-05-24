@@ -4,7 +4,7 @@ import { ArrowLeft, Copy, ExternalLink, Globe, Star } from '@lucide/astro';
 import { getCollection, render } from 'astro:content';
 import GitHub from '../../components/icons/GitHub.astro';
 import { formatStarCount } from '../../lib/github';
-import { badgeClass, categoryLabel, isGitHubUrl } from '../../lib/registry';
+import { categoryLabel, isGitHubUrl, CATEGORIES } from '../../lib/registry';
 
 export async function getStaticPaths() {
   const skills = await getCollection('skills');
@@ -17,8 +17,8 @@ export async function getStaticPaths() {
 const { skill } = Astro.props;
 const { Content } = await render(skill);
 const data = skill.data;
+const catCfg = CATEGORIES[data.category];
 ---
-
 <Layout title={`${data.title} - AgentHub Registry`} description={data.description}>
   <div class="container detail-container">
     <a href="/" class="back-link" id="directory-back-link">
@@ -30,7 +30,7 @@ const data = skill.data;
       <div class="main-content-column">
         <div class="detail-header-card glass-card">
           <div class="header-meta">
-            <span class={`badge ${badgeClass(data.category)}`}>{categoryLabel(data.category)}</span>
+            <span class="badge" style={`--badge-color: ${catCfg.color}; --badge-bg: ${catCfg.bg}; --badge-border: ${catCfg.border};`}>{categoryLabel(data.category)}</span>
             {data.githubStars > 0 && isGitHubUrl(data.githubUrl) && (
               <span class="stars-pill" title="GitHub stars">
                 <Star size={14} />
@@ -40,7 +40,7 @@ const data = skill.data;
           </div>
 
           <div class="title-row">
-            <div class={`title-icon-wrapper ${data.category}`} aria-hidden="true">{data.icon.slice(0, 2)}</div>
+            <div class="title-icon-wrapper" style={`color: ${catCfg.color}; background: ${catCfg.bg}; border-color: ${catCfg.border};`} aria-hidden="true">{data.icon.slice(0, 2)}</div>
             <div class="title-meta">
               <h1 class="asset-title">{data.title}</h1>
               <p class="asset-description">{data.description}</p>
@@ -244,10 +244,6 @@ const data = skill.data;
     font-weight: 800;
     font-size: 1.2rem;
   }
-  .title-icon-wrapper.mcp-server { color: rgb(34, 211, 238); background: rgba(6, 182, 212, 0.08); }
-  .title-icon-wrapper.agent-skill { color: rgb(167, 139, 250); background: rgba(139, 92, 246, 0.08); }
-  .title-icon-wrapper.plugin { color: rgb(251, 113, 133); background: rgba(244, 63, 94, 0.08); }
-  .title-icon-wrapper.browser-extension { color: rgb(253, 224, 71); background: rgba(234, 179, 8, 0.08); }
   .title-meta {
     display: flex;
     flex-direction: column;

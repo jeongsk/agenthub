@@ -1,7 +1,7 @@
 ---
 title: "VideoEditor"
 description: "CapCut·Canva 대안으로 지향하는 AI 기반 비디오 편집기입니다. 멀티트랙 편집, 실시간 미리보기, 빠른 내보내기, AI 보조 편집이 필요할 때 유용합니다."
-category: "agent-harness"
+category: "desktop-utility"
 tags: ["video-editing", "editor", "ai-assistant", "react", "remotion", "creative"]
 githubUrl: "https://github.com/trykimu/videoeditor"
 githubStars: 1936

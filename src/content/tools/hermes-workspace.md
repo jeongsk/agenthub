@@ -1,7 +1,7 @@
 ---
 title: "Hermes Workspace"
 description: "Hermes Agent용 웹 기반 작업 공간입니다. 채팅, 파일, 메모리, 스킬, 터미널을 한곳에서 다루고 싶을 때 유용합니다."
-category: "agent-harness"
+category: "desktop-utility"
 tags: ["hermes-agent", "workspace", "dashboard", "terminal", "memory", "skills"]
 githubUrl: "https://github.com/outsourc-e/hermes-workspace"
 githubStars: 4754

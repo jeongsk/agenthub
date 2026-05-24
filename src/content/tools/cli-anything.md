@@ -1,7 +1,7 @@
 ---
 title: "CLI-Anything"
 description: "모든 CLI 소프트웨어를 AI 에이전트 네이티브로 만드는 프레임워크입니다. 기존 CLI 도구에 에이전트 인터페이스를 자동 생성해, Claude Code, Codex 등이 모든 커맨드라인 도구를 직접 사용할 수 있게 해줍니다."
-category: "agent-harness"
+category: "cli-utility"
 tags: ["cli", "agent-native", "developer-tools", "automation", "agent-framework"]
 githubUrl: "https://github.com/HKUDS/CLI-Anything"
 githubStars: 39856

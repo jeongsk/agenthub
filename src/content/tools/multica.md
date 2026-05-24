@@ -1,7 +1,7 @@
 ---
 title: "Multica"
 description: "오픈소스 관리형 에이전트 플랫폼입니다. 코딩 에이전트를 진짜 팀원으로 전환해 작업을 할당하고, 진행 상황을 추적하며, 스킬을 축적할 수 있게 해줍니다."
-category: "agent-harness"
+category: "agent-framework"
 tags: ["ai-agents", "agent-harness", "managed-agents", "orchestration", "multi-agent", "coding-agents"]
 githubUrl: "https://github.com/multica-ai/multica"
 githubStars: 32033

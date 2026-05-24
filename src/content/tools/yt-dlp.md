@@ -1,7 +1,7 @@
 ---
 title: "yt-dlp"
 description: "수천 개 사이트에서 오디오와 비디오를 내려받는 명령줄 도구입니다. 에이전트가 미디어를 추출하거나 아카이브할 때 자주 쓰기 좋습니다."
-category: "agent-harness"
+category: "cli-utility"
 tags: ["downloader", "video", "audio", "cli", "media"]
 githubUrl: "https://github.com/yt-dlp/yt-dlp"
 githubStars: 164966

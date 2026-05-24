@@ -1,7 +1,7 @@
 ---
 title: "FreeLLMAPI"
 description: "여러 무료 LLM 제공자의 free tier를 하나의 OpenAI 호환 엔드포인트로 묶는 프록시입니다. 자동 failover와 키별 사용량 추적으로 안정적인 호출을 돕습니다."
-category: "agent-harness"
+category: "agent-component"
 tags: ["openai-compatible", "proxy", "model-routing", "failover", "llm", "free-tier"]
 githubUrl: "https://github.com/tashfeenahmed/freellmapi"
 githubStars: 4525

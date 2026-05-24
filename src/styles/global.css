@@ -197,41 +197,9 @@ body::before {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: hsl(var(--text-secondary));
-}
-
-/* Category Specific Badges */
-.badge-mcp {
-  background: rgba(6, 182, 212, 0.1);
-  border-color: rgba(6, 182, 212, 0.3);
-  color: rgb(34, 211, 238);
-}
-.badge-skill {
-  background: rgba(139, 92, 246, 0.1);
-  border-color: rgba(139, 92, 246, 0.3);
-  color: rgb(167, 139, 250);
-}
-.badge-harness {
-  background: rgba(20, 184, 166, 0.1);
-  border-color: rgba(20, 184, 166, 0.3);
-  color: rgb(45, 212, 191);
-}
-.badge-utility {
-  background: rgba(245, 158, 11, 0.1);
-  border-color: rgba(245, 158, 11, 0.3);
-  color: rgb(251, 191, 36);
-}
-.badge-plugin {
-  background: rgba(244, 63, 94, 0.1);
-  border-color: rgba(244, 63, 94, 0.3);
-  color: rgb(251, 113, 133);
-}
-.badge-extension {
-  background: rgba(234, 179, 8, 0.1);
-  border-color: rgba(234, 179, 8, 0.3);
-  color: rgb(253, 224, 71);
+  background: var(--badge-bg, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--badge-border, rgba(255, 255, 255, 0.08));
+  color: var(--badge-color, hsl(var(--text-secondary)));
 }
 
 /* Layout Utilities */
