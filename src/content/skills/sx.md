@@ -4,6 +4,7 @@ description: "AI 코딩 도우미용 스킬, MCP 설정, 명령어를 팀 단위
 category: "agent-harness"
 tags: ["skills", "mcp", "commands", "distribution", "vault", "cli"]
 githubUrl: "https://github.com/sleuth-io/sx"
+githubStars: 208
 author: "sleuth-io"
 installCommand: "brew install sx"
 compatibleAgents: ["Claude Code", "Cursor", "GitHub Copilot", "Gemini", "OpenCode"]

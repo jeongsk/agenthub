@@ -39,6 +39,7 @@ description: Short summary
 category: mcp-server | agent-skill | plugin | browser-extension
 tags: [keyword1, keyword2]
 githubUrl: https://github.com/user/repo
+githubStars: 1234                    # GitHub star snapshot
 author: github-username
 installCommand: pip install ...      # optional
 compatibleAgents: [Gemini, Claude]   # 필수

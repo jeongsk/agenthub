@@ -4,6 +4,7 @@ description: "macOS 메뉴 막대에서 시스템 상태를 확인하고 팬 제
 category: "desktop-utility"
 tags: ["macos", "menu-bar", "system-monitoring", "fan-control", "sleep", "utility"]
 githubUrl: "https://github.com/jaehwan02/UltraCat"
+githubStars: 9
 author: "jaehwan02"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini"]
 icon: "Activity"

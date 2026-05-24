@@ -4,6 +4,7 @@ description: "여러 AI 코딩 에이전트를 TUI와 웹 대시보드에서 관
 category: "agent-harness"
 tags: ["orchestrator", "tui", "web-dashboard", "tmux", "worktree", "multi-agent"]
 githubUrl: "https://github.com/njbrake/agent-of-empires"
+githubStars: 2387
 author: "njbrake"
 installCommand: "brew install aoe"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini", "Copilot"]

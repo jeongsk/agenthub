@@ -4,6 +4,7 @@ description: "Hermes Agent용 웹 기반 작업 공간입니다. 채팅, 파일,
 category: "agent-harness"
 tags: ["hermes-agent", "workspace", "dashboard", "terminal", "memory", "skills"]
 githubUrl: "https://github.com/outsourc-e/hermes-workspace"
+githubStars: 4754
 author: "outsourc-e"
 installCommand: "curl -fsSL https://raw.githubusercontent.com/outsourc-e/hermes-workspace/main/install.sh | bash"
 compatibleAgents: ["Hermes Agent", "Claude Code", "Codex", "OpenCode", "Gemini"]

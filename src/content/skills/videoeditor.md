@@ -4,6 +4,7 @@ description: "CapCut·Canva 대안으로 지향하는 AI 기반 비디오 편집
 category: "agent-harness"
 tags: ["video-editing", "editor", "ai-assistant", "react", "remotion", "creative"]
 githubUrl: "https://github.com/trykimu/videoeditor"
+githubStars: 1936
 author: "trykimu"
 installCommand: "docker compose up"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode"]

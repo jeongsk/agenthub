@@ -4,6 +4,7 @@ description: "책 제목, 저자, 완독일, 평점, 메모를 바탕으로 한�
 category: "agent-skill"
 tags: ["korean", "book-journal", "image-generation", "prompt-engineering", "analog", "reading"]
 githubUrl: "https://github.com/jeongsk/agenthub/tree/main/skills/analog-reading-note-image"
+githubStars: 0
 author: "jeongsk"
 installCommand: "npx skills add jeongsk/agenthub --skill analog-reading-note-image"
 compatibleAgents: ["Claude", "Gemini", "OpenAI", "Codex"]

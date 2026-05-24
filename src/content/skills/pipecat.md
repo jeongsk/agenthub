@@ -4,6 +4,7 @@ description: "실시간 음성·멀티모달 대화 에이전트를 만드는 Py
 category: "agent-harness"
 tags: ["voice", "multimodal", "agent-framework", "real-time", "python", "conversation"]
 githubUrl: "https://github.com/pipecat-ai/pipecat"
+githubStars: 12447
 author: "pipecat-ai"
 installCommand: "pip install pipecat-ai"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode"]

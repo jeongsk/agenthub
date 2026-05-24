@@ -4,6 +4,7 @@ description: "AI-driven development을 위한 에이전트 플랫폼입니다. C
 category: "agent-harness"
 tags: ["ai-development", "agent-platform", "cli", "gui", "sdk", "automation"]
 githubUrl: "https://github.com/OpenHands/OpenHands"
+githubStars: 74658
 author: "OpenHands"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini"]
 featured: true

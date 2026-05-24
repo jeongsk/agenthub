@@ -4,6 +4,7 @@ description: "Claude Code에 역할별 작업 흐름과 브라우징·리뷰·�
 category: "agent-harness"
 tags: ["claude-code", "agent-harness", "orchestration", "workflow", "productivity"]
 githubUrl: "https://github.com/garrytan/gstack"
+githubStars: 101272
 author: "garrytan"
 installCommand: "git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup"
 compatibleAgents: ["Claude Code"]

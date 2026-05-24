@@ -4,6 +4,7 @@ description: "Claude Code용 고품질 플러그인들을 모아 둔 Anthropic �
 category: "plugin"
 tags: ["claude-code", "plugins", "marketplace", "anthropic", "directory"]
 githubUrl: "https://github.com/anthropics/claude-plugins-official"
+githubStars: 26459
 author: "anthropics"
 installCommand: "/plugin install {plugin-name}@claude-plugins-official"
 compatibleAgents: ["Claude Code"]

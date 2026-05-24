@@ -4,6 +4,7 @@ description: "브라우저 자동화, 스크린샷, 폼 제출, 웹 QA를 에이
 category: "mcp-server"
 tags: ["browser-automation", "web-testing", "screenshots", "mcp", "official"]
 githubUrl: "https://github.com/modelcontextprotocol/servers/tree/main/src/playwright"
+githubStars: 86140
 author: "modelcontextprotocol"
 installCommand: "npx -y @modelcontextprotocol/server-playwright"
 compatibleAgents: ["Claude", "Cursor", "Continue", "Cline"]

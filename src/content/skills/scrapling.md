@@ -4,6 +4,7 @@ description: "페이지 변경에 적응하는 웹 스크래핑 프레임워크�
 category: "mcp-server"
 tags: ["web-scraping", "crawler", "python", "playwright", "mcp", "anti-bot"]
 githubUrl: "https://github.com/D4Vinci/Scrapling"
+githubStars: 53690
 author: "D4Vinci"
 installCommand: "pip install scrapling"
 compatibleAgents: ["Claude", "Cursor", "Continue", "Cline"]

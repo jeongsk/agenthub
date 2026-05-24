@@ -4,6 +4,7 @@ description: "VS Code와 JetBrains에서 코드 편집, 리팩터링, 질의응�
 category: "plugin"
 tags: ["vscode", "jetbrains", "code-editing", "refactor", "ai-assistant"]
 githubUrl: "https://github.com/continuedev/continue"
+githubStars: 33345
 author: "continuedev"
 installCommand: "code --install-extension Continue.continue"
 compatibleAgents: ["VSCode", "Cursor", "JetBrains"]

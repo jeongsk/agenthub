@@ -4,6 +4,7 @@ description: "다국어 웹 문서, PDF, 자막, 입력창 번역을 돕는 오�
 category: "browser-extension"
 tags: ["translation", "multilingual", "browser-extension", "pdf", "research"]
 githubUrl: "https://github.com/immersive-translate/immersive-translate"
+githubStars: 17739
 chromeWebStoreUrl: "https://chromewebstore.google.com/detail/immersive-translate-ai-we/bpoadfkcbjbfhfodiogcnhhhpibjhbnh"
 author: "immersive-translate"
 installCommand: "git clone https://github.com/immersive-translate/immersive-translate.git && cd immersive-translate && pnpm install && pnpm build"

@@ -4,6 +4,7 @@ description: "코드베이스를 미리 인덱싱해 Claude Code, Cursor, Codex,
 category: "mcp-server"
 tags: ["mcp", "code-intelligence", "codebase", "indexing", "graph"]
 githubUrl: "https://github.com/colbymchenry/codegraph"
+githubStars: 19494
 author: "colbymchenry"
 installCommand: "npx @colbymchenry/codegraph"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]

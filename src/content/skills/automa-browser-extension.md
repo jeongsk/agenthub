@@ -4,6 +4,7 @@ description: "클릭, 입력, 탭 전환을 블록 기반 워크플로로 자동
 category: "browser-extension"
 tags: ["browser-automation", "workflow", "rpa", "productivity", "open-source"]
 githubUrl: "https://github.com/AutomaApp/automa"
+githubStars: 21335
 chromeWebStoreUrl: "https://chrome.google.com/webstore/detail/automa/infppggnoaenmfagbfknfkancpbljcca"
 author: "AutomaApp"
 installCommand: "git clone https://github.com/AutomaApp/automa.git && cd automa && pnpm install && pnpm build"

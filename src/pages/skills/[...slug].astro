@@ -1,8 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { ArrowLeft, Copy, ExternalLink } from '@lucide/astro';
+import { ArrowLeft, Copy, ExternalLink, Star } from '@lucide/astro';
 import { getCollection, render } from 'astro:content';
 import GitHub from '../../components/icons/GitHub.astro';
+import { formatStarCount } from '../../lib/github';
 import { badgeClass, categoryLabel } from '../../lib/registry';
 
 export async function getStaticPaths() {
@@ -30,6 +31,10 @@ const data = skill.data;
         <div class="detail-header-card glass-card">
           <div class="header-meta">
             <span class={`badge ${badgeClass(data.category)}`}>{categoryLabel(data.category)}</span>
+            <span class="stars-pill" title="GitHub stars">
+              <Star size={14} />
+              <span>{formatStarCount(data.githubStars)}</span>
+            </span>
           </div>
 
           <div class="title-row">
@@ -86,6 +91,14 @@ const data = skill.data;
           </div>
 
           <div class="sidebar-section">
+            <span class="section-label">GitHub Stars</span>
+            <a href={data.githubUrl} target="_blank" rel="noopener noreferrer" class="stat-link">
+              <Star size={16} />
+              <span>{formatStarCount(data.githubStars)}</span>
+            </a>
+          </div>
+
+          <div class="sidebar-section">
             <span class="section-label">호환 에이전트</span>
             <div class="agents-list">
               {data.compatibleAgents.map((agent) => <span class="agent-tag">{agent}</span>)}
@@ -138,12 +151,46 @@ const data = skill.data;
     align-items: start;
     margin-bottom: 80px;
   }
-  .main-content-column { display: flex; flex-direction: column; gap: 30px; }
+  .main-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 0;
+  }
   .detail-header-card {
     padding: 36px;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    min-width: 0;
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .stars-pill, .stat-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgb(253, 224, 71);
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+    border-radius: 9999px;
+    font-weight: 700;
+  }
+  .stars-pill {
+    padding: 4px 10px;
+    font-size: 0.78rem;
+  }
+  .stat-link {
+    width: fit-content;
+    padding: 9px 12px;
+    text-decoration: none;
+  }
+  .stat-link:hover {
+    border-color: rgba(234, 179, 8, 0.42);
+    background: rgba(234, 179, 8, 0.13);
   }
   .title-row { display: flex; gap: 20px; align-items: flex-start; }
   .title-icon-wrapper {
@@ -162,7 +209,12 @@ const data = skill.data;
   .title-icon-wrapper.agent-skill { color: rgb(167, 139, 250); background: rgba(139, 92, 246, 0.08); }
   .title-icon-wrapper.plugin { color: rgb(251, 113, 133); background: rgba(244, 63, 94, 0.08); }
   .title-icon-wrapper.browser-extension { color: rgb(253, 224, 71); background: rgba(234, 179, 8, 0.08); }
-  .title-meta { display: flex; flex-direction: column; gap: 8px; }
+  .title-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+  }
   .asset-title { font-size: 2.2rem; font-weight: 800; color: white; }
   .asset-description {
     font-size: 1.05rem;
@@ -175,12 +227,18 @@ const data = skill.data;
     align-items: center;
     gap: 10px;
     padding: 10px 12px;
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
   }
   .command-code {
+    display: block;
+    min-width: 0;
+    flex: 1 1 auto;
     overflow-x: auto;
     color: hsl(var(--text-secondary));
     font-size: 0.9rem;
+    white-space: nowrap;
   }
   .copy-btn {
     border: 0;
@@ -193,13 +251,18 @@ const data = skill.data;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.06);
     color: white;
+    flex: 0 0 auto;
   }
   .copy-btn.success { color: rgb(34, 211, 238); }
-  .readme-panel, .sticky-sidebar { padding: 30px; }
+  .readme-panel, .sticky-sidebar {
+    padding: 30px;
+    min-width: 0;
+  }
   .readme-title { font-size: 1.3rem; margin-bottom: 18px; }
   .markdown-body {
     color: hsl(var(--text-secondary));
     line-height: 1.75;
+    min-width: 0;
   }
   .markdown-body :global(h1), .markdown-body :global(h2), .markdown-body :global(h3) {
     color: white;
@@ -214,6 +277,7 @@ const data = skill.data;
     color: white;
   }
   .markdown-body :global(pre) {
+    max-width: 100%;
     overflow-x: auto;
     padding: 16px;
     border-radius: 12px;
@@ -259,5 +323,10 @@ const data = skill.data;
     .detail-header-card, .readme-panel, .sticky-sidebar { padding: 22px; }
     .title-row { flex-direction: column; }
     .asset-title { font-size: 1.8rem; }
+    .copy-command-wrapper { align-items: flex-start; }
+    .command-code {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
   }
 </style>
