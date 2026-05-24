@@ -126,9 +126,69 @@ const sortedSkills = [...skillEntries]
   const directoryGrid = document.getElementById('directory-grid');
   const resultsCount = document.getElementById('results-count');
   const noResultsState = document.getElementById('no-search-results');
+  const directoryStateKey = 'agenthub:directory-state';
+  const returnToDirectoryKey = 'agenthub:return-to-directory';
 
   let activeCategory = 'all';
   let searchQuery = '';
+
+  function normalizeQuery(value: string | null) {
+    return (value || '').toLowerCase().trim();
+  }
+
+  function getAvailableCategories() {
+    return Array.from(tabButtons)
+      .map((button) => (button as HTMLButtonElement).dataset.category)
+      .filter(Boolean) as string[];
+  }
+
+  function getInitialState() {
+    const params = new URLSearchParams(window.location.search);
+    const availableCategories = getAvailableCategories();
+    const storedState = sessionStorage.getItem(directoryStateKey);
+    let storedQuery = '';
+    let storedCategory = 'all';
+
+    if (storedState) {
+      try {
+        const parsedState = JSON.parse(storedState) as { query?: string; category?: string };
+        storedQuery = normalizeQuery(parsedState.query || '');
+        storedCategory = parsedState.category || 'all';
+      } catch {
+        sessionStorage.removeItem(directoryStateKey);
+      }
+    }
+
+    const category = params.get('category') || storedCategory;
+
+    return {
+      query: normalizeQuery(params.get('q') || storedQuery),
+      category: availableCategories.includes(category) ? category : 'all',
+    };
+  }
+
+  function persistState() {
+    const state = { query: searchQuery, category: activeCategory };
+    sessionStorage.setItem(directoryStateKey, JSON.stringify(state));
+    sessionStorage.setItem(returnToDirectoryKey, `${window.location.pathname}${window.location.search}`);
+  }
+
+  function updateUrlState() {
+    const params = new URLSearchParams();
+    if (searchQuery) params.set('q', searchQuery);
+    if (activeCategory !== 'all') params.set('category', activeCategory);
+
+    const queryString = params.toString();
+    const nextUrl = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+    window.history.replaceState(null, '', nextUrl);
+  }
+
+  function activateTab(category: string) {
+    tabButtons.forEach((entry) => {
+      const button = entry as HTMLButtonElement;
+      button.classList.toggle('active', button.dataset.category === category);
+    });
+  }
 
   function filterItems() {
     let visibleCount = 0;
@@ -157,9 +217,21 @@ const sortedSkills = [...skillEntries]
     noResultsState.classList.toggle('hide', visibleCount !== 0);
   }
 
+  function applyState({ query, category }: { query: string; category: string }) {
+    searchQuery = query;
+    activeCategory = category;
+    if (searchInput) searchInput.value = query;
+    activateTab(category);
+    updateUrlState();
+    persistState();
+    filterItems();
+  }
+
   if (searchInput) {
     searchInput.addEventListener('input', (event) => {
       searchQuery = (event.target as HTMLInputElement).value.toLowerCase().trim();
+      updateUrlState();
+      persistState();
       filterItems();
     });
   }
@@ -170,11 +242,19 @@ const sortedSkills = [...skillEntries]
       const currentTarget = event.currentTarget as HTMLButtonElement;
       currentTarget.classList.add('active');
       activeCategory = currentTarget.dataset.category || 'all';
+      updateUrlState();
+      persistState();
       filterItems();
     });
   });
 
-  filterItems();
+  document.querySelectorAll<HTMLAnchorElement>('.card-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      persistState();
+    });
+  });
+
+  applyState(getInitialState());
 </script>
 
 <style>

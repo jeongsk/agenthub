@@ -21,7 +21,7 @@ const data = skill.data;
 
 <Layout title={`${data.title} - AgentHub Registry`} description={data.description}>
   <div class="container detail-container">
-    <a href="/" class="back-link">
+    <a href="/" class="back-link" id="directory-back-link">
       <ArrowLeft size={16} />
       <span>디렉토리로 돌아가기</span>
     </a>
@@ -120,6 +120,8 @@ const data = skill.data;
 <script>
   const copyBtn = document.getElementById('copy-command-btn');
   const commandText = document.getElementById('command-text');
+  const directoryBackLink = document.getElementById('directory-back-link') as HTMLAnchorElement | null;
+  const returnToDirectoryKey = 'agenthub:return-to-directory';
 
   if (copyBtn && commandText) {
     copyBtn.addEventListener('click', () => {
@@ -127,6 +129,26 @@ const data = skill.data;
         copyBtn.classList.add('success');
         setTimeout(() => copyBtn.classList.remove('success'), 1600);
       });
+    });
+  }
+
+  if (directoryBackLink) {
+    const fallbackPath = sessionStorage.getItem(returnToDirectoryKey);
+
+    if (fallbackPath?.startsWith('/')) {
+      directoryBackLink.href = fallbackPath;
+    }
+
+    directoryBackLink.addEventListener('click', (event) => {
+      const referrerUrl = document.referrer ? new URL(document.referrer) : null;
+      const cameFromDirectory =
+        referrerUrl?.origin === window.location.origin &&
+        referrerUrl.pathname === '/';
+
+      if (cameFromDirectory && window.history.length > 1) {
+        event.preventDefault();
+        window.history.back();
+      }
     });
   }
 </script>
