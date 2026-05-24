@@ -1,8 +1,8 @@
 ---
 title: "Scrapling"
 description: "페이지 변경에 적응하는 웹 스크래핑 프레임워크입니다. 안티봇 대응과 크롤링 기능을 함께 제공해 에이전트가 안정적으로 데이터를 수집할 때 유용합니다."
-category: "mcp-server"
-tags: ["web-scraping", "crawler", "python", "playwright", "mcp", "anti-bot"]
+category: "agent-skill"
+tags: ["web-scraping", "crawler", "python", "playwright", "anti-bot"]
 githubUrl: "https://github.com/D4Vinci/Scrapling"
 githubStars: 53690
 author: "D4Vinci"
@@ -30,7 +30,4 @@ Scrapling은 현대적인 웹 스크래핑 프레임워크입니다. 단일 요�
 - 프로덕션 크롤링에 필요한 프록시 회전과 pause/resume 흐름을 지원합니다.
 - README 기준으로 `agent-skill` 디렉터리와 MCP 관련 문서도 포함합니다.
 
-## 참고
 
-- 이 저장소는 단순한 스크래핑 예제보다 *에이전트용 데이터 수집 도구*에 가깝습니다.
-- 그래서 이 레지스트리에서는 `mcp-server`로 분류하는 편이 자연스럽습니다.
