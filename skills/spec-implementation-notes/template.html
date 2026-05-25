@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Implementation Notes — <FEATURE NAME></title>
+<style>
+  :root {
+    --fg: #1f2328;
+    --muted: #656d76;
+    --border: #d0d7de;
+    --bg-card: #f6f8fa;
+    --open: #bf8700;
+    --accepted: #1a7f37;
+    --changed: #9a6700;
+    --resolved: #0969da;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         max-width: 820px; margin: 2rem auto; padding: 0 1rem; color: var(--fg); line-height: 1.55; }
+  h1 { border-bottom: 1px solid var(--border); padding-bottom: .5rem; }
+  h2 { margin-top: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: .3rem; }
+  .meta { color: var(--muted); font-size: .9rem; }
+  .entry { background: var(--bg-card); border: 1px solid var(--border);
+           border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .entry h3 { margin: 0 0 .5rem 0; }
+  .entry dl { display: grid; grid-template-columns: max-content 1fr; gap: .25rem 1rem;
+              margin: 0 0 .75rem 0; font-size: .9rem; }
+  .entry dt { color: var(--muted); }
+  .badge { display: inline-block; padding: .1rem .55rem; border-radius: 999px;
+           font-size: .75rem; font-weight: 600; text-transform: lowercase;
+           color: #fff; vertical-align: middle; }
+  .badge.open      { background: var(--open); }
+  .badge.accepted  { background: var(--accepted); }
+  .badge.changed   { background: var(--changed); }
+  .badge.resolved  { background: var(--resolved); }
+  .empty { color: var(--muted); font-style: italic; }
+  .legend { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--border);
+            margin-top: 3rem; padding-top: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>Implementation Notes — <FEATURE NAME></h1>
+<p class="meta">
+  <strong>SPEC:</strong> <link or path to the spec><br />
+  <strong>Started:</strong> <ISO 8601 timestamp, e.g. 2026-05-25T14:30+09:00>
+</p>
+<p>Live record of design decisions, deviations, tradeoffs, and open questions
+encountered while implementing the SPEC. Updated as decisions happen, not after.</p>
+
+<h2>Design Decisions</h2>
+<p>Choices made because the spec was ambiguous.</p>
+
+<!-- Example entry — copy and edit, remove the comment wrapper.
+<article class="entry">
+  <h3>Short title</h3>
+  <dl>
+    <dt>Status</dt>      <dd><span class="badge accepted">accepted</span></dd>
+    <dt>Spec area</dt>   <dd>which part of the SPEC</dd>
+    <dt>Timestamp</dt>   <dd>2026-05-25T14:30+09:00</dd>
+  </dl>
+  <p>1–4 sentence explanation of the decision and why.</p>
+</article>
+-->
+
+<p class="empty">No entries yet.</p>
+
+<h2>Deviations</h2>
+<p>Intentional places where the implementation does not follow the spec.</p>
+<p class="empty">No entries yet.</p>
+
+<h2>Tradeoffs</h2>
+<p>Alternatives considered and why the chosen approach won.</p>
+<p class="empty">No entries yet.</p>
+
+<h2>Open Questions</h2>
+<p>Items still needing confirmation. May force later changes.</p>
+<p class="empty">No entries yet.</p>
+
+<div class="legend">
+  <p><strong>Status legend</strong></p>
+  <ul>
+    <li><span class="badge open">open</span> — question raised, no decision yet</li>
+    <li><span class="badge accepted">accepted</span> — assumption in force, implementation reflects it</li>
+    <li><span class="badge changed">changed</span> — previously accepted decision overturned; a follow-up entry records the new state</li>
+    <li><span class="badge resolved">resolved</span> — confirmed by user or evidence, no further change expected</li>
+  </ul>
+  <p>Never delete entries. Reversed decisions transition through <code>changed</code> and gain a follow-up entry — the audit trail is the point.</p>
+</div>
+
+</body>
+</html>
