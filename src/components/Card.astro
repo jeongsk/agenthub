@@ -14,9 +14,10 @@ interface Props {
   icon: string;
   slug: string;
   stars?: number | null;
+  featured?: boolean;
 }
 
-const { title, description, category, tags, author, compatibleAgents, icon, slug, stars } = Astro.props;
+const { title, description, category, tags, author, compatibleAgents, icon, slug, stars, featured } = Astro.props;
 
 // Dynamically select Lucide icon component based on string input
 const IconComponent = (Icons as any)[icon] || Icons.Terminal;
@@ -34,6 +35,7 @@ const pointBorder = cfg?.border ?? 'rgba(255, 255, 255, 0.06)';
         <IconComponent size={22} />
       </div>
       <div class="header-badges">
+        {featured && <span class="featured-pill">추천</span>}
         <span class="badge" style={`--badge-color: ${pointColor}; --badge-bg: ${pointBg}; --badge-border: ${pointBorder};`}>
           {categoryLabel(category)}
         </span>
@@ -110,6 +112,21 @@ const pointBorder = cfg?.border ?? 'rgba(255, 255, 255, 0.06)';
     justify-content: flex-end;
     gap: 6px;
     min-width: 0;
+  }
+
+  .featured-pill {
+    display: inline-flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(236, 72, 153, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.18);
   }
 
   .stars-pill {
