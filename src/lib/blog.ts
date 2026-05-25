@@ -1,3 +1,6 @@
+import { marked } from 'marked';
+import agentHarnessEngineeringSource from '../content/blog/2026-05-25-agent-harness-engineering-blog.md?raw';
+
 export interface BlogSection {
   heading: string;
   paragraphs: string[];
@@ -13,18 +16,35 @@ export interface BlogPost {
   category: string;
   tags: string[];
   sections: BlogSection[];
+  html?: string;
 }
+
+function renderWikiMarkdown(source: string) {
+  const body = source.replace(/^---[\s\S]*?---\n/, '');
+  const translated = body
+    .replace(/!\[\[assets\/wiki-pages\/([^\]]+)\]\]/g, (_match: string, fileName: string) => {
+      return `![](/blog-assets/agent-harness-engineering-survey/${fileName})`;
+    })
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
+    .replace(/\[\[([^\]]+)\]\]/g, '$1');
+
+  return marked.parse(translated, { async: false }) as string;
+}
+
+const agentHarnessEngineeringHtml = renderWikiMarkdown(agentHarnessEngineeringSource);
+
 
 export const blogPosts: BlogPost[] = [
   {
     slug: 'agent-harness-engineering-survey',
     title: "프롬프트 다음, 컨텍스트 다음은 '하네스'다",
     description:
-      'LLM 에이전트의 신뢰성은 모델 성능보다 실행 환경, 도구 계약, 관측, 검증, 거버넌스가 좌우합니다. ETCLOVG 관점으로 하네스 엔지니어링을 정리합니다.',
+      '원문 노트를 가능한 한 그대로 옮겨 담은 하네스 엔지니어링 정리글입니다. 이미지, 표, 인용을 포함해 서베이 노트를 블로그 형식으로 보존합니다.',
     date: '2026.05.25',
     readTime: '10분',
     category: 'Operations',
     tags: ['ai-agents', 'harness', 'survey', 'observability', 'governance'],
+    html: agentHarnessEngineeringHtml,
     sections: [
       {
         heading: '왜 하네스가 중요해졌나',
