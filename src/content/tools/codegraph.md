@@ -1,10 +1,11 @@
 ---
 title: "CodeGraph"
-description: "코드베이스를 미리 인덱싱해 Claude Code, Cursor, Codex, OpenCode, Hermes Agent가 파일을 일일이 훑지 않고도 구조와 관계를 빠르게 조회하도록 돕는 MCP 서버입니다."
+description: "코드베이스를 사전 인덱싱해 Claude Code, Cursor, Codex, OpenCode, Hermes Agent가 파일을 하나씩 뒤지지 않고도 구조와 관계를 빠르게 조회하도록 돕는 MCP 서버입니다."
 category: "mcp-server"
-tags: ["mcp", "code-intelligence", "codebase", "indexing", "graph"]
+tags: ["mcp", "code-intelligence", "codebase", "indexing", "knowledge-graph"]
 githubUrl: "https://github.com/colbymchenry/codegraph"
-githubStars: 19494
+websiteUrl: "https://colbymchenry.github.io/codegraph/"
+githubStars: 24409
 author: "colbymchenry"
 installCommand: "npx @colbymchenry/codegraph"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]
