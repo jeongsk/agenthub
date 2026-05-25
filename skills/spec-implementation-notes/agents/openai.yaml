@@ -1,6 +1,11 @@
 interface:
   display_name: "Spec Implementation Notes"
-  short_description: "명세 구현 중 판단과 편차를 실시간 기록"
-  default_prompt: "Use $spec-implementation-notes after $grill-me to implement the clarified SPEC while maintaining implementation-notes.html."
+  short_description: "명세 구현 중 판단·편차·미해결 항목을 implementation-notes.md에 실시간 기록"
+  default_prompt: |
+    Implement the SPEC. While working, maintain a live implementation-notes.md
+    that records every meaningful point where the implementation differs from,
+    interprets, or extends the specification. Use the sections, entry format,
+    and status lifecycle defined in spec-implementation-notes/SKILL.md. Copy
+    template.md (or template.html if HTML was requested) as the starting file.
 policy:
   allow_implicit_invocation: true
