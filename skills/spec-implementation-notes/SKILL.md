@@ -1,71 +1,120 @@
 ---
 name: spec-implementation-notes
-description: Use after grill-me or any clarified SPEC when implementing a feature from a specification. Maintain a live implementation-notes.html file that records ambiguous design decisions, intentional deviations, tradeoffs, and open questions while building the SPEC.
+description: Maintain a live implementation-notes.md while implementing a feature from a SPEC. Records ambiguous design decisions, intentional deviations, tradeoffs, and open questions as they happen so the user can give feedback during implementation, not after. Use after grill-me, or whenever the user asks to implement a SPEC / specification / design doc / requirements. Triggers include "스펙 구현", "specification 따라 구현", "design doc 따라 구현해줘", "implement this spec", "build this from the spec".
 metadata:
   short-description: Implement specs with live notes
 ---
 
 # Spec Implementation Notes
 
-Use this skill immediately after a `grill-me` clarification session, or whenever the user asks to implement a `<SPEC>` and wants the agent to keep implementation assumptions visible.
+Use this skill when implementing a clarified `<SPEC>` — most commonly right after a `grill-me` session, but also any time the user says "implement this spec / design doc / requirements".
+
+The goal is to keep implementation assumptions **visible** so the user can correct them mid-flight rather than after the fact.
 
 ## Core Instruction
 
-Implement the user's `<SPEC>`. While working, maintain a live `implementation-notes.html` file that records every meaningful point where the implementation differs from, interprets, or extends the specification.
+Implement the user's `<SPEC>`. While working, maintain a live notes file that records every meaningful point where the implementation differs from, interprets, or extends the specification.
 
-The notes are not a final report. Treat them as a working artifact that is updated as decisions happen, so the user can inspect and give feedback during implementation.
+The notes are a **working artifact**, not a final report. Update them as decisions happen.
 
-## Required Notes
+## File Format
 
-Create or update `implementation-notes.html` at the project root unless the user specifies another path. The file must include these sections:
+Default: `implementation-notes.md` (Markdown).
 
-- `Design Decisions`: Choices made because the spec was ambiguous.
-- `Deviations`: Intentional places where the implementation does not follow the spec, with reasons.
-- `Tradeoffs`: Alternatives considered and why the chosen approach won.
-- `Open Questions`: Items that still need confirmation or may require later changes.
+Use HTML (`implementation-notes.html`) only when:
 
-Each entry should include:
+- The user explicitly asks for HTML.
+- The artifact will be shared via a static-site / preview channel where Markdown rendering is unavailable.
 
-- A short title.
-- The current status: `open`, `accepted`, `changed`, or `resolved`.
-- The relevant spec area or feature.
-- A concise explanation.
-- A timestamp or ordering marker if useful.
+Starter templates live next to this skill:
+
+- `template.md` — copy when creating the file the first time.
+- `template.html` — copy when the user opts into HTML.
+
+Copy the relevant template verbatim into the project, then fill it in. Do not invent a new layout per project.
+
+## Where to Put the File
+
+- Default location: project root.
+- For monorepos, place it at the **feature scope root** (the package/app directory that owns the SPEC), not the repo root.
+- Default git policy: **do not commit** the file. On first creation, append `implementation-notes.md` (and `.html` if used) to the project's `.gitignore`. If the user later asks to commit it, remove the ignore entry — do not commit silently.
+
+## Required Sections
+
+The notes file must contain these four sections (templates already include them):
+
+| Section | Records |
+|---|---|
+| Design Decisions | Choices made because the spec was ambiguous |
+| Deviations | Places where the implementation intentionally diverges from the spec, with reason |
+| Tradeoffs | Alternatives considered and why the chosen approach won |
+| Open Questions | Items still needing confirmation; may force later changes |
+
+## Entry Format
+
+Each entry must include:
+
+- **Title** — short, scannable.
+- **Status** — see lifecycle below. Required.
+- **Spec area / feature** — which part of the SPEC this touches.
+- **Timestamp** — ISO 8601 with offset (e.g. `2026-05-25T14:30+09:00`). Required, not optional.
+- **Body** — concise explanation, typically 1–4 sentences.
+
+## Status Lifecycle
+
+```
+open ──► accepted ──► resolved
+              │
+              └──► changed ──► accepted | resolved
+```
+
+| Status | Meaning |
+|---|---|
+| `open` | Question raised, no decision yet. Implementation is either blocked or proceeding on a stated assumption. |
+| `accepted` | A decision/assumption is in force and the implementation reflects it. Still revisable. |
+| `changed` | A previously `accepted` decision was overturned. Record what changed and why, then add a follow-up entry with the new state. |
+| `resolved` | The user (or empirical evidence) confirmed the decision. No further change expected. |
+
+Never delete an entry. If a decision is reversed, transition it through `changed` and add a new entry — the audit trail is the point.
 
 ## Workflow
 
-1. Read the spec and identify likely ambiguity before editing code.
-2. Create `implementation-notes.html` early, even if most sections initially say there are no entries yet.
-3. Update the notes before or alongside code changes whenever:
+1. Read the SPEC and skim the codebase for likely ambiguity *before* writing code.
+2. Copy the starter template into the project and append the file to `.gitignore` (unless told otherwise).
+3. Seed the section headers, even if each section is initially empty.
+4. Update notes **before or alongside** the code change whenever:
    - The spec has multiple valid interpretations.
    - A user-visible behavior is chosen without explicit spec language.
-   - The codebase constraints force a different implementation than the spec implies.
-   - A simpler, staged, or lower-risk approach is chosen over a richer alternative.
-   - A question remains but implementation can proceed with a reasonable assumption.
-4. Keep notes concise and factual. Do not use the notes as a task log for routine edits.
-5. At the end, summarize the implemented behavior and mention any remaining open notes.
+   - Codebase constraints force a different implementation than the spec implies.
+   - A simpler / staged / lower-risk approach is chosen over a richer alternative.
+   - A question remains but implementation proceeds on a reasonable assumption.
+5. Do **not** log routine edits (renames, formatting, obvious refactors). Notes track *judgments*, not activity.
+6. At the end, summarize the implemented behavior and list every entry still in `open` status or recently `changed`.
 
-## HTML Requirements
+## Verification Before Declaring Done
 
-The notes file should be standalone and readable in a browser:
+Run, in order, whichever exist in the project:
 
-- Use semantic HTML with a small embedded CSS block.
-- Keep styling simple and compatible with the repository's tone when obvious.
-- Make entries easy to scan with headings, status badges, and short paragraphs.
-- Preserve existing entries when updating; append or revise them rather than replacing the file wholesale.
+1. Type check (`tsc`, `mypy`, `cargo check`, etc.).
+2. Lint (`eslint`, `ruff`, `cargo clippy`, etc.).
+3. Tests relevant to the touched code.
+4. Build (if the project produces an artifact).
 
-## Default Starting Prompt
-
-When this skill is used after `grill-me`, proceed with:
-
-```text
-Implement the <SPEC>. While working, maintain a live implementation-notes.html file recording every meaningful point where the implementation differs from, interprets, or extends the specification. Record entries under the sections defined in the Required Notes above. No spec is complete — ambiguities and unexpected constraints always arise. Make reasonable judgments and keep them visible for continuous feedback.
-```
+If a step does not exist or cannot be run, state that explicitly in the wrap-up. For behavioral verification (actually exercising the feature in a running app), delegate to the `verify` or `run` skill.
 
 ## Completion Criteria
 
-The task is not complete until:
+The task is complete when **all** of the following hold:
 
-- The requested spec implementation is done or a clear blocker is documented.
-- `implementation-notes.html` exists and reflects all known decisions, deviations, tradeoffs, and unresolved questions.
-- Verification appropriate to the codebase has been run, or the reason it could not be run is stated.
+- [ ] The SPEC implementation is done, or a clear blocker is recorded as an `open` entry.
+- [ ] `implementation-notes.md` (or `.html`) exists and reflects every known decision, deviation, tradeoff, and open question.
+- [ ] Verification appropriate to the project has been run, or its absence is stated explicitly.
+- [ ] The final response summarizes the implemented behavior and explicitly lists unresolved `open` items.
+
+## Default Starting Prompt
+
+When invoked right after `grill-me`:
+
+```text
+Implement the clarified SPEC. Maintain a live implementation-notes.md recording every meaningful point where the implementation differs from, interprets, or extends the specification. Use the sections, entry format, and status lifecycle defined in this skill. No spec is complete — surface ambiguities and unexpected constraints as you find them, and keep your assumptions visible for continuous feedback.
+```
