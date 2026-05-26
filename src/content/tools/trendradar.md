@@ -1,7 +1,7 @@
 ---
 title: "TrendRadar"
-description: "AI로 뉴스·트렌드·여론을 모아 RSS, 키워드 필터, AI 요약/번역, 다채널 푸시로 전달하는 자가 호스팅 모니터링 허브입니다. MCP 기반 AI 분석도 함께 제공합니다."
-category: "mcp-server"
+description: "뉴스·트렌드·여론을 RSS와 여러 채널에서 모아 키워드별로 추적하고, AI 요약/번역과 다채널 푸시를 붙여 쓰는 자가 호스팅 모니터링 컴포넌트입니다."
+category: "agent-component"
 tags: ["news", "rss", "trend-monitoring", "alerts", "mcp", "ai-summarization", "notifications"]
 githubUrl: "https://github.com/sansan0/TrendRadar"
 websiteUrl: "https://sansan0.github.io/TrendRadar/"
@@ -9,7 +9,7 @@ githubStars: 58329
 author: "sansan0"
 installCommand: "git clone https://github.com/sansan0/TrendRadar.git && cd TrendRadar && docker compose up -d"
 compatibleAgents: ["Claude", "Cursor", "Gemini", "OpenAI", "Windsurf"]
-featured: false
+featured: true
 icon: "Radar"
 ---
 
