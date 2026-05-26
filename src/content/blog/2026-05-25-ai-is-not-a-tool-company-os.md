@@ -24,7 +24,7 @@
 
 ## 1. 도입 — 왜 이 영상을 봐야 하는가 (00:00 – 00:40)
 
-![opening](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/01_opening_hook.jpg)
+![opening](/blog-assets/ai-is-not-a-tool-company-os/01_opening_hook.jpg)
 
 영상은 세 가지 도발적 질문으로 시작합니다.
 
@@ -38,7 +38,7 @@
 
 ## 2. Diana Hu의 인트로 — AI는 새로운 자본주의 (00:40 – 01:08)
 
-![diana](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/02_diana_intro.jpg)
+![diana](/blog-assets/ai-is-not-a-tool-company-os/02_diana_intro.jpg)
 
 > "AI is not just going to change how quickly software gets built or what workflows get automated. **It's going to fundamentally change the way startup should be run** — from what roles will exist to what products are possible to build."
 
@@ -53,7 +53,7 @@
 
 ## 3. 생산성 향상 vs. 새로운 능력 (01:08 – 01:54)
 
-![ai-as-os](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/03_ai_as_operating_system.jpg)
+![ai-as-os](/blog-assets/ai-is-not-a-tool-company-os/03_ai_as_operating_system.jpg)
 
 대부분의 사람들이 AI를 "생산성(productivity) 도구"로 이야기합니다. "엔지니어를 더 빠르게 해 준다", "기존 워크플로우에 Copilot을 붙이자"는 식이죠. 다이아나는 이 프레임이 **현재 일어나고 있는 시프트(shift)를 완전히 놓치고 있다**고 단언합니다.
 
@@ -72,7 +72,7 @@
 
 ## 4. Y Combinator와 Diana Hu 소개 (01:54 – 02:36)
 
-![yc-explainer](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/04_korean_yc_explainer.jpg)
+![yc-explainer](/blog-assets/ai-is-not-a-tool-company-os/04_korean_yc_explainer.jpg)
 
 한국어 해설자의 보충 설명입니다.
 
@@ -86,7 +86,7 @@
 
 ## 5. 핵심 개념 ① — 폐쇄 루프(Closed Loop) 회사 (02:36 – 03:36)
 
-![closed-loop](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/05_closed_loop_intro.jpg)
+![closed-loop](/blog-assets/ai-is-not-a-tool-company-os/05_closed_loop_intro.jpg)
 
 회사의 모든 중요한 프로세스는 **하나의 지능적 폐쇄 루프(intelligent closed loop)** 로 캡처되어야 합니다.
 
@@ -105,7 +105,7 @@
 
 ## 6. 폐쇄 루프 = 요리 비유 (03:36 – 04:48)
 
-![cooking](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/06_open_vs_closed_loop_cooking.jpg)
+![cooking](/blog-assets/ai-is-not-a-tool-company-os/06_open_vs_closed_loop_cooking.jpg)
 
 한국어 해설자의 핵심 비유입니다 — 이 비유 하나로 폐쇄 루프 개념이 완벽히 이해됩니다.
 
@@ -128,7 +128,7 @@
 
 ## 7. 핵심 개념 ② — 회사 전체를 "쿼리 가능"하게 (04:48 – 07:05)
 
-![queryable](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/07_queryable_company.jpg)
+![queryable](/blog-assets/ai-is-not-a-tool-company-os/07_queryable_company.jpg)
 
 폐쇄 루프를 만들려면 **회사 전체가 AI에게 읽힐 수 있어야(legible to AI) 합니다.** 모든 중요한 액션이 "회사 중심의 지능"이 학습하고 자가 개선에 사용할 수 있는 **아티팩트(artifact)** 를 생산해야 합니다.
 
@@ -165,7 +165,7 @@
 
 ## 8. 한국어 해설 — "데이터베이스가 아니라 AI에게 질문하는 회사" (07:05 – 08:34)
 
-![db-query](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/08_korean_database_query.jpg)
+![db-query](/blog-assets/ai-is-not-a-tool-company-os/08_korean_database_query.jpg)
 
 "쿼리(query)"라는 단어는 원래 "데이터베이스에 질문한다"는 뜻입니다. 다이아나가 말하는 AI 네이티브 운영체제가 작동한다면, **데이터베이스가 아니라 AI에게 질문함으로써** 서비스에 대한 모든 답이 나오는 상태가 되는 것이죠.
 
@@ -188,7 +188,7 @@
 
 ## 9. 핵심 개념 ③ — AI 소프트웨어 팩토리 (08:34 – 09:56)
 
-![software-factory](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/09_ai_software_factory.jpg)
+![software-factory](/blog-assets/ai-is-not-a-tool-company-os/09_ai_software_factory.jpg)
 
 **AI 소프트웨어 팩토리(AI Software Factory)** 는 TDD(Test-Driven Development, 테스트 주도 개발)의 다음 진화 단계입니다.
 
@@ -212,7 +212,7 @@
 
 ## 10. 한국어 해설 — "건축가와 로봇 인부" 비유 (09:56 – 11:36)
 
-![architecture](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/10_korean_architecture_analogy.jpg)
+![architecture](/blog-assets/ai-is-not-a-tool-company-os/10_korean_architecture_analogy.jpg)
 
 해설자의 비유로 더 쉽게:
 
@@ -236,7 +236,7 @@
 
 ## 11. 핵심 개념 ③ — 새로운 조직 구조: 중간 관리자가 사라진다 (11:36 – 12:36)
 
-![new-org](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/11_new_org_structure.jpg)
+![new-org](/blog-assets/ai-is-not-a-tool-company-os/11_new_org_structure.jpg)
 
 새로운 시대에는 **지능 레이어(intelligence layer)가 매니저의 역할을 대체**합니다. 회사가 쿼리 가능하고, 아티팩트가 풍부하고, AI에게 읽힐 수 있다면 — **인간 미들웨어(human middleware)는 거의 필요 없어야 합니다.**
 
@@ -252,7 +252,7 @@
 
 ## 12. 세 가지 직원 원형(Three Archetypes) (12:36 – 13:42)
 
-![three-archetypes](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/12_three_archetypes.jpg)
+![three-archetypes](/blog-assets/ai-is-not-a-tool-company-os/12_three_archetypes.jpg)
 
 잭 도시가 제시하는, 앞으로 모든 회사가 가질 **세 가지 직원 원형**:
 
@@ -281,7 +281,7 @@
 
 ## 13. 한국어 해설 — Jack Dorsey와 Block 사례 (13:42 – 15:28)
 
-![dorsey](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/13_jack_dorsey_block.jpg)
+![dorsey](/blog-assets/ai-is-not-a-tool-company-os/13_jack_dorsey_block.jpg)
 
 - **Jack Dorsey**: X(트위터)의 공동 창업자이자 결제회사 **Block(블록)** 의 CEO. 실리콘밸리에서 가장 영향력 있는 창업자 중 한 명.
 - **Block**: 미국의 카드 결제 서비스·송금 앱 등을 운영.
@@ -309,7 +309,7 @@
 
 ## 14. API 비용은 직원 비용보다 싸다 — 그리고 직접 사용해 보라 (15:28 – 16:14)
 
-![api-bills](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/14_api_bills_conviction.jpg)
+![api-bills](/blog-assets/ai-is-not-a-tool-company-os/14_api_bills_conviction.jpg)
 
 트레이드오프 사고법:
 
@@ -323,7 +323,7 @@
 
 ## 15. 스타트업의 역사적 우위 (16:14 – 17:13)
 
-![startup-advantage](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/15_startup_advantage.jpg)
+![startup-advantage](/blog-assets/ai-is-not-a-tool-company-os/15_startup_advantage.jpg)
 
 > "초기 스타트업이라면 이 분야에서 앞서 나가는 데 **엄청난 우위**가 있다. **레거시 시스템도, 이해관계도, 조직도도, 재교육해야 할 수천 명의 사람도 없다.** 첫날부터 회사를 제대로 만들 수 있을 만큼 작다."
 
@@ -339,7 +339,7 @@
 
 ## 16. 한국어 해설 — 스컹크웍스와 Mutiny (17:13 – 18:13)
 
-![skunkworks](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/16_korean_skunkworks.jpg)
+![skunkworks](/blog-assets/ai-is-not-a-tool-company-os/16_korean_skunkworks.jpg)
 
 - **스컹크웍스(Skunkworks)**: 회사 본부의 복잡한 절차와 보고 라인에서 떨어져 나와, **소수 정예 멤버가 자유롭게 새로운 것을 실험하는 작은 팀**. "별동대" 개념과 비슷.
 - **기존 회사가 AI 네이티브 운영체제를 도입하려면** → 핵심 비즈니스와 무관한 작은 AI 네이티브 팀(스컹크웍스)을 만들어, 그 팀이 완전히 새로운 방식으로 일하면서 실험.
@@ -349,7 +349,7 @@
 
 ## 17. 영상의 핵심 요약 — 가장 중요한 메시지 (18:13 – 19:15)
 
-![final-summary](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/17_final_summary.jpg)
+![final-summary](/blog-assets/ai-is-not-a-tool-company-os/17_final_summary.jpg)
 
 해설자의 최종 정리:
 
@@ -367,7 +367,7 @@
 
 ## 18. 결론 — 역사적 기회 (19:15 – 끝)
 
-![historic](https://raw.githubusercontent.com/jeongsk/my-wiki/main/youtube-notes/diana-hu-ai-native-company/screenshots/18_historic_opportunity.jpg)
+![historic](/blog-assets/ai-is-not-a-tool-company-os/18_historic_opportunity.jpg)
 
 영상에서 가장 힘이 되는 대목:
 
