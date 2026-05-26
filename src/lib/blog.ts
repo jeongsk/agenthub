@@ -1,5 +1,6 @@
 import { marked } from 'marked';
 import agentHarnessEngineeringSource from '../content/blog/2026-05-25-agent-harness-engineering-blog.md?raw';
+import aiNativeCompanySource from '../content/blog/2026-05-25-ai-is-not-a-tool-company-os.md?raw';
 
 export interface BlogSection {
   heading: string;
@@ -32,9 +33,21 @@ function renderWikiMarkdown(source: string) {
 }
 
 const agentHarnessEngineeringHtml = renderWikiMarkdown(agentHarnessEngineeringSource);
-
+const aiNativeCompanyHtml = renderWikiMarkdown(aiNativeCompanySource);
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'ai-is-not-a-tool-company-os',
+    title: 'AI는 도구가 아니라 운영체제다',
+    description:
+      'Diana Hu의 YC 발언을 바탕으로, AI를 직원이 쓰는 도구가 아니라 회사 전체가 그 위에서 돌아가는 운영체제로 보는 관점을 원문에 가깝게 옮긴 글입니다.',
+    date: '2026.05.25',
+    readTime: '20분',
+    category: 'Operations',
+    tags: ['ai-native', 'operating-system', 'organization', 'yc', 'closed-loop'],
+    html: aiNativeCompanyHtml,
+    sections: [],
+  },
   {
     slug: 'agent-harness-engineering-survey',
     title: "프롬프트 다음, 컨텍스트 다음은 '하네스'다",
