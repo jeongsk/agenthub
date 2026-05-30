@@ -157,8 +157,8 @@ export interface SkillData {
   icon: string;
 }
 
-export function isGitHubUrl(url: string): boolean {
-  return url.startsWith('https://github.com/');
+export function isGitHubUrl(url: string | undefined): boolean {
+  return url ? url.startsWith('https://github.com/') : false;
 }
 
 export function searchableText(item: SkillData): string {
