@@ -320,6 +320,17 @@ const catCfg = CATEGORIES[data.category];
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
   .markdown-body :global(pre code) { background: transparent; padding: 0; }
+  .markdown-body :global(img) {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: min(62vh, 560px);
+    height: auto;
+    object-fit: contain;
+    margin: 20px auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
   .sidebar-column { position: sticky; top: 110px; }
   .sticky-sidebar { display: flex; flex-direction: column; gap: 24px; }
   .sidebar-title { font-size: 1.1rem; }
