@@ -1,0 +1,166 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import { ArrowLeft } from '@lucide/astro';
+import { getAllTags, getToolsByTag, getRelatedTags } from '../../lib/tags';
+
+export async function getStaticPaths() {
+  const tags = await getAllTags();
+  return tags.map((t) => ({
+    params: { tag: t.slug },
+    props: { tag: t.tag, count: t.count },
+  }));
+}
+
+const { tag, count } = Astro.props;
+const slug = Astro.params.tag!;
+const tools = await getToolsByTag(slug);
+const related = await getRelatedTags(slug, 8);
+---
+
+<Layout
+  title={`#${tag} 도구 ${count}개 - AgentHub`}
+  description={`'${tag}' 태그가 달린 AI 에이전트 도구 ${count}개를 모았습니다. MCP 서버, 에이전트 스킬, CLI 유틸리티 등을 태그로 탐색하세요.`}
+>
+  <div class="container tag-detail-container">
+    <a href="/tags" class="back-link">
+      <ArrowLeft size={16} />
+      <span>전체 태그</span>
+    </a>
+
+    <section class="tag-hero">
+      <h1 class="tag-title"><span class="tag-hash">#</span>{tag}</h1>
+      <p class="tag-subtitle">이 태그가 달린 도구 {count}개</p>
+    </section>
+
+    {related.length > 0 && (
+      <section class="related-section">
+        <span class="related-label">관련 태그</span>
+        <div class="related-list">
+          {related.map((t) => (
+            <a href={`/tags/${t.slug}`} class="related-chip">#{t.tag}</a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="section-header">
+      <h2 class="section-title">도구 목록</h2>
+      <span class="results-count">{tools.length}개</span>
+    </div>
+
+    {tools.length > 0 ? (
+      <div class="directory-grid">
+        {tools.map((skill) => (
+          <Card
+            title={skill.data.title}
+            description={skill.data.description}
+            category={skill.data.category}
+            tags={skill.data.tags}
+            author={skill.data.author}
+            compatibleAgents={skill.data.compatibleAgents}
+            icon={skill.data.icon}
+            slug={skill.id}
+            stars={skill.data.githubStars}
+            featured={skill.data.featured}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="empty-state glass-card">
+        <h3>해당 태그의 도구가 없습니다</h3>
+        <p>다른 태그를 둘러보거나 전체 태그 목록으로 돌아가세요.</p>
+        <a href="/tags" class="back-link"><ArrowLeft size={16} /><span>전체 태그</span></a>
+      </div>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .tag-detail-container { padding-top: 40px; }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    margin-bottom: 24px;
+  }
+  .back-link:hover { color: white; }
+
+  .tag-hero { margin-bottom: 22px; }
+  .tag-title {
+    font-size: 2.6rem;
+    font-weight: 850;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+  }
+  .tag-hash { color: hsl(var(--cyan-point)); }
+  .tag-subtitle { color: hsl(var(--text-secondary)); font-size: 1.05rem; }
+
+  .related-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 34px;
+  }
+  .related-label {
+    font-size: 0.82rem;
+    color: hsl(var(--text-muted));
+    font-weight: 600;
+  }
+  .related-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .related-chip {
+    font-size: 0.8rem;
+    color: hsl(var(--text-secondary));
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 7px;
+    padding: 5px 9px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .related-chip:hover {
+    color: white;
+    border-color: rgba(6, 182, 212, 0.35);
+    background: rgba(6, 182, 212, 0.08);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+  .section-title { font-size: 1.5rem; }
+  .results-count { color: hsl(var(--text-muted)); font-size: 0.95rem; }
+
+  .directory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .empty-state {
+    padding: 54px 24px;
+    text-align: center;
+  }
+  .empty-state h3 { margin-bottom: 8px; }
+  .empty-state p { color: hsl(var(--text-secondary)); margin-bottom: 18px; }
+  .empty-state .back-link { margin-bottom: 0; }
+
+  @media (max-width: 992px) {
+    .directory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .tag-detail-container { padding-top: 28px; }
+    .tag-title { font-size: 2.1rem; }
+    .directory-grid { grid-template-columns: 1fr; }
+  }
+</style>

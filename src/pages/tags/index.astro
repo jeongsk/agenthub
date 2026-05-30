@@ -1,0 +1,202 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import * as Icons from '@lucide/astro';
+import { getAllTags, tagBucketSize, TAG_THRESHOLD } from '../../lib/tags';
+
+const tags = await getAllTags();
+const maxCount = tags[0]?.count ?? 1;
+
+// 1차 노출: 인기 태그(클라우드) — count desc 정렬 유지
+const popular = tags.filter((t) => t.count >= TAG_THRESHOLD);
+
+// 2차 노출: 전체 태그 A~Z 목록(롱테일 100% 딥링크)
+const alphabetical = [...tags].sort((a, b) => a.tag.localeCompare(b.tag));
+
+// 버킷(1~5) → rem 폰트 크기 매핑
+const BUCKET_REM = [0.85, 0.95, 1.1, 1.35, 1.65];
+---
+
+<Layout
+  title="태그 - AgentHub | AI 에이전트 도구를 태그로 탐색"
+  description="claude-code, mcp, cli, multi-agent 등 태그로 AI 에이전트 도구를 탐색하세요. 전체 태그 목록과 각 태그별 도구 모음을 제공합니다."
+>
+  <div class="container tags-container">
+    <section class="hero-section">
+      <div class="hero-badge">
+        <Icons.Tags size={14} class="rose-icon" />
+        <span>태그 탐색</span>
+      </div>
+      <h1 class="hero-title"><span class="text-gradient">태그</span>로 도구 찾기</h1>
+      <p class="hero-subtitle">
+        총 {tags.length}개의 태그로 AI 에이전트 도구를 탐색하세요. 관심 있는 태그를 눌러 관련 도구를 모아 보세요.
+      </p>
+    </section>
+
+    <section class="glass-panel cloud-panel">
+      <div class="section-header">
+        <h2 class="section-title">인기 태그</h2>
+        <span class="results-count">{popular.length}개</span>
+      </div>
+      <div class="tag-cloud">
+        {popular.map((t) => (
+          <a
+            href={`/tags/${t.slug}`}
+            class="cloud-link"
+            style={`font-size: ${BUCKET_REM[tagBucketSize(t.count, maxCount) - 1]}rem;`}
+          >
+            <span class="cloud-hash">#</span>{t.tag}
+            <span class="cloud-count">{t.count}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="all-tags-section">
+      <div class="section-header">
+        <h2 class="section-title">전체 태그</h2>
+        <span class="results-count">{tags.length}개</span>
+      </div>
+      <div class="tag-index-list">
+        {alphabetical.map((t) => (
+          <a href={`/tags/${t.slug}`} class="index-link">
+            <span class="index-name"><span class="index-hash">#</span>{t.tag}</span>
+            <span class="index-count">{t.count}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .tags-container { padding-top: 40px; }
+
+  .hero-section {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px solid rgba(244, 63, 94, 0.25);
+    color: rgb(251, 113, 133);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .rose-icon { color: hsl(var(--rose-point)); }
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 850;
+    line-height: 1.12;
+    margin-bottom: 18px;
+    text-wrap: balance;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: hsl(var(--text-secondary));
+    line-height: 1.6;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 18px;
+  }
+  .section-title { font-size: 1.4rem; }
+  .results-count { color: hsl(var(--text-muted)); font-size: 0.95rem; }
+
+  .cloud-panel { padding: 26px; margin-bottom: 40px; }
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+  }
+  .cloud-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1.1;
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .cloud-link:hover {
+    color: white;
+    transform: translateY(-1px);
+  }
+  .cloud-hash { color: hsl(var(--cyan-point)); opacity: 0.8; }
+  .cloud-count {
+    font-size: 0.62em;
+    color: hsl(var(--text-muted));
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+    padding: 1px 7px;
+    font-weight: 700;
+  }
+
+  .all-tags-section { margin-bottom: 20px; }
+  .tag-index-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .index-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    min-width: 0;
+  }
+  .index-link:hover {
+    color: white;
+    border-color: rgba(6, 182, 212, 0.35);
+    background: rgba(6, 182, 212, 0.08);
+  }
+  .index-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .index-hash { color: hsl(var(--cyan-point)); opacity: 0.7; }
+  .index-count {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    color: hsl(var(--text-muted));
+  }
+
+  @media (max-width: 992px) {
+    .tag-index-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .tags-container { padding-top: 28px; }
+    .hero-title { font-size: 2.1rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .cloud-panel { padding: 18px; }
+    .tag-index-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 390px) {
+    .hero-title { font-size: 1.95rem; }
+    .tag-index-list { grid-template-columns: 1fr; }
+  }
+</style>

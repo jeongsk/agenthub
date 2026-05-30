@@ -21,6 +21,7 @@ const isActive = (path: string) => {
     
     <nav class="nav-links">
       <a href="/" class:list={['nav-link', { active: isActive('/') }]} id="nav-home">둘러보기</a>
+      <a href="/tags" class:list={['nav-link', { active: isActive('/tags') }]} id="nav-tags">태그</a>
       <a href="/blog" class:list={['nav-link', { active: isActive('/blog') }]} id="nav-blog">블로그</a>
       <a href="/submit" class:list={['nav-link', { active: isActive('/submit') }]} id="nav-submit-guide">등록하기</a>
       <a href="https://github.com/jeongsk/agenthub" target="_blank" rel="noopener noreferrer" class="nav-icon-link" aria-label="GitHub Repository">
