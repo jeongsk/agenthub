@@ -3,6 +3,7 @@ import * as Icons from '@lucide/astro';
 import { ArrowUpRight, Star } from '@lucide/astro';
 import { formatStarCount } from '../lib/github';
 import { CATEGORIES, categoryLabel, categoryColor, categoryBg } from '../lib/registry';
+import { tagToSlug } from '../lib/tags';
 
 interface Props {
   title: string;
@@ -53,15 +54,16 @@ const pointBorder = cfg?.border ?? 'rgba(255, 255, 255, 0.06)';
       </h3>
       <p class="card-description">{description}</p>
     </div>
-    
-    <div class="card-tags">
-      {tags.slice(0, 3).map((tag) => (
-        <span class="tag-chip">#{tag}</span>
-      ))}
-      {tags.length > 3 && <span class="tag-chip muted">+{tags.length - 3}</span>}
-    </div>
-    
-    <div class="card-footer">
+  </a>
+
+  <div class="card-tags">
+    {tags.slice(0, 3).map((tag) => (
+      <a href={`/tags/${tagToSlug(tag)}`} class="tag-chip">#{tag}</a>
+    ))}
+    {tags.length > 3 && <span class="tag-chip muted">+{tags.length - 3}</span>}
+  </div>
+
+  <div class="card-footer">
       <div class="author-info">
         <img 
           src={`https://github.com/${author}.png?size=40`} 
@@ -78,24 +80,25 @@ const pointBorder = cfg?.border ?? 'rgba(255, 255, 255, 0.06)';
           <span class="agent-chip" title={`Compatible with ${agent}`}>{agent}</span>
         ))}
       </div>
-    </div>
-  </a>
+  </div>
 </article>
 
 <style>
   .tool-card {
     position: relative;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
   }
 
   .card-link {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1 1 auto;
     min-width: 0;
     text-decoration: none;
     color: inherit;
-    padding: 24px;
   }
 
   .card-header {
@@ -219,10 +222,12 @@ const pointBorder = cfg?.border ?? 'rgba(255, 255, 255, 0.06)';
     border-radius: 6px;
     transition: all 0.2s ease;
     overflow-wrap: anywhere;
+    text-decoration: none;
   }
-  .tag-chip:hover {
+  a.tag-chip:hover {
     color: white;
-    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(6, 182, 212, 0.35);
+    background: rgba(6, 182, 212, 0.08);
   }
   .tag-chip.muted {
     opacity: 0.6;
@@ -292,7 +297,7 @@ const pointBorder = cfg?.border ?? 'rgba(255, 255, 255, 0.06)';
   }
 
   @media (max-width: 640px) {
-    .card-link {
+    .tool-card {
       padding: 18px;
     }
 
