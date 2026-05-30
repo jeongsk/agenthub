@@ -33,7 +33,7 @@ def _to_seconds(h: str, m: str, s: str, ms: str) -> float:
 
 
 def _to_hms(seconds: float) -> str:
-    seconds = int(seconds)
+    seconds = int(round(seconds))
     h, rem = divmod(seconds, 3600)
     m, s = divmod(rem, 60)
     return f"{h:02d}:{m:02d}:{s:02d}"
