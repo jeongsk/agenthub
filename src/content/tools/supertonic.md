@@ -16,6 +16,8 @@ icon: "Speech"
 
 Supertonic는 초고속 온디바이스 다국어 TTS(Text-to-Speech) 엔진입니다. ONNX Runtime을 기반으로 iOS, Web, Android, Node.js, Python, Rust, Go, C++, C#, Flutter, Java, Swift 등 거의 모든 플랫폼에서 네이티브 수준의 음성 합성을 제공합니다.
 
+![Supertonic 3 온디바이스 TTS 엔진 소개 배너](/tool-screenshots/supertonic-hero.webp)
+
 ## 언제 쓰나
 
 - AI 에이전트에 음성 출력 기능을 추가하고 싶을 때

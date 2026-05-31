@@ -16,6 +16,8 @@ icon: "LayoutDashboard"
 
 Hermes Workspace는 Hermes Agent를 위한 웹 기반 작업 공간입니다. 채팅, 파일, 메모리, 스킬, 터미널, 대시보드를 한 화면에서 다룹니다.
 
+![Hermes Workspace 메인 대시보드 화면](/tool-screenshots/hermes-workspace-dashboard.webp)
+
 ## 언제 쓰나
 
 - Hermes Agent를 위한 통합 작업 공간이 필요할 때

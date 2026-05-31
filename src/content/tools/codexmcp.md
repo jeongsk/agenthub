@@ -16,6 +16,8 @@ icon: "Plug"
 
 CodexMCP는 Claude Code와 Codex를 MCP로 이어 주는 협업 브리지입니다. Claude Code가 전체 설계와 흐름을 잡고, Codex가 코드 생성·세부 수정·검토를 맡는 식으로 여러 에이전트를 함께 운영할 때 쓰기 좋습니다.
 
+![CodexMCP 설치 후 settings.json 허용 항목 설정 화면](/tool-screenshots/codexmcp-settings.webp)
+
 ## 언제 쓰나
 
 - Claude Code와 Codex를 하나의 협업 흐름으로 묶고 싶을 때

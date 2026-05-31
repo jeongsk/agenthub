@@ -16,6 +16,8 @@ icon: "CandlestickChart"
 
 OpenStock은 실시간 주가, 알림, 종목 인사이트, 차트를 한곳에서 보여주는 오픈소스 시장 플랫폼입니다. Next.js 기반 웹 앱으로, 비싼 구독형 금융 서비스 대신 무료로 종목을 탐색하고 감시하고 싶은 사용자에게 맞습니다.
 
+![OpenStock 대시보드: 시장 개요, 주가 히트맵, 종목 추적 화면](/tool-screenshots/openstock-dashboard.webp)
+
 ## 언제 쓰나
 
 - 특정 종목의 실시간 가격과 흐름을 빠르게 확인하고 싶을 때

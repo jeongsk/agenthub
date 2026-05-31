@@ -16,6 +16,8 @@ icon: "Layers3"
 
 Agent of Empires는 여러 AI 코딩 에이전트를 세션 단위로 관리하는 오케스트레이션 도구입니다. TUI와 웹 대시보드로 병렬 작업과 장기 세션을 다루기 쉽게 해 줍니다.
 
+![Agent of Empires TUI 대시보드 데모](/tool-screenshots/agent-of-empires-demo.webp)
+
 ## 언제 쓰나
 
 - 여러 에이전트를 서로 다른 브랜치에서 동시에 돌리고 싶을 때

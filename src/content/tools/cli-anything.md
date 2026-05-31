@@ -16,6 +16,8 @@ icon: "Terminal"
 
 CLI-Anything은 모든 CLI 소프트웨어를 AI 에이전트 네이티브로 만드는 프레임워크입니다. 기존 커맨드라인 도구에 에이전트 인터페이스(도구 설명, 파라미터 스키마, 사용 예시)를 자동 생성해, Claude Code, Codex, Cursor 등 AI 코딩 에이전트가 어떤 CLI 도구든 직접 호출하고 사용할 수 있게 해줍니다.
 
+![CLI-Anything — 모든 CLI 도구를 에이전트 네이티브로 변환하는 아키텍처 개요](/tool-screenshots/cli-anything-teaser.webp)
+
 ## 언제 쓰나
 
 - AI 에이전트가 터미널 명령어를 더 정확하고 안전하게 실행하게 하고 싶을 때

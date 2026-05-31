@@ -17,7 +17,7 @@ icon: "Server"
 
 oMLX는 Mac에 최적화된 LLM 추론 서버입니다. MLX 기반으로 Apple Silicon에서 모델을 구동하며, continuous batching과 Hot Cache(메모리)·Cold Cache(SSD) 2단계 KV 캐시로 추론 성능을 끌어올립니다. OpenAI 호환 API를 제공해 기존 클라이언트를 그대로 붙일 수 있고, 서버 관리는 macOS 메뉴바 앱에서 처리합니다.
 
-![oMLX 관리자 대시보드](/tool-screenshots/omlx-dashboard.png)
+![oMLX 관리자 대시보드](/tool-screenshots/omlx-dashboard.webp)
 
 ## 언제 쓰나
 
@@ -34,4 +34,4 @@ oMLX는 Mac에 최적화된 LLM 추론 서버입니다. MLX 기반으로 Apple S
 - MCP(Model Context Protocol) 지원 (선택 설치)
 - Homebrew 백그라운드 서비스로 실행 (크래시 시 자동 재시작)
 
-![oMLX의 Hot/Cold 2단계 KV 캐시 구조](/tool-screenshots/omlx-hot-cold-cache.png)
+![oMLX의 Hot/Cold 2단계 KV 캐시 구조](/tool-screenshots/omlx-hot-cold-cache.webp)

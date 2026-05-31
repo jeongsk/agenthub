@@ -16,6 +16,8 @@ icon: "Shuffle"
 
 FreeLLMAPI는 여러 무료 LLM 제공자의 free tier를 하나의 OpenAI 호환 엔드포인트로 묶는 프록시입니다. 자동 failover와 사용량 추적으로 안정적인 호출을 돕습니다.
 
+![FreeLLMAPI 플레이그라운드 화면](/tool-screenshots/freellmapi-playground.webp)
+
 ## 언제 쓰나
 
 - 하나의 `base_url`로 여러 무료 모델 공급자를 묶고 싶을 때

@@ -17,6 +17,8 @@ icon: "LineChart"
 
 Fincept Terminal은 시장 데이터와 투자 리서치를 한 화면에서 다루는 금융 터미널입니다. Qt 기반의 데스크톱 앱으로 포트폴리오, 뉴스, 경제 데이터, 리스크 지표, AI 보조 분석을 함께 보여줘서, 슈퍼바이즈드 트레이딩이나 리서치 워크플로의 운영 화면으로 쓰기 좋습니다.
 
+![Fincept Terminal 주식 리서치 화면](/tool-screenshots/finceptterminal-equity-research.webp)
+
 ## 언제 쓰나
 
 - 여러 시장 데이터와 지표를 한곳에서 모니터링하고 싶을 때

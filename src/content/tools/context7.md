@@ -6,7 +6,7 @@ tags: ["mcp", "documentation", "llm", "code-editor", "upstash"]
 githubUrl: "https://github.com/upstash/context7"
 githubStars: 56456
 author: "upstash"
-installCommand: "npx @upstash/context7"
+installCommand: "npx ctx7 setup"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "GitHub Copilot", "Gemini CLI"]
 featured: true
 icon: "BookOpen"

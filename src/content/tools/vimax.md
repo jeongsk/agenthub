@@ -16,6 +16,8 @@ icon: "Video"
 
 ViMax는 에이전틱 비디오 생성 프레임워크입니다. 하나의 시스템 안에 감독(Director), 각본가(Screenwriter), 프로듀서(Producer), 영상 생성기(Video Generator) 역할을 모두 갖춰, AI 에이전트가 엔드투엔드로 비디오를 기획하고 제작할 수 있게 해줍니다.
 
+![ViMax 에이전틱 비디오 생성 파이프라인 개요](/tool-screenshots/vimax-demo.webp)
+
 ## 언제 쓰나
 
 - AI 에이전트가 텍스트 설명만으로 비디오를 자동 제작하게 하고 싶을 때

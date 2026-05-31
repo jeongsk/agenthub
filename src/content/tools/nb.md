@@ -17,6 +17,8 @@ icon: "NotebookText"
 
 `nb`는 CLI와 로컬 웹을 함께 제공하는 노트, 북마크, 아카이브 관리 도구입니다. 평문 저장을 기본으로 하고, Git 기반 버전 관리와 동기화, 태그/필터/검색, 위키식 링크, Pandoc 변환, 암호화 노트까지 지원합니다.
 
+![nb 터미널 홈 화면 및 노트 관리 UI](/tool-screenshots/nb-home-terminal.webp)
+
 ## 언제 쓰나
 
 - 노트와 북마크를 한 도구로 같이 관리하고 싶을 때

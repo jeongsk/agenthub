@@ -16,6 +16,8 @@ icon: "Scissors"
 
 LosslessCut은 FFmpeg의 GUI 프론트엔드로, **인코딩 없이** 동영상/오디오 파일을 자르고 붙이는 데 특화된 크로스플랫폼 데스크톱 앱입니다. "무손실"이라는 이름처럼 데이터를 재인코딩하지 않아 원본 화질을 그대로 유지하면서도 수 기가바이트 단위의 파일을 순식간에 처리할 수 있습니다.
 
+![LosslessCut 동영상 편집 화면](/tool-screenshots/lossless-cut-main-screenshot.webp)
+
 ## 언제 쓰나
 
 - 카메라/드론/액션캠에서 찍은 긴 영상에서 필요한 부분만 잘라내고 싶을 때

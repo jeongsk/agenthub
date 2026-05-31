@@ -16,6 +16,8 @@ icon: "ClipboardList"
 
 PM Skills Marketplace는 제품 관리자를 위한 Claude Code/Cowork 스킬 모음입니다. 디스커버리, 가정 매핑, 우선순위 설정, 전략 수립 등 proven PM 프레임워크를 슬래시 커맨드로 바로 사용할 수 있습니다.
 
+![PM Skills 플러그인 개요: 제품 발견, 전략, 실행, 데이터 분석 등 PM 영역별 스킬 구성 화면](/tool-screenshots/pm-skills-plugins-overview.webp)
+
 ## 언제 쓰나
 
 - Claude Code나 Claude Cowork에서 제품 관리 워크플로를 체계적으로 실행하고 싶을 때

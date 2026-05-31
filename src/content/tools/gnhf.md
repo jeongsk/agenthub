@@ -16,6 +16,8 @@ icon: "MoonStar"
 
 gnhf는 에이전트를 장시간 자율 실행시키는 오케스트레이터입니다. 반복 실행마다 작은 변경을 만들고, 성공하면 커밋하며, 실패하면 안전하게 롤백합니다.
 
+![gnhf 터미널 실행 데모](/tool-screenshots/gnhf-terminal-demo.webp)
+
 ## 언제 쓰나
 
 - 밤새 맡겨둘 장시간 작업이 필요할 때

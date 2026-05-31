@@ -16,6 +16,8 @@ icon: "Bot"
 
 goose는 로컬에서 실행하는 오픈소스 AI 에이전트입니다. 데스크톱 앱, CLI, API를 함께 제공해 코드 작업, 워크플로 자동화, 연구 같은 작업을 한곳에서 다룰 수 있습니다.
 
+![goose 에이전트 동작 데모](/tool-screenshots/goose-in-action.webp)
+
 ## 언제 쓰나
 
 - 데스크톱 앱과 CLI를 함께 쓰는 로컬 에이전트 환경이 필요할 때

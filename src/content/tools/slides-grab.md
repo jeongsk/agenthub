@@ -17,6 +17,8 @@ icon: "Workflow"
 
 slides-grab는 AI가 만든 HTML 슬라이드를 더 잘 다루게 해 주는 하네스입니다. 슬라이드를 시각적으로 선택해 수정하고, 검증하고, PDF나 PPTX로 내보내는 흐름을 한 번에 묶어 줍니다.
 
+![slides-grab 에이전트와 협업하는 슬라이드 편집 데모](/tool-screenshots/slides-grab-demo.webp)
+
 ## 언제 쓰나
 
 - Claude Code나 Codex로 발표자료를 만들고 있을 때

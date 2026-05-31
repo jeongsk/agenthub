@@ -15,6 +15,8 @@ icon: "Workflow"
 
 Superset은 AI 코딩 에이전트를 병렬로 실행하고 관리하기 위한 데스크톱 앱입니다. 터미널에서 실행되는 어떤 CLI 에이전트든 지원하며, 각 작업을 독립된 git worktree에 격리해 충돌 없이 동시에 진행할 수 있습니다.
 
+![Superset AI 에이전트 오케스트레이션 데스크톱 앱 메인 화면](/tool-screenshots/superset-ui.webp)
+
 ## 언제 쓰나
 
 - 여러 코딩 에이전트(Claude Code, Codex, Gemini CLI 등)를 한 프로젝트에서 동시에 운영하고 싶을 때

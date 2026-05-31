@@ -16,6 +16,8 @@ icon: "Building2"
 
 Odoo는 비즈니스 운영을 위한 오픈소스 ERP 플랫폼입니다. ERP, CRM, 전자상거래, 회계, 재고 관리, 인사, 마케팅, 제조 등 7만 개 이상의 모듈을 갖춘 종합 비즈니스 관리 시스템입니다.
 
+![Odoo CRM 앱 화면](/tool-screenshots/odoo-erp-dashboard.webp)
+
 ## 언제 쓰나
 
 - 비즈니스 운영을 AI 에이전트와 연동하고 싶을 때

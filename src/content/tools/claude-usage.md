@@ -15,7 +15,7 @@ icon: "BarChart3"
 
 Claude Usage는 Claude Code가 로컬에 남기는 사용량 로그를 읽어 토큰, 비용, 세션, 프로젝트 정보를 한눈에 보여 주는 대시보드입니다. Claude Code를 자주 쓰는데 사용량과 비용 흐름을 따로 확인하고 싶을 때 유용합니다.
 
-![Claude Usage dashboard](/tool-screenshots/claude-usage-dashboard.png)
+![Claude Usage dashboard](/tool-screenshots/claude-usage-dashboard.webp)
 
 ## 언제 쓰나
 

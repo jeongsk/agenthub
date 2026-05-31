@@ -17,6 +17,8 @@ icon: "Monitor"
 
 MonitorControl은 macOS에서 외장 모니터의 밝기·볼륨을 기본 내장 디스플레이처럼 제어할 수 있게 해주는 오픈소스 데스크톱 앱입니다. Apple 키보드의 밝기/미디어 키를 그대로 쓸 수 있고, 메뉴바 슬라이더나 커스텀 단축키로도 조절할 수 있습니다.
 
+![MonitorControl 메인 UI 및 모니터 밝기 제어 화면](/tool-screenshots/monitorcontrol-main-ui.webp)
+
 ## 언제 쓰나
 
 - Apple 키보드의 밝기 키가 외장 모니터에 먹히지 않아서 답답할 때

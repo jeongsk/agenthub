@@ -15,6 +15,8 @@ icon: "Package"
 
 Pake는 어떤 웹페이지든 데스크톱 앱으로 단일 명령어로 변환해 주는 CLI 도구입니다. Electron 대신 Rust Tauri를 사용하기 때문에 결과물이 5MB 안팎으로 가볍고, 실행 속도도 훨씬 빠릅니다.
 
+![Pake 데모: 웹페이지를 데스크톱 앱으로 변환하는 과정](/tool-screenshots/pake-demo.webp)
+
 ## 언제 쓰나
 
 - 자주 쓰는 웹 서비스(ChatGPT, Grok, DeepSeek, Twitter 등)를 네이티브 앱처럼 쓰고 싶을 때

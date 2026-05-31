@@ -17,6 +17,8 @@ icon: "Radio"
 
 `music-cli`는 개발자를 위한 백그라운드 음악 데몬입니다. 터미널에서 라디오, 로컬 MP3, YouTube 오디오, AI 생성 음악을 하나의 명령어 흐름으로 제어할 수 있어, 작업 중 음악을 따로 신경 쓰지 않고 계속 켜 두기 좋습니다.
 
+![music-cli AI 음악 생성 및 터미널 제어 데모](/tool-screenshots/music-cli-ai-demo.webp)
+
 ## 언제 쓰나
 
 - 코드 작업 중 배경음악을 끊김 없이 틀어 두고 싶을 때

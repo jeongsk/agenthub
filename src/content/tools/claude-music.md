@@ -16,6 +16,8 @@ icon: "Music"
 
 Claude Music는 Claude Code 세션 안에서 바로 배경 음악을 틀어 주는 플러그인입니다. 코딩 중에 음악 앱으로 왔다 갔다 하지 않고, 세션 안에서 장르별 스테이션과 AI DJ를 함께 쓰는 흐름에 맞춰져 있습니다.
 
+![Claude Music 데모 — 터미널에서 음악 재생 및 AI DJ 작동 화면](/tool-screenshots/claude-music-demo.webp)
+
 ## 언제 쓰나
 
 - Claude Code 작업 중 배경 음악을 바로 켜고 싶을 때

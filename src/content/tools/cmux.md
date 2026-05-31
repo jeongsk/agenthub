@@ -16,6 +16,8 @@ icon: "Terminal"
 
 cmux는 AI 코딩 에이전트를 위한 macOS 터미널 오케스트레이터입니다. Ghostty 기반 터미널에 수직 탭, 알림, 내장 브라우저, SSH 작업공간을 얹어 여러 세션을 한 화면에서 관리할 수 있게 해 줍니다.
 
+![cmux — 여러 AI 에이전트 세션을 수직 탭으로 관리하는 macOS 터미널 화면](/tool-screenshots/cmux-main.webp)
+
 ## 언제 쓰나
 
 - Claude Code, Codex 같은 에이전트를 여러 개 동시에 돌릴 때

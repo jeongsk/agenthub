@@ -17,6 +17,8 @@ icon: "Download"
 
 AB Download Manager는 Kotlin과 Compose Multiplatform으로 제작된 오픈소스 데스크톱 다운로드 매니저입니다. 다운로드 속도 최적화, 큐 관리, 스케줄러, 브라우저 확장 연동까지 제공하며, Windows·Linux·macOS에서 동일한 UI로 사용할 수 있습니다.
 
+![AB Download Manager 앱 홈 화면 (다크 테마)](/tool-screenshots/ab-download-manager-ui.webp)
+
 ## 언제 쓰나
 
 - 브라우저 내장 다운로더보다 빠른 속도로 파일을 받고 싶을 때

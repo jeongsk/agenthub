@@ -17,6 +17,8 @@ icon: "Blocks"
 
 Automa는 브라우저 작업을 블록 기반 워크플로로 묶어 반복 작업을 줄이는 데 적합합니다.
 
+![Automa 블록 기반 워크플로 빌더 UI](/tool-screenshots/automa-workflow-builder.webp)
+
 ## 핵심 용도
 
 - 반복 클릭/입력 자동화
