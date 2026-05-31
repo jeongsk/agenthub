@@ -425,6 +425,4 @@
 | "**Maximizing token usage not headcount** will be the critical shift." | **헤드카운트가 아니라 토큰 사용량을 극대화하는 것**이 결정적 전환이 될 것이다. |
 | "You cannot **outsource your conviction** on the power of these tools." | 이 도구들의 힘에 대한 확신은 **아웃소싱할 수 없다.** |
 
----
-
-*노트 작성일: 2026-05-25 · 작성자 정석(Agentic Engineering 팀)을 위해 자동 생성*
+> 이 글은 Diana Hu(Y Combinator)의 발표 영상을 한국어로 요약·해설한 노트입니다. 인용문은 원문 발언이며, 그 외 해석·비유는 해설자의 보충입니다.

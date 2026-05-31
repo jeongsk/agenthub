@@ -1,6 +1,6 @@
 ---
 title: "프롬프트 다음, 컨텍스트 다음은 '하네스'다 — Agent Harness Engineering 서베이 정리"
-tags: [ai-agents, harness, etclovg, survey, blog]
+tags: [ai-agents, harness, etclovg, survey, observability, governance]
 created: 2026-05-25
 updated: 2026-05-25
 modified: 2026-05-25
@@ -13,7 +13,7 @@ embedding_ready: false
 
 > LLM 에이전트가 실제 프로덕션에서 신뢰성 있게 동작하는 이유는 **모델이 좋아져서가 아니라, 모델을 감싸는 "하네스(harness)"가 잘 짜여져 있어서**다.
 >
-> 2026년 5월 16일 공개된 [Agent Harness Engineering: A Survey](https://openreview.net/forum?id=eONq7FdiHa) (Li et al., 20인 공저)는 이 직관을 정면으로 다룬 첫 번째 본격 서베이다. 170개 이상의 오픈소스 프로젝트를 **ETCLOVG**라는 7계층 분류로 매핑하고, 하네스를 *모델 옆에 두는 보조 코드*가 아니라 *독립적인 시스템 계층*으로 정립한다.
+> 2026년 5월 16일 공개된 [Agent Harness Engineering: A Survey](https://openreview.net/forum?id=3hXEPbG0dh) (Li et al., 20인 공저)는 이 직관을 정면으로 다룬 첫 번째 본격 서베이다. 170개 이상의 오픈소스 프로젝트를 **ETCLOVG**라는 7계층 분류로 매핑하고, 하네스를 *모델 옆에 두는 보조 코드*가 아니라 *독립적인 시스템 계층*으로 정립한다.
 >
 > 이 글은 그 서베이를 우리 개발자의 시각에서 압축해 정리한다.
 
@@ -38,7 +38,7 @@ embedding_ready: false
 
 즉, "어떤 모델을 쓸까"보다 "**모델 주변에 어떤 시스템을 두를까**"가 더 큰 변수가 되었다는 것이다.
 
-이미 우리는 이걸 경험적으로 알고 있다. 2026년 4월 LangChain은 **모델은 `gpt-5.2-codex`로 고정해 두고 하네스만 바꿔서** [Terminal Bench 2.0](https://www.tbench.ai/) 점수를 52.8 → 66.5점 (+13.7점)으로 끌어올렸다 ([LangChain 블로그](https://www.langchain.com/blog/improving-deep-agents-with-harness-engineering)). 모델은 그대로인데 점수가 13점 오른다는 건, 거기에 *그만큼 큰 설계 공간*이 숨어 있다는 뜻이다.
+이미 우리는 이걸 경험적으로 알고 있다. 2026년 2월 LangChain은 **모델은 `gpt-5.2-codex`로 고정해 두고 하네스만 바꿔서** [Terminal Bench 2.0](https://www.tbench.ai/) 점수를 52.8 → 66.5점 (+13.7점)으로 끌어올렸다 ([LangChain 블로그](https://www.langchain.com/blog/improving-deep-agents-with-harness-engineering)). 모델은 그대로인데 점수가 13점 오른다는 건, 거기에 *그만큼 큰 설계 공간*이 숨어 있다는 뜻이다.
 
 서베이는 그 설계 공간을 처음으로 정면으로 지도화한다.
 
@@ -193,12 +193,11 @@ embedding_ready: false
 
 ## 7. 더 읽을거리
 
-- **논문 본문**: [OpenReview `eONq7FdiHa`](https://openreview.net/forum?id=eONq7FdiHa) · [PDF](https://openreview.net/pdf?id=eONq7FdiHa)
+- **논문 본문**: [OpenReview `3hXEPbG0dh`](https://openreview.net/forum?id=3hXEPbG0dh) · [PDF](https://openreview.net/pdf?id=3hXEPbG0dh)
 - **프로젝트 페이지**: [picrew.github.io/LLM-Harness](https://picrew.github.io/LLM-Harness/) (위 이미지들의 출처)
-- **오픈소스 카탈로그**: [Picrew/awesome-agent-harness](https://github.com/Picrew/awesome-agent-harness) (207 entries, PR로 갱신)
+- **오픈소스 카탈로그**: [Picrew/awesome-agent-harness](https://github.com/Picrew/awesome-agent-harness) (PR로 갱신되는 living 카탈로그)
 - **데이터셋**: [HuggingFace `ChenLiu1996/Agent-Harness-Engineering`](https://huggingface.co/datasets/ChenLiu1996/Agent-Harness-Engineering)
 - **하네스만 바꿔서 +13.7점**: [LangChain — Improving Deep Agents with Harness Engineering](https://www.langchain.com/blog/improving-deep-agents-with-harness-engineering)
-- **이 글의 원본 정리 노트**: [[2026-05-24-agent-harness-engineering-survey]]
 
 ### Citation
 
@@ -211,7 +210,7 @@ embedding_ready: false
           Xu, Xiang and Zhao, Tianchen and Kim, Youngeun and
           Wang, Tianyang and Hamm, Jihun and Krishnaswamy, Smita and
           Huan, Jun and Reddy, Chandan},
-  url={https://openreview.net/pdf?id=eONq7FdiHa},
+  url={https://openreview.net/pdf?id=3hXEPbG0dh},
   year={2026}
 }
 ```

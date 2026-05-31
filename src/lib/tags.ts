@@ -5,6 +5,7 @@
  * 정의하고, 페이지/컴포넌트는 항상 여기를 참조합니다. (registry.ts의 카테고리와 동일한 컨벤션)
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { blogPosts, type BlogPost } from './blog';
 
 type Skill = CollectionEntry<'skills'>;
 
@@ -68,22 +69,25 @@ function compareSkills(a: Skill, b: Skill): number {
   return a.data.title.localeCompare(b.data.title, 'ko-KR');
 }
 
-/** 전체 태그를 정규화 기준으로 집계. count desc → tag asc 정렬 */
+/** 한 항목의 태그 배열을 정규화해 카운트 맵에 1회씩 더한다(항목 내 ai-agent/ai-agents 중복 제거) */
+function tallyTags(counts: Map<string, number>, rawTags: string[]) {
+  const seen = new Set<string>();
+  for (const raw of rawTags) {
+    const canon = canonicalizeTag(raw);
+    if (!canon || seen.has(canon)) continue;
+    seen.add(canon);
+    counts.set(canon, (counts.get(canon) ?? 0) + 1);
+  }
+}
+
+/** 전체 태그를 정규화 기준으로 집계(도구 + 블로그 통합). count desc → tag asc 정렬 */
 export async function getAllTags(): Promise<TagInfo[]> {
   if (_tagsCache) return _tagsCache;
   const skills = await loadSkills();
   const counts = new Map<string, number>();
 
-  for (const skill of skills) {
-    // 한 도구가 ai-agent/ai-agents를 모두 달면 정규화 후 1회만 카운트
-    const seen = new Set<string>();
-    for (const raw of skill.data.tags) {
-      const canon = canonicalizeTag(raw);
-      if (!canon || seen.has(canon)) continue;
-      seen.add(canon);
-      counts.set(canon, (counts.get(canon) ?? 0) + 1);
-    }
-  }
+  for (const skill of skills) tallyTags(counts, skill.data.tags);
+  for (const post of blogPosts) tallyTags(counts, post.tags);
 
   _tagsCache = Array.from(counts.entries())
     .map(([tag, count]) => ({ tag, slug: slugify(tag), count }))
@@ -99,20 +103,27 @@ export async function getToolsByTag(slug: string): Promise<Skill[]> {
     .sort(compareSkills);
 }
 
+/** 특정 태그 slug를 가진 블로그 글 목록(blogPosts 배열 순서 = 최신순) */
+export function getBlogPostsByTag(slug: string): BlogPost[] {
+  return blogPosts.filter((post) => post.tags.some((raw) => tagToSlug(raw) === slug));
+}
+
 /** 주어진 태그와 같은 도구에 함께 등장한 관련 태그(동시 출현 빈도 상위) */
 export async function getRelatedTags(slug: string, limit = 8): Promise<TagInfo[]> {
   const skills = await loadSkills();
   const counts = new Map<string, number>();
 
-  for (const skill of skills) {
-    const canonTags = new Set(skill.data.tags.map(canonicalizeTag));
-    const hasTag = Array.from(canonTags).some((t) => slugify(t) === slug);
-    if (!hasTag) continue;
+  const scan = (rawTags: string[]) => {
+    const canonTags = new Set(rawTags.map(canonicalizeTag));
+    if (!Array.from(canonTags).some((t) => slugify(t) === slug)) return;
     for (const t of canonTags) {
       if (slugify(t) === slug) continue;
       counts.set(t, (counts.get(t) ?? 0) + 1);
     }
-  }
+  };
+
+  for (const skill of skills) scan(skill.data.tags);
+  for (const post of blogPosts) scan(post.tags);
 
   return Array.from(counts.entries())
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))

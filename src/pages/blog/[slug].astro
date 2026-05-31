@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { ArrowLeft, CalendarDays, Clock3, Newspaper } from '@lucide/astro';
 import { blogPosts, type BlogPost } from '../../lib/blog';
+import { tagToSlug } from '../../lib/tags';
 
 interface Props {
   post: BlogPost;
@@ -44,7 +45,7 @@ const { post } = Astro.props;
         </div>
         <div class="tag-list" aria-label={`${post.title} 태그`}>
           {post.tags.map((tag) => (
-            <span class="tag-pill">#{tag}</span>
+            <a class="tag-pill" href={`/tags/${tagToSlug(tag)}`}>#{tag}</a>
           ))}
         </div>
       </header>
@@ -166,6 +167,17 @@ const { post } = Astro.props;
     border-radius: 9999px;
     padding: 5px 10px;
     font-size: 0.8rem;
+  }
+
+  a.tag-pill {
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  a.tag-pill:hover {
+    color: white;
+    border-color: rgba(6, 182, 212, 0.35);
+    background: rgba(6, 182, 212, 0.1);
   }
 
   .article-body {
