@@ -73,7 +73,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'agent-harness-engineering-survey',
     title: "프롬프트 다음, 컨텍스트 다음은 '하네스'다",
     description:
-      '원문 노트를 가능한 한 그대로 옮겨 담은 하네스 엔지니어링 정리글입니다. 이미지, 표, 인용을 포함해 서베이 노트를 블로그 형식으로 보존합니다.',
+      "모델이 좋아질수록 성능의 병목은 모델 바깥의 '하네스'로 옮겨갑니다. 같은 모델로 하네스만 바꿔 벤치마크를 13점 올린 사례에서 출발해, Agent Harness Engineering 서베이의 ETCLOVG 7계층 분류와 실전 점검 포인트를 정리했습니다.",
     date: '2026.05.25',
     readTime: '10분',
     category: 'Operations',
