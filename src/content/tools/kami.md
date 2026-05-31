@@ -5,7 +5,7 @@ category: "agent-skill"
 tags: ["design-system", "document-generation", "pdf", "slides", "claude-code", "codex", "templates", "typography"]
 githubUrl: "https://github.com/tw93/Kami"
 websiteUrl: "https://kami.tw93.fun"
-githubStars: 5777
+githubStars: 6615
 author: "tw93"
 installCommand: "npx skills add tw93/kami -a claude-code -g -y"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode"]

@@ -4,7 +4,7 @@ description: "여러 무료 LLM 제공자의 free tier를 하나의 OpenAI 호�
 category: "agent-component"
 tags: ["openai-compatible", "proxy", "model-routing", "failover", "llm", "free-tier"]
 githubUrl: "https://github.com/tashfeenahmed/freellmapi"
-githubStars: 4525
+githubStars: 6631
 author: "tashfeenahmed"
 installCommand: "npm install -g freellmapi"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode"]
@@ -32,5 +32,5 @@ FreeLLMAPI는 여러 무료 LLM 제공자의 free tier를 하나의 OpenAI 호�
 
 ## 참고
 
-- 이 저장소는 단일 기능 도구보다 **에이전트 모델 공급망을 관리하는 하네스**에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 자연스럽습니다.
+- 이 저장소는 독립 실행 도구라기보다 **여러 LLM 공급자를 묶는 모델 프록시/라우팅 컴포넌트**입니다.
+- 그래서 이 레지스트리에서는 `agent-component`로 분류합니다.

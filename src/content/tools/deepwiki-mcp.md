@@ -3,9 +3,7 @@ title: "DeepWiki MCP"
 description: "Devin이 제공하는 무료 MCP 서버입니다. GitHub 저장소의 문서를 조회하고, AI 기반으로 저장소에 대한 질문에 답변합니다. 인증 없이 원격으로 사용할 수 있습니다."
 category: "mcp-server"
 tags: ["mcp", "codebase-documentation", "github", "code-search", "devin", "knowledge-base"]
-githubUrl: "https://github.com/cognition-labs/devin-docs"
 websiteUrl: "https://docs.devin.ai/work-with-devin/deepwiki-mcp"
-githubStars: 0
 author: "cognition-labs"
 compatibleAgents: ["Claude", "Gemini", "OpenAI", "Windsurf", "Cursor"]
 featured: true

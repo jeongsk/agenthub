@@ -5,7 +5,7 @@ category: "mcp-server"
 tags: ["mcp", "codex", "claude-code", "multi-agent", "collaboration", "agent-tools"]
 githubUrl: "https://github.com/GuDaStudio/codexmcp"
 websiteUrl: "https://code.guda.studio"
-githubStars: 1964
+githubStars: 1967
 author: "GuDaStudio"
 installCommand: "claude mcp add codex -s user --transport stdio -- uvx --from git+https://github.com/GuDaStudio/codexmcp.git codexmcp"
 compatibleAgents: ["Claude Code", "Codex"]

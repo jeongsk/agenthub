@@ -4,7 +4,7 @@ description: "X/Twitter 데이터를 로컬 SQLite에 모으고, 아카이브 im
 category: "desktop-utility"
 tags: ["twitter", "x", "sqlite", "local-first", "archive", "dm", "bookmarks", "cli"]
 githubUrl: "https://github.com/steipete/birdclaw"
-githubStars: 665
+githubStars: 795
 websiteUrl: "https://birdclaw.sh"
 author: "steipete"
 installCommand: "brew install steipete/tap/birdclaw"

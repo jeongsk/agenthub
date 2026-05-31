@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["codex", "desktop-app", "tauri", "multi-agent", "workspaces", "monitoring", "macos", "linux", "windows"]
 githubUrl: "https://github.com/Dimillian/CodexMonitor"
 websiteUrl: "https://www.codexmonitor.app"
-githubStars: 3955
+githubStars: 3974
 author: "Dimillian"
 installCommand: "git clone https://github.com/Dimillian/CodexMonitor.git && cd CodexMonitor && npm install"
 compatibleAgents: ["Codex"]

@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["video-editing", "ffmpeg", "lossless", "video", "audio", "cross-platform", "electron", "trimming"]
 githubUrl: "https://github.com/mifi/lossless-cut"
 websiteUrl: "https://losslesscut.app"
-githubStars: 40743
+githubStars: 40806
 author: "mifi"
 compatibleAgents: []
 featured: false

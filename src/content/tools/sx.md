@@ -4,7 +4,7 @@ description: "AI 코딩 도우미용 스킬, MCP 설정, 명령어를 팀 단위
 category: "agent-component"
 tags: ["skills", "mcp", "commands", "distribution", "vault", "cli"]
 githubUrl: "https://github.com/sleuth-io/sx"
-githubStars: 208
+githubStars: 230
 author: "sleuth-io"
 installCommand: "brew install sx"
 compatibleAgents: ["Claude Code", "Cursor", "GitHub Copilot", "Gemini", "OpenCode"]
@@ -32,5 +32,5 @@ sx는 AI 코딩 도우미용 자산을 패키징하고 배포하는 도구입니
 
 ## 참고
 
-- 이 저장소는 단순한 스킬 모음집보다 **AI 자산 배포/동기화 하네스**에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 자연스럽습니다.
+- 이 저장소는 단순한 스킬 모음집이라기보다 **AI 자산을 패키징·배포하는 컴포넌트**입니다.
+- 그래서 이 레지스트리에서는 `agent-component`로 분류합니다.

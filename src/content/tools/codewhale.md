@@ -4,7 +4,7 @@ description: "터미널에서 실행되는 DeepSeek 모델 전용 코딩 에이�
 category: "agent-framework"
 tags: ["coding-agent", "deepseek", "cli", "tui", "rust", "terminal"]
 githubUrl: "https://github.com/Hmbown/CodeWhale"
-githubStars: 33960
+githubStars: 36175
 author: "Hmbown"
 installCommand: "curl -fsSL https://raw.githubusercontent.com/Hmbown/CodeWhale/main/install.sh | bash"
 compatibleAgents: ["DeepSeek"]

@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["embedded", "microcontrollers", "arduino", "esp32", "firmware", "serial-monitor", "desktop-app", "electron", "svelte", "opencode"]
 githubUrl: "https://github.com/Razz19/Exort"
 websiteUrl: "https://exort.dev"
-githubStars: 118
+githubStars: 210
 author: "Razz19"
 installCommand: "git clone https://github.com/Razz19/Exort.git && cd Exort && npm install"
 compatibleAgents: ["OpenCode"]

@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["terminal", "macos", "ai-coding", "rust", "wezterm", "lazygit", "yazi", "shell"]
 githubUrl: "https://github.com/tw93/Kaku"
 websiteUrl: "https://kaku.fun"
-githubStars: 5191
+githubStars: 5229
 author: "tw93"
 installCommand: "brew install tw93/tap/kakuku"
 compatibleAgents: ["Claude Code", "Codex", "Gemini CLI", "Copilot CLI"]

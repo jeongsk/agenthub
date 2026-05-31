@@ -5,7 +5,7 @@ category: "cli-utility"
 tags: ["music", "audio-player", "terminal", "cli", "unix", "ncurses"]
 githubUrl: "https://github.com/cmus/cmus"
 websiteUrl: "https://cmus.github.io/"
-githubStars: 6143
+githubStars: 6145
 author: "cmus"
 installCommand: "git clone https://github.com/cmus/cmus.git && cd cmus && ./configure && make && sudo make install"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]

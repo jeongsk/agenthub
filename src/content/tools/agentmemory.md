@@ -4,7 +4,7 @@ description: "AI 코딩 에이전트를 위한 영속적 메모리 시스템입�
 category: "agent-component"
 tags: ["memory", "agent-memory", "persistent-memory", "claude-code", "codex", "cursor", "copilot", "hermes", "openclaw"]
 githubUrl: "https://github.com/rohitg00/agentmemory"
-githubStars: 16930
+githubStars: 20055
 author: "rohitg00"
 installCommand: "npm install agentmemory"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "GitHub Copilot", "Hermes Agent", "OpenClaw"]

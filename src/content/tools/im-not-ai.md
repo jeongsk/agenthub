@@ -4,7 +4,7 @@ description: "Claude Code에서 한국어 AI 문체를 자연스럽게 다듬는
 category: "agent-skill"
 tags: ["claude-code", "humanizer", "korean", "writing", "rewriting", "style", "ai-text", "skills-pack"]
 githubUrl: "https://github.com/epoko77-ai/im-not-ai"
-githubStars: 1426
+githubStars: 1680
 author: "epoko77-ai"
 installCommand: "git clone https://github.com/epoko77-ai/im-not-ai.git"
 compatibleAgents: ["Claude Code"]

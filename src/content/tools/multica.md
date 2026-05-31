@@ -4,7 +4,7 @@ description: "오픈소스 관리형 에이전트 플랫폼입니다. 코딩 에
 category: "agent-framework"
 tags: ["ai-agents", "agent-harness", "managed-agents", "orchestration", "multi-agent", "coding-agents"]
 githubUrl: "https://github.com/multica-ai/multica"
-githubStars: 32033
+githubStars: 34333
 author: "multica-ai"
 installCommand: "npx multica init"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "GitHub Copilot"]

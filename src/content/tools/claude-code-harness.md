@@ -4,7 +4,7 @@ description: "Claude Code에 계획·작업·리뷰·출시의 검증 루프를 
 category: "agent-harness"
 tags: ["claude-code", "workflow", "plan-review", "autonomy", "shell"]
 githubUrl: "https://github.com/Chachamaru127/claude-code-harness"
-githubStars: 1398
+githubStars: 2322
 author: "Chachamaru127"
 installCommand: "claude /plugin marketplace add Chachamaru127/claude-code-harness && /plugin install claude-code-harness@claude-code-harness-marketplace && /harness-setup"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode"]

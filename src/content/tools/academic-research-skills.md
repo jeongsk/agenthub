@@ -4,7 +4,7 @@ description: "Claude Code에서 논문 조사, 초안 작성, 인용 검증, 논
 category: "agent-skill"
 tags: ["academic", "research", "writing", "citations", "review"]
 githubUrl: "https://github.com/Imbad0202/academic-research-skills"
-githubStars: 19720
+githubStars: 24843
 author: "Imbad0202"
 installCommand: "/plugin marketplace add Imbad0202/academic-research-skills && /plugin install academic-research-skills"
 compatibleAgents: ["Claude Code"]

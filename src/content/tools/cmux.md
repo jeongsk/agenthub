@@ -1,10 +1,10 @@
 ---
 title: "cmux"
 description: "AI 코딩 에이전트를 위한 Ghostty 기반 macOS 터미널입니다. 수직 탭, 알림, 내장 브라우저, 원격 SSH 작업공간으로 여러 세션을 동시에 다룰 때 유용합니다."
-category: "desktop-utility"
+category: "agent-harness"
 tags: ["terminal", "macos", "ghostty", "notifications", "tmux", "orchestration"]
 githubUrl: "https://github.com/manaflow-ai/cmux"
-githubStars: 18468
+githubStars: 20525
 author: "manaflow-ai"
 installCommand: "brew install --cask cmux"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini", "Copilot"]

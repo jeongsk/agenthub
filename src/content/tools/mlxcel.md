@@ -1,10 +1,10 @@
 ---
 title: "MLXcel"
 description: "MLX 기반 실험적 추론 엔진입니다. Apple Silicon(MLX) 위에서 경량화된 모델 추론을 수행합니다."
-category: "plugin"
+category: "cli-utility"
 tags: ["mlx", "inference", "apple-silicon", "llm", "rust"]
 githubUrl: "https://github.com/lablup/mlxcel"
-githubStars: 58
+githubStars: 76
 author: "lablup"
 compatibleAgents: ["Claude Code", "Codex", "Cursor"]
 featured: false

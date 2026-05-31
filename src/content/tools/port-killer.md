@@ -4,7 +4,7 @@ description: "개발 중 포트 충돌을 빠르게 찾고 정리하는 크로�
 category: "desktop-utility"
 tags: ["ports", "process-manager", "kubernetes", "cloudflare-tunnel", "desktop-app", "developer-tools"]
 githubUrl: "https://github.com/productdevbook/port-killer"
-githubStars: 4827
+githubStars: 4840
 author: "productdevbook"
 installCommand: "brew install --cask productdevbook/tap/portkiller"
 compatibleAgents: ["Claude", "Cursor", "Gemini", "Codex"]

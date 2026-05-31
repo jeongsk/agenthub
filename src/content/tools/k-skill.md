@@ -4,7 +4,7 @@ description: "한국 사용자를 위한 AI 에이전트 스킬 모음집입니�
 category: "agent-skill"
 tags: ["korean", "skills-pack", "korea", "hermes-agent", "coding-agent", "productivity"]
 githubUrl: "https://github.com/NomaDamas/k-skill"
-githubStars: 5168
+githubStars: 5299
 author: "NomaDamas"
 installCommand: "hermes skill install k-skill"
 compatibleAgents: ["Hermes Agent", "Claude Code", "Codex", "Cursor"]

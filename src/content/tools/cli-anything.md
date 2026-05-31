@@ -4,7 +4,7 @@ description: "모든 CLI 소프트웨어를 AI 에이전트 네이티브로 만�
 category: "cli-utility"
 tags: ["cli", "agent-native", "developer-tools", "automation", "agent-framework"]
 githubUrl: "https://github.com/HKUDS/CLI-Anything"
-githubStars: 39856
+githubStars: 41450
 author: "HKUDS"
 installCommand: "pip install cli-anything"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "Gemini CLI"]
