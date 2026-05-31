@@ -1,7 +1,7 @@
 ---
 title: "TrendRadar"
 description: "뉴스·트렌드·여론을 RSS와 여러 채널에서 모아 키워드별로 추적하고, AI 요약/번역과 다채널 푸시를 붙여 쓰는 자가 호스팅 모니터링 컴포넌트입니다."
-category: "self-hosted-app"
+category: "mcp-server"
 tags: ["news", "rss", "trend-monitoring", "alerts", "mcp", "ai-summarization", "notifications"]
 githubUrl: "https://github.com/sansan0/TrendRadar"
 websiteUrl: "https://sansan0.github.io/TrendRadar/"

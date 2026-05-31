@@ -13,7 +13,6 @@ const categories = new Set([
   'desktop-utility',
   'plugin',
   'browser-extension',
-  'self-hosted-app',
 ]);
 // Zod 스키마 기준 필수 문자열 필드(githubUrl·icon은 optional/기본값이라 제외)
 const requiredStrings = ['title', 'description', 'category', 'author'];
