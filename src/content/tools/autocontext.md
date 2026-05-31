@@ -4,7 +4,7 @@ description: "에이전트가 여러 번의 실행과 평가를 거치며 스스
 category: "agent-harness"
 tags: ["harness", "self-improvement", "evaluation", "mcp", "agent-workflow"]
 githubUrl: "https://github.com/greyhaven-ai/autocontext"
-githubStars: 1112
+githubStars: 1167
 author: "greyhaven-ai"
 installCommand: "uv tool install autocontext==0.5.0"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]

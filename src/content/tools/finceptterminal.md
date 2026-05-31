@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["finance", "terminal", "market-data", "investment-research", "portfolio", "qt", "cpp", "python"]
 githubUrl: "https://github.com/Fincept-Corporation/FinceptTerminal"
 websiteUrl: "https://fincept.in"
-githubStars: 24128
+githubStars: 24761
 author: "Fincept-Corporation"
 installCommand: "git clone https://github.com/Fincept-Corporation/FinceptTerminal.git && cd FinceptTerminal && chmod +x setup.sh && ./setup.sh"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]

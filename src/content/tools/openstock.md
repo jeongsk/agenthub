@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["stock-market", "finance", "market-data", "watchlist", "alerts", "tradingview", "nextjs", "web-app"]
 githubUrl: "https://github.com/Open-Dev-Society/OpenStock"
 websiteUrl: "https://openstock-ods.vercel.app"
-githubStars: 12683
+githubStars: 12812
 author: "Open-Dev-Society"
 compatibleAgents: []
 featured: false

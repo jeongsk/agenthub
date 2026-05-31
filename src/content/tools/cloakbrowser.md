@@ -4,7 +4,7 @@ description: "브라우저 지문을 조정한 스텔스 Chromium으로, Playwri
 category: "agent-component"
 tags: ["browser-automation", "chromium", "playwright", "puppeteer", "stealth"]
 githubUrl: "https://github.com/CloakHQ/CloakBrowser"
-githubStars: 19568
+githubStars: 22748
 author: "CloakHQ"
 installCommand: "pip install cloakbrowser"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]
@@ -32,5 +32,5 @@ CloakBrowser는 일반적인 브라우저 자동화보다 더 강한 탐지 회�
 
 ## 참고
 
-- 이 저장소는 단순한 브라우저 스크립트 라이브러리라기보다, *에이전트용 브라우저 실행 하네스*에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 더 자연스럽습니다.
+- 이 저장소는 단순한 브라우저 스크립트 라이브러리라기보다, *에이전트가 웹 자동화에 쓰는 스텔스 브라우저 런타임*에 가깝습니다.
+- 그래서 이 레지스트리에서는 `agent-component`로 분류합니다.

@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["hwp", "hwpx", "korean", "document-editor", "cross-platform", "electron", "open-source", "desktop-app"]
 githubUrl: "https://github.com/golbin/hop"
 websiteUrl: "https://golbin.github.io/hop/"
-githubStars: 1408
+githubStars: 1420
 author: "golbin"
 installCommand: "brew install hop"
 compatibleAgents: []

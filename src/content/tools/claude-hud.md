@@ -4,7 +4,7 @@ description: "Claude Code의 상태를 실시간으로 보여주는 플러그인
 category: "plugin"
 tags: ["claude-code", "plugin", "hud", "statusline", "cli", "productivity"]
 githubUrl: "https://github.com/jarrodwatts/claude-hud"
-githubStars: 23531
+githubStars: 24153
 author: "jarrodwatts"
 installCommand: "claude plugins add https://github.com/jarrodwatts/claude-hud"
 compatibleAgents: ["Claude Code"]

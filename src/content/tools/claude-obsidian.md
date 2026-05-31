@@ -4,7 +4,7 @@ description: "Claude Code와 Obsidian을 연결하는 지식 동반자입니다.
 category: "agent-skill"
 tags: ["obsidian", "knowledge-management", "wiki", "claude-code", "second-brain", "rag", "knowledge-graph", "multi-agent"]
 githubUrl: "https://github.com/AgriciDaniel/claude-obsidian"
-githubStars: 5412
+githubStars: 5808
 author: "AgriciDaniel"
 installCommand: "claude plugins add https://github.com/AgriciDaniel/claude-obsidian"
 compatibleAgents: ["Claude Code"]

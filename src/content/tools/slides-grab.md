@@ -5,7 +5,7 @@ category: "agent-harness"
 tags: ["slides", "presentations", "claude-code", "codex", "html", "css", "editor", "lint", "pdf", "pptx"]
 githubUrl: "https://github.com/NomaDamas/slides-grab"
 websiteUrl: "https://nomadamas.github.io/slides-grab/"
-githubStars: 748
+githubStars: 750
 author: "NomaDamas"
 installCommand: "git clone https://github.com/NomaDamas/slides-grab.git && cd slides-grab && npm ci && npx playwright install chromium"
 compatibleAgents: ["Claude Code", "Codex"]

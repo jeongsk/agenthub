@@ -4,7 +4,7 @@ description: "로컬 작업 폴더의 파일을 안전하게 읽고 쓰는 공�
 category: "mcp-server"
 tags: ["filesystem", "local-files", "mcp", "productivity", "official"]
 githubUrl: "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
-githubStars: 86140
+githubStars: 86509
 author: "modelcontextprotocol"
 installCommand: "npx -y @modelcontextprotocol/server-filesystem /path/to/allowed/root"
 compatibleAgents: ["Claude", "Cursor", "Continue", "Cline"]

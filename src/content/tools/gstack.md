@@ -4,7 +4,7 @@ description: "Y Combinator CEO Garry Tan이 실제로 사용하는 Claude Code �
 category: "agent-harness"
 tags: ["claude-code", "ai-agents", "productivity", "opinionated-tools", "garrytan", "startup-tools", "yc"]
 githubUrl: "https://github.com/garrytan/gstack"
-githubStars: 101315
+githubStars: 104945
 author: "garrytan"
 installCommand: "git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup"
 compatibleAgents: ["Claude Code"]

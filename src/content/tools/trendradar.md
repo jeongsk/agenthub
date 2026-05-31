@@ -5,7 +5,7 @@ category: "agent-component"
 tags: ["news", "rss", "trend-monitoring", "alerts", "mcp", "ai-summarization", "notifications"]
 githubUrl: "https://github.com/sansan0/TrendRadar"
 websiteUrl: "https://sansan0.github.io/TrendRadar/"
-githubStars: 58329
+githubStars: 58619
 author: "sansan0"
 installCommand: "git clone https://github.com/sansan0/TrendRadar.git && cd TrendRadar && docker compose up -d"
 compatibleAgents: ["Claude", "Cursor", "Gemini", "OpenAI", "Windsurf"]

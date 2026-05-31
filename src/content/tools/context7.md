@@ -4,7 +4,7 @@ description: "AI 코드 에디터와 LLM을 위해 항상 최신 상태의 코�
 category: "mcp-server"
 tags: ["mcp", "mcp-server", "documentation", "llm", "code-editor", "upstash"]
 githubUrl: "https://github.com/upstash/context7"
-githubStars: 55964
+githubStars: 56456
 author: "upstash"
 installCommand: "npx @upstash/context7"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "GitHub Copilot", "Gemini CLI"]

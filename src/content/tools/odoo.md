@@ -4,7 +4,7 @@ description: "비즈니스 성장을 위한 오픈소스 앱 모음입니다. ER
 category: "plugin"
 tags: ["erp", "crm", "business", "python", "management", "apps", "odoo"]
 githubUrl: "https://github.com/odoo/odoo"
-githubStars: 51535
+githubStars: 51756
 author: "odoo"
 installCommand: "pip install odoo"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]

@@ -1,11 +1,11 @@
 ---
 title: "Agent of Empires"
 description: "여러 AI 코딩 에이전트를 TUI와 웹 대시보드에서 관리하는 세션 매니저입니다. tmux, git worktree, Docker 샌드박스로 병렬 에이전트 운영을 정리할 때 유용합니다."
-category: "agent-framework"
+category: "agent-harness"
 tags: ["orchestrator", "tui", "web-dashboard", "tmux", "worktree", "multi-agent"]
 githubUrl: "https://github.com/njbrake/agent-of-empires"
-githubStars: 2387
-author: "njbrake"
+githubStars: 2471
+author: "agent-of-empires"
 installCommand: "brew install aoe"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini", "Copilot"]
 featured: true

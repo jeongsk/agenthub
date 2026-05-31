@@ -4,7 +4,7 @@ description: "코드를 대화형 지식 그래프로 변환해 탐색, 검색, 
 category: "agent-skill"
 tags: ["knowledge-graph", "codebase-analysis", "agent-skills", "claude-code", "codex", "developer-tools", "memory"]
 githubUrl: "https://github.com/Lum1104/Understand-Anything"
-githubStars: 22229
+githubStars: 46583
 author: "Lum1104"
 installCommand: "git clone https://github.com/Lum1104/Understand-Anything.git && cd Understand-Anything && npm install"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "GitHub Copilot", "Gemini CLI"]

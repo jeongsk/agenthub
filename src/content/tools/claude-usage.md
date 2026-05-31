@@ -4,7 +4,7 @@ description: "Claude Code의 로컬 사용량 로그를 읽어 토큰, 비용, �
 category: "desktop-utility"
 tags: ["claude-code", "token-usage", "cost-tracking", "usage-dashboard", "session-history", "sqlite", "python", "vscode-extension"]
 githubUrl: "https://github.com/phuryn/claude-usage"
-githubStars: 1636
+githubStars: 1673
 author: "phuryn"
 installCommand: "brew install --formula https://raw.githubusercontent.com/phuryn/claude-usage/main/Formula/claude-usage.rb"
 compatibleAgents: ["Claude Code"]

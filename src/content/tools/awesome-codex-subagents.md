@@ -4,7 +4,7 @@ description: "Codex용 전문 서브에이전트 160개 이상을 카테고리�
 category: "agent-skill"
 tags: ["codex", "subagents", "agent-skills", "skills-pack", "automation", "productivity"]
 githubUrl: "https://github.com/VoltAgent/awesome-codex-subagents"
-githubStars: 4900
+githubStars: 4981
 author: "VoltAgent"
 installCommand: "git clone https://github.com/VoltAgent/awesome-codex-subagents.git"
 compatibleAgents: ["Codex"]

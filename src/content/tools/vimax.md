@@ -4,7 +4,7 @@ description: "에이전틱 비디오 생성 프레임워크입니다. 감독, �
 category: "desktop-utility"
 tags: ["video-generation", "agentic-aigc", "ai-video", "multi-agent", "generation"]
 githubUrl: "https://github.com/HKUDS/ViMax"
-githubStars: 7080
+githubStars: 8395
 author: "HKUDS"
 installCommand: "git clone https://github.com/HKUDS/ViMax.git && cd ViMax && pip install -r requirements.txt"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]

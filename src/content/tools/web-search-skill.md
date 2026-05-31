@@ -4,9 +4,8 @@ description: "Gemini 에이전트에 실시간 웹 검색, URL 파싱, 본문 �
 category: "agent-skill"
 tags: ["google", "gemini", "search", "web-crawler", "api"]
 githubUrl: "https://github.com/google-gemini/gemini-skills"
-githubStars: 3547
+githubStars: 3581
 author: "google-gemini"
-installCommand: "npm install @gemini/web-search-skill"
 compatibleAgents: ["Gemini"]
 featured: true
 icon: "Search"

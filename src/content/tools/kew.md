@@ -4,7 +4,7 @@ description: "터미널에서 음악 라이브러리를 검색하고 재생하�
 category: "cli-utility"
 tags: ["music", "audio-player", "terminal", "cli", "linux", "macos"]
 githubUrl: "https://github.com/ravachol/kew"
-githubStars: 2737
+githubStars: 2746
 author: "ravachol"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]
 featured: false

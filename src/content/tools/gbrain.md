@@ -4,7 +4,7 @@ description: "AI 에이전트에게 영속적인 지식과 검색 능력을 부�
 category: "agent-component"
 tags: ["ai-agents", "knowledge-graph", "memory", "rag", "vector-search", "hermes-agent", "openclaw"]
 githubUrl: "https://github.com/garrytan/gbrain"
-githubStars: 18537
+githubStars: 19992
 author: "garrytan"
 installCommand: "bun install -g github:garrytan/gbrain && gbrain init --pglite"
 compatibleAgents: ["Claude Code", "OpenClaw", "Hermes Agent", "Cursor"]
