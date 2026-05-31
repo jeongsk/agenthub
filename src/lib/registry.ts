@@ -15,6 +15,7 @@ export const CATEGORY_IDS = [
   'cli-utility',
   'plugin',
   'browser-extension',
+  'web-app',
 ] as const;
 
 export type CategoryId = (typeof CATEGORY_IDS)[number];
@@ -106,6 +107,14 @@ export const CATEGORIES: Record<CategoryId, CategoryConfig> = {
     bg: 'rgba(234, 179, 8, 0.06)',
     border: 'rgba(234, 179, 8, 0.15)',
   },
+  'web-app': {
+    id: 'web-app',
+    label: '웹 앱',
+    icon: 'Globe',
+    color: 'rgb(var(--cat-web-app))',
+    bg: 'rgba(16, 185, 129, 0.06)',
+    border: 'rgba(16, 185, 129, 0.15)',
+  },
 };
 
 export function categoryLabel(id: CategoryId): string {
@@ -139,6 +148,7 @@ export function badgeClass(id: CategoryId): string {
     'cli-utility': 'badge-cli',
     plugin: 'badge-plugin',
     'browser-extension': 'badge-extension',
+    'web-app': 'badge-webapp',
   };
   return map[id] ?? 'badge';
 }
