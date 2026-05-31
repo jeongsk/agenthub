@@ -11,7 +11,7 @@
  *    (agent-skill / agent-framework / agent-harness / agent-infrastructure /
  *     mcp-server / model-runtime)면 에이전트 축으로 분류하고, 전달 형태는 태그로
  *    표기한다. 에이전트 구성물이 *아닐* 때만 형태 카테고리(cli-utility /
- *    desktop-utility / plugin / browser-extension / self-hosted-app)를 쓴다.
+ *    desktop-utility / plugin / browser-extension)를 쓴다.
  *
  * 2. agent-* 4종 판별선:
  *    - agent-skill          = 기존 에이전트에 "로드되는 능력 콘텐츠"(프롬프트/커맨드/
@@ -47,7 +47,6 @@ export const CATEGORY_IDS = [
   'desktop-utility',
   'plugin',
   'browser-extension',
-  'self-hosted-app',
 ] as const;
 
 export type CategoryId = (typeof CATEGORY_IDS)[number];
@@ -159,15 +158,6 @@ export const CATEGORIES: Record<CategoryId, CategoryConfig> = {
     bg: 'rgba(234, 179, 8, 0.06)',
     border: 'rgba(234, 179, 8, 0.15)',
   },
-  'self-hosted-app': {
-    id: 'self-hosted-app',
-    label: '셀프호스팅 앱',
-    description: '직접 호스팅해 쓰는 웹·서비스 애플리케이션',
-    icon: 'Server',
-    color: 'rgb(var(--cat-self-hosted-app))',
-    bg: 'rgba(16, 185, 129, 0.06)',
-    border: 'rgba(16, 185, 129, 0.15)',
-  },
 };
 
 export function categoryLabel(id: CategoryId): string {
@@ -202,7 +192,6 @@ export function badgeClass(id: CategoryId): string {
     'cli-utility': 'badge-cli',
     plugin: 'badge-plugin',
     'browser-extension': 'badge-extension',
-    'self-hosted-app': 'badge-selfhosted',
   };
   return map[id] ?? 'badge';
 }

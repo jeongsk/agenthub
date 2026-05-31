@@ -1,7 +1,7 @@
 ---
 title: "Odoo"
 description: "비즈니스 성장을 위한 오픈소스 앱 모음입니다. ERP, CRM, 전자상거래, 회계, 재고, 인사 등 7만 개 이상의 모듈로 구성된 종합 비즈니스 관리 플랫폼입니다."
-category: "self-hosted-app"
+category: "agent-infrastructure"
 tags: ["erp", "crm", "business", "python", "management", "apps", "odoo"]
 githubUrl: "https://github.com/odoo/odoo"
 githubStars: 51756
