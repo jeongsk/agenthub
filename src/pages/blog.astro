@@ -128,7 +128,7 @@ const featuredPost = posts[0];
     border-radius: 9999px;
     background: rgba(244, 63, 94, 0.08);
     border: 1px solid rgba(244, 63, 94, 0.25);
-    color: rgb(251, 113, 133);
+    color: rgb(var(--accent-rose));
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 24px;
@@ -166,7 +166,7 @@ const featuredPost = posts[0];
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    color: rgb(34, 211, 238);
+    color: rgb(var(--accent-cyan-link));
     font-size: 0.82rem;
     font-weight: 700;
     margin-bottom: 14px;
@@ -188,11 +188,11 @@ const featuredPost = posts[0];
 
   .featured-copy-link:hover h2,
   .post-card-link:hover h3 {
-    color: rgb(34, 211, 238);
+    color: rgb(var(--accent-cyan-link));
   }
 
   .featured-copy-link:focus-visible {
-    outline: 2px solid rgba(6, 182, 212, 0.75);
+    outline: 2px solid rgb(var(--accent-cyan) / 0.75);
     outline-offset: 5px;
   }
 
@@ -230,7 +230,7 @@ const featuredPost = posts[0];
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: rgb(34, 211, 238);
+    color: rgb(var(--accent-cyan-link));
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
     white-space: nowrap;
@@ -253,15 +253,15 @@ const featuredPost = posts[0];
   .featured-panel {
     min-height: 190px;
     border-radius: 16px;
-    border: 1px solid rgba(6, 182, 212, 0.22);
+    border: 1px solid rgb(var(--accent-cyan) / 0.22);
     background:
-      linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(139, 92, 246, 0.08)),
-      rgba(255, 255, 255, 0.03);
+      linear-gradient(135deg, rgb(var(--accent-cyan) / 0.12), rgba(139, 92, 246, 0.08)),
+      var(--surface-subtle);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 22px;
-    color: rgb(34, 211, 238);
+    color: rgb(var(--accent-cyan-link));
   }
 
   .featured-panel span {
@@ -309,7 +309,7 @@ const featuredPost = posts[0];
   }
 
   .post-card-link:focus-visible {
-    outline: 2px solid rgba(6, 182, 212, 0.75);
+    outline: 2px solid rgb(var(--accent-cyan) / 0.75);
     outline-offset: 4px;
     border-radius: 20px;
   }
@@ -336,9 +336,9 @@ const featuredPost = posts[0];
     min-height: 28px;
     padding: 5px 11px;
     border-radius: 9999px;
-    border: 1px solid rgba(6, 182, 212, 0.3);
-    background: rgba(6, 182, 212, 0.1);
-    color: rgb(34, 211, 238);
+    border: 1px solid rgb(var(--accent-cyan) / 0.3);
+    background: rgb(var(--accent-cyan) / 0.1);
+    color: rgb(var(--accent-cyan-link));
     font-size: 0.72rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -373,8 +373,8 @@ const featuredPost = posts[0];
 
   .tag-pill {
     color: hsl(var(--text-muted));
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--surface-subtle);
+    border: 1px solid var(--border-subtle);
     border-radius: 9999px;
     padding: 4px 9px;
     font-size: 0.78rem;
@@ -395,7 +395,7 @@ const featuredPost = posts[0];
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: rgb(34, 211, 238);
+    color: rgb(var(--accent-cyan-link));
     font-weight: 700;
     transition: transform 0.2s ease;
   }
@@ -411,10 +411,10 @@ const featuredPost = posts[0];
   }
 
   code {
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--surface-subtle);
     border-radius: 5px;
     padding: 2px 5px;
-    color: white;
+    color: hsl(var(--text-primary));
   }
 
   @media (max-width: 992px) {

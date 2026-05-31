@@ -1,5 +1,5 @@
 ---
-import { Terminal } from '@lucide/astro';
+import { Terminal, Sun, Moon, Monitor } from '@lucide/astro';
 import GitHub from './icons/GitHub.astro';
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -27,9 +27,89 @@ const isActive = (path: string) => {
       <a href="https://github.com/jeongsk/agenthub" target="_blank" rel="noopener noreferrer" class="nav-icon-link" aria-label="GitHub Repository">
         <GitHub size={20} />
       </a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="테마 전환" title="테마 전환">
+        <Monitor size={20} class="ti ti-system" />
+        <Sun size={20} class="ti ti-light" />
+        <Moon size={20} class="ti ti-dark" />
+      </button>
     </nav>
   </div>
 </header>
+
+<script>
+  const KEY = 'agenthub:theme';
+  const ORDER = ['system', 'light', 'dark'] as const;
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+
+  type Mode = (typeof ORDER)[number];
+
+  function read(): Mode {
+    try {
+      const v = localStorage.getItem(KEY);
+      return v === 'light' || v === 'dark' ? v : 'system';
+    } catch {
+      return 'system';
+    }
+  }
+
+  function effective(mode: Mode) {
+    return mode === 'system' ? (mql.matches ? 'dark' : 'light') : mode;
+  }
+
+  function applyDOM(mode: Mode) {
+    if (mode === 'light' || mode === 'dark') root.setAttribute('data-theme', mode);
+    else root.removeAttribute('data-theme');
+  }
+
+  function syncMeta(mode: Mode) {
+    const eff = effective(mode);
+    let m = document.querySelector('meta[name="theme-color"]:not([media])');
+    if (!m) {
+      m = document.createElement('meta');
+      m.setAttribute('name', 'theme-color');
+      document.head.appendChild(m);
+    }
+    m.setAttribute('content', eff === 'dark' ? '#0c0e14' : '#f3f5fa');
+  }
+
+  function syncIcon(mode: Mode) {
+    if (!btn) return;
+    btn.classList.remove('is-system', 'is-light', 'is-dark');
+    btn.classList.add('is-' + mode);
+    const label =
+      mode === 'system'
+        ? '테마: 시스템 (클릭하면 라이트)'
+        : mode === 'light'
+          ? '테마: 라이트 (클릭하면 다크)'
+          : '테마: 다크 (클릭하면 시스템)';
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('title', label);
+  }
+
+  function render(mode: Mode) {
+    applyDOM(mode);
+    syncIcon(mode);
+    syncMeta(mode);
+  }
+
+  render(read());
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const next = ORDER[(ORDER.indexOf(read()) + 1) % ORDER.length];
+      try {
+        localStorage.setItem(KEY, next);
+      } catch {}
+      render(next);
+    });
+  }
+
+  mql.addEventListener('change', () => {
+    if (read() === 'system') syncMeta('system');
+  });
+</script>
 
 <style>
   .main-header {
@@ -60,7 +140,7 @@ const isActive = (path: string) => {
     gap: 10px;
     min-width: 0;
     text-decoration: none;
-    color: white;
+    color: hsl(var(--text-primary));
     font-size: 1.35rem;
     font-weight: 800;
     font-family: 'Outfit', sans-serif;
@@ -72,21 +152,21 @@ const isActive = (path: string) => {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(6, 182, 212, 0.1);
-    border: 1px solid rgba(6, 182, 212, 0.25);
+    background: rgb(var(--accent-cyan) / 0.1);
+    border: 1px solid rgb(var(--accent-cyan) / 0.25);
     border-radius: 10px;
     transition: all 0.3s ease;
   }
 
   .logo:hover .logo-icon {
     transform: rotate(10deg) scale(1.05);
-    background: rgba(6, 182, 212, 0.15);
-    border-color: rgba(6, 182, 212, 0.4);
-    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+    background: rgb(var(--accent-cyan) / 0.15);
+    border-color: rgb(var(--accent-cyan) / 0.4);
+    box-shadow: 0 0 10px rgb(var(--accent-cyan) / 0.2);
   }
 
   .cyan-icon {
-    color: hsl(var(--cyan-point));
+    color: rgb(var(--accent-cyan-link));
   }
 
   .logo-text {
@@ -129,7 +209,7 @@ const isActive = (path: string) => {
     height: 2px;
     border-radius: 9999px;
     background: var(--grad-primary);
-    box-shadow: 0 0 12px rgba(6, 182, 212, 0.35);
+    box-shadow: 0 0 12px rgb(var(--accent-cyan) / 0.35);
   }
 
   .nav-icon-link {
@@ -140,8 +220,38 @@ const isActive = (path: string) => {
   }
 
   .nav-icon-link:hover {
-    color: white;
+    color: hsl(var(--text-primary));
     transform: scale(1.05);
+  }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    color: hsl(var(--text-secondary));
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .theme-toggle:hover {
+    color: hsl(var(--text-primary));
+    transform: scale(1.05);
+  }
+  .theme-toggle .ti-light,
+  .theme-toggle .ti-dark {
+    display: none;
+  }
+  .theme-toggle.is-light .ti-system,
+  .theme-toggle.is-dark .ti-system {
+    display: none;
+  }
+  .theme-toggle.is-light .ti-light {
+    display: block;
+  }
+  .theme-toggle.is-dark .ti-dark {
+    display: block;
   }
 
   /* Responsive styles */
