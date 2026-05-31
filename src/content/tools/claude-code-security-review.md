@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Security Reviewer"
 description: "Claude Code와 GitHub Actions에서 PR 변경분의 보안 취약점을 검토하는 도구입니다. 코드 변경의 의미를 이해하는 보안 리뷰가 필요할 때 유용합니다."
-category: "agent-component"
+category: "agent-infrastructure"
 tags: ["claude-code", "github-actions", "security", "code-review", "vulnerability", "anthropic"]
 githubUrl: "https://github.com/anthropics/claude-code-security-review"
 githubStars: 4892

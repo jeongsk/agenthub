@@ -2,7 +2,7 @@
 title: "oh-my-pi"
 description: "터미널에서 쓰는 에이전트 하네스로, IDE·LSP·브라우저·서브에이전트를 한데 묶어 코드 편집과 실행 흐름을 더 강하게 지원합니다."
 category: "agent-harness"
-tags: ["agent-harness", "terminal", "lsp", "browser", "subagents"]
+tags: ["terminal", "lsp", "browser", "subagents"]
 githubUrl: "https://github.com/can1357/oh-my-pi"
 githubStars: 8951
 author: "can1357"
