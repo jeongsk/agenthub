@@ -7,7 +7,7 @@ const skillsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    category: z.enum(['agent-skill', 'agent-framework', 'agent-harness', 'agent-infrastructure', 'mcp-server', 'model-runtime', 'cli-utility', 'desktop-utility', 'plugin', 'browser-extension', 'self-hosted-app']),
+    category: z.enum(['agent-skill', 'agent-framework', 'agent-harness', 'agent-infrastructure', 'mcp-server', 'model-runtime', 'cli-utility', 'desktop-utility', 'plugin', 'browser-extension']),
     tags: z.array(z.string()),
     githubUrl: z.string().url().optional(),
     websiteUrl: z.string().url().optional(),
