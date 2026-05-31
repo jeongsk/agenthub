@@ -58,6 +58,7 @@
   --cat-cli-utility: 148 163 184;
   --cat-plugin: 251 113 133;
   --cat-browser-extension: 253 224 71;
+  --cat-web-app: 52 211 153;
 
   /* Ambient */
   --glow-opacity: 0.15;
@@ -113,6 +114,7 @@
     --cat-cli-utility: 71 85 105;
     --cat-plugin: 225 29 72;
     --cat-browser-extension: 161 98 7;
+    --cat-web-app: 5 150 105;
 
     --glow-opacity: 0.08;
     --page-mesh: var(--grad-light-mesh);
@@ -158,6 +160,7 @@
   --cat-cli-utility: 71 85 105;
   --cat-plugin: 225 29 72;
   --cat-browser-extension: 161 98 7;
+  --cat-web-app: 5 150 105;
 
   --glow-opacity: 0.08;
   --page-mesh: var(--grad-light-mesh);
