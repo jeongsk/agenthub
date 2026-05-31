@@ -1,7 +1,7 @@
 ---
 title: "RuView"
 description: "일반 WiFi 신호를 실시간 공간 인텔리전스, 생체 신호 모니터링, 재실 감지로 변환하는 시스템입니다. 카메라 한 픽셀 없이 WiFi만으로 공간을 인식합니다."
-category: "plugin"
+category: "agent-skill"
 tags: ["spatial-intelligence", "wifi-sensing", "iot", "home-automation", "physical-ai", "esp32", "agentic-ai"]
 githubUrl: "https://github.com/ruvnet/RuView"
 githubStars: 69225

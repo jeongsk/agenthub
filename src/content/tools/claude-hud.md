@@ -2,7 +2,7 @@
 title: "Claude HUD"
 description: "Claude Code의 상태를 실시간으로 보여주는 플러그인입니다. 컨텍스트 사용량, 활성 도구, 실행 중인 에이전트, 할 일 진행 상황을 HUD 형태로 표시합니다."
 category: "plugin"
-tags: ["claude-code", "plugin", "hud", "statusline", "cli", "productivity"]
+tags: ["claude-code", "hud", "statusline", "cli", "productivity"]
 githubUrl: "https://github.com/jarrodwatts/claude-hud"
 githubStars: 24153
 author: "jarrodwatts"

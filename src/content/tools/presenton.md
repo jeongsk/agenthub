@@ -1,7 +1,7 @@
 ---
 title: "Presenton"
 description: "오픈소스 AI 프레젠테이션 생성기 및 API입니다. Gamma, Beautiful AI, Decktopus의 대안으로, AI 에이전트가 파워포인트/슬라이드 덱을 자동 생성할 수 있는 API를 제공합니다."
-category: "plugin"
+category: "self-hosted-app"
 tags: ["ai-presentation", "powerpoint-generation", "api", "presentation", "productivity"]
 githubUrl: "https://github.com/presenton/presenton"
 githubStars: 7609

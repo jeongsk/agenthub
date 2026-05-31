@@ -2,7 +2,7 @@
 title: "Immersive Translate"
 description: "다국어 웹 문서, PDF, 자막, 입력창 번역을 돕는 오픈소스 번역 브라우저 확장입니다."
 category: "browser-extension"
-tags: ["translation", "multilingual", "browser-extension", "pdf", "research"]
+tags: ["translation", "multilingual", "pdf", "research"]
 githubUrl: "https://github.com/immersive-translate/immersive-translate"
 githubStars: 17773
 chromeWebStoreUrl: "https://chromewebstore.google.com/detail/immersive-translate-ai-we/bpoadfkcbjbfhfodiogcnhhhpibjhbnh"
