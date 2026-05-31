@@ -1,7 +1,7 @@
 ---
 title: "gstack"
 description: "Y Combinator CEO Garry Tan이 실제로 사용하는 Claude Code 설정입니다. CEO, 디자이너, 엔지니어링 매니저, QA, 릴리스 매니저 등 23개의 전문화된 도구를 슬래시 커맨드로 즉시 사용할 수 있습니다."
-category: "agent-harness"
+category: "agent-skill"
 tags: ["claude-code", "ai-agents", "productivity", "opinionated-tools", "garrytan", "startup-tools", "yc"]
 githubUrl: "https://github.com/garrytan/gstack"
 githubStars: 104945

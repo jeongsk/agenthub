@@ -2,7 +2,7 @@
 title: "oh-my-agent"
 description: "프로젝트별 전문화된 에이전트 팀을 구성할 수 있는 포터블 멀티 에이전트 하네스입니다. 프론트엔드, 백엔드, 아키텍처, QA, PM, DB, 데브옵스 등 도메인별 에이전트가 각자의 스킬과 체크리스트로 협업하며, 모든 주요 AI IDE에서 동일한 설정을 공유할 수 있습니다."
 category: "agent-harness"
-tags: ["ai-agents", "agent-harness", "multi-agent", "orchestration", "claude-code", "codex", "cursor", "opencode", "serena", "workflow", "cli"]
+tags: ["ai-agents", "multi-agent", "orchestration", "claude-code", "codex", "cursor", "opencode", "serena", "workflow", "cli"]
 githubUrl: "https://github.com/first-fluke/oh-my-agent"
 githubStars: 1038
 author: "first-fluke"

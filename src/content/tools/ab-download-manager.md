@@ -2,7 +2,7 @@
 title: "AB Download Manager"
 description: "Kotlin/Compose Multiplatform으로 만든 크로스플랫폼 데스크톱 다운로드 매니저입니다. 다운로드 속도를 높여주고, 큐/스케줄러/브라우저 확장과 연동되며 Windows·Linux·macOS를 모두 지원합니다. 웹에서 파일을 자주 받는 사용자에게 유용합니다."
 category: "desktop-utility"
-tags: ["download-manager", "downloader", "kotlin", "compose-desktop", "cross-platform", "desktop-app", "browser-extension", "windows", "linux", "macos"]
+tags: ["download-manager", "downloader", "kotlin", "compose-desktop", "cross-platform", "desktop-app", "windows", "linux", "macos"]
 githubUrl: "https://github.com/amir1376/ab-download-manager"
 websiteUrl: "https://abdownloadmanager.com"
 githubStars: 15714

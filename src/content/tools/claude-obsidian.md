@@ -1,7 +1,7 @@
 ---
 title: "Claude Obsidian"
 description: "Claude Code와 Obsidian을 연결하는 지식 동반자입니다. Karpathy의 LLM Wiki 패턴 기반의 영속적인 위키 저장소로, /wiki /save /autoresearch 명령어로 지식을 축적하고 검색합니다."
-category: "agent-skill"
+category: "plugin"
 tags: ["obsidian", "knowledge-management", "wiki", "claude-code", "second-brain", "rag", "knowledge-graph", "multi-agent"]
 githubUrl: "https://github.com/AgriciDaniel/claude-obsidian"
 githubStars: 5808

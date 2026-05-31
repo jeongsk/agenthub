@@ -1,7 +1,7 @@
 ---
 title: "sx"
 description: "AI 코딩 도우미용 스킬, MCP 설정, 명령어를 팀 단위로 패키징하고 배포하는 도구입니다. 여러 클라이언트에 같은 AI 자산을 공유하고 싶을 때 유용합니다."
-category: "agent-component"
+category: "agent-infrastructure"
 tags: ["skills", "mcp", "commands", "distribution", "vault", "cli"]
 githubUrl: "https://github.com/sleuth-io/sx"
 githubStars: 230

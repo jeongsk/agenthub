@@ -1,9 +1,23 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
 
-const categories = new Set(['mcp-server', 'agent-skill', 'plugin', 'browser-extension']);
-const requiredStrings = ['title', 'description', 'category', 'githubUrl', 'author', 'icon'];
-const contentDir = new URL('../src/content/skills', import.meta.url);
+// content.config.ts의 category enum과 동기화 유지 (src/lib/registry.ts CATEGORY_IDS 기준)
+const categories = new Set([
+  'agent-skill',
+  'agent-framework',
+  'agent-harness',
+  'agent-infrastructure',
+  'mcp-server',
+  'model-runtime',
+  'cli-utility',
+  'desktop-utility',
+  'plugin',
+  'browser-extension',
+  'self-hosted-app',
+]);
+// Zod 스키마 기준 필수 문자열 필드(githubUrl·icon은 optional/기본값이라 제외)
+const requiredStrings = ['title', 'description', 'category', 'author'];
+const contentDir = new URL('../src/content/tools', import.meta.url);
 const errors = [];
 const slugs = new Set();
 
@@ -11,11 +25,11 @@ const files = (await readdir(contentDir))
   .filter((file) => file.endsWith('.md') && !file.startsWith('_'))
   .sort();
 
-if (files.length === 0) errors.push('src/content/skills must contain at least one markdown file');
+if (files.length === 0) errors.push('src/content/tools must contain at least one markdown file');
 
 for (const file of files) {
   const slug = basename(file, '.md');
-  const label = `src/content/skills/${file}`;
+  const label = `src/content/tools/${file}`;
   const markdown = await readFile(join(contentDir.pathname, file), 'utf8');
   const frontmatter = parseFrontmatter(markdown, label);
   if (!frontmatter) continue;
@@ -36,12 +50,12 @@ for (const file of files) {
   if (!Array.isArray(frontmatter.tags) || frontmatter.tags.some((tag) => typeof tag !== 'string' || !tag.trim())) {
     errors.push(`${label}: tags must be a non-empty string array`);
   }
+  // Zod 스키마는 빈 배열을 허용한다(순수 유틸리티/앱은 호환 에이전트가 없을 수 있음)
   if (
     !Array.isArray(frontmatter.compatibleAgents) ||
-    frontmatter.compatibleAgents.length === 0 ||
     frontmatter.compatibleAgents.some((agent) => typeof agent !== 'string' || !agent.trim())
   ) {
-    errors.push(`${label}: compatibleAgents must be a non-empty string array`);
+    errors.push(`${label}: compatibleAgents must be a string array`);
   }
   if (frontmatter.installCommand !== undefined && typeof frontmatter.installCommand !== 'string') {
     errors.push(`${label}: installCommand must be a string when provided`);
@@ -63,7 +77,7 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`content OK (${files.length} skills)`);
+console.log(`content OK (${files.length} tools)`);
 
 function parseFrontmatter(markdown, label) {
   const match = /^---\n([\s\S]*?)\n---\n/.exec(markdown);

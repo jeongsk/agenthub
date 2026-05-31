@@ -1,8 +1,8 @@
 ---
 title: "Superpowers"
 description: "AI 에이전트가 뛰어난 개발자처럼 행동하게 만드는 에이전틱 스킬 프레임워크이자 소프트웨어 개발 방법론입니다."
-category: "agent-harness"
-tags: ["agent-skills", "agent-framework", "software-development", "methodology", "coding-agent"]
+category: "agent-skill"
+tags: ["agent-skills", "software-development", "methodology", "coding-agent"]
 githubUrl: "https://github.com/obra/superpowers"
 githubStars: 213327
 author: "obra"
