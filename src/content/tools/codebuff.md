@@ -16,6 +16,8 @@ icon: "TerminalSquare"
 
 Codebuff는 터미널에서 자연어 지시로 코드베이스를 수정하는 멀티 에이전트 코딩 어시스턴트입니다. 파일 탐색, 계획, 편집, 검토를 나눠 처리해 더 정확한 변경을 목표로 합니다.
 
+![Codebuff — 멀티 에이전트 구조로 계획·편집·검토를 분담하는 코딩 흐름](/tool-screenshots/codebuff-multi-agents.webp)
+
 ## 언제 쓰나
 
 - 터미널에서 바로 코드 변경 작업을 맡기고 싶을 때

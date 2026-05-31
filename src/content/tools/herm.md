@@ -16,6 +16,8 @@ icon: "LayoutDashboard"
 
 Herm은 Hermes Agent를 위한 탭형 TUI 대시보드입니다. 세션과 운영 요소를 한 화면에서 관리할 수 있습니다.
 
+![Herm TUI 대시보드 화면](/tool-screenshots/herm-tui-dashboard.webp)
+
 ## 언제 쓰나
 
 - 터미널 안에서 Hermes 작업 흐름을 빠르게 보고 싶을 때

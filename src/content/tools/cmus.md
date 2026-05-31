@@ -17,6 +17,8 @@ icon: "Radio"
 
 `cmus`는 작고 빠른 콘솔 음악 플레이어입니다. ncurses 기반 인터페이스로 로컬 음악 라이브러리를 탐색하고, 곡·앨범·아티스트 기준으로 재생목록을 만들고 관리할 수 있습니다.
 
+![cmus — ncurses 기반 콘솔 음악 플레이어 트리 뷰 화면](/tool-screenshots/cmus-screenshot.webp)
+
 ## 언제 쓰나
 
 - 콘솔 안에서 음악을 빠르게 찾고 재생하고 싶을 때

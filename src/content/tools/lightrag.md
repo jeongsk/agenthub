@@ -16,6 +16,8 @@ icon: "Lightbulb"
 
 LightRAG는 EMNLP 2025에 발표된 간단하고 빠른 검색 증강 생성(RAG) 프레임워크입니다. 기존 GraphRAG 접근법 대비 1% 미만의 토큰 비용으로 동등하거나 더 나은 검색 성능을 제공합니다. 지식 그래프 기반으로 문서 간 관계를 학습하고 검색합니다.
 
+![LightRAG 웹 UI 대시보드 화면](/tool-screenshots/lightrag-ui.webp)
+
 ## 언제 쓰나
 
 - AI 에이전트에 RAG 기반 지식 검색 능력을 추가하고 싶을 때

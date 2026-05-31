@@ -16,6 +16,8 @@ icon: "Terminal"
 
 oh-my-pi는 터미널 기반 코드 에이전트 하네스입니다. 단순한 프롬프트 모음이 아니라, 편집·검색·LSP·브라우저·서브에이전트 같은 작업 도구를 묶어서 에이전트가 실제 개발 흐름에 더 가깝게 움직이도록 설계되어 있습니다.
 
+![oh-my-pi TUI: Python과 JavaScript 커널이 함께 실행되는 코드 평가 데모](/tool-screenshots/oh-my-pi-tui-eval.webp)
+
 ## 핵심 포인트
 
 - **IDE 결합형**: LSP와 편집 흐름을 에이전트 작업에 직접 연결합니다.

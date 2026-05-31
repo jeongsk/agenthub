@@ -15,6 +15,8 @@ icon: "Radio"
 
 RuView(π RuView)는 일반 WiFi 신호를 활용해 실시간 공간 인텔리전스와 생체 신호 모니터링을 가능하게 하는 시스템입니다. 카메라나 센서 하드웨어 없이, 이미 있는 WiFi 라우터와 ESP32만으로 사람의 위치, 동작, 심박수/호흡을 감지합니다.
 
+![RuView WiFi 기반 실내 포즈 감지 화면](/tool-screenshots/ruview-wifi-densepose.webp)
+
 ## 언제 쓰나
 
 - AI 에이전트에 물리 공간 인식 능력을 부여하고 싶을 때

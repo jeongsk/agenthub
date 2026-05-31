@@ -16,6 +16,8 @@ icon: "GitGraph"
 
 "그래프는 감동보다 가르침에 쓰는 것"이라는 철학으로 만든 코드 지식 그래프 도구입니다. 코드베이스를 대화형 지식 그래프로 변환해, AI 에이전트가 구조와 관계를 깊이 이해하고 질문할 수 있게 해줍니다.
 
+![Understand Anything — 코드베이스를 대화형 지식 그래프로 변환한 대시보드](/tool-screenshots/understand-anything-hero.webp)
+
 ## 언제 쓰나
 
 - 낯선 코드베이스를 빠르게 파악해야 할 때

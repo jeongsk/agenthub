@@ -17,6 +17,8 @@ icon: "Radar"
 
 TrendRadar는 뉴스, 커뮤니티 핫이슈, RSS 피드, 키워드 알림을 한곳에 모아 보여주는 자가 호스팅 트렌드 모니터링 허브입니다. AI가 제목을 정리하고 번역·요약을 보강해 주며, 결과를 Telegram, Slack, Feishu, Bark, ntfy, 이메일 같은 채널로 바로 푸시할 수 있습니다.
 
+![TrendRadar 가시화 설정 편집기 화면](/tool-screenshots/trendradar-editor.webp)
+
 ## 언제 쓰나
 
 - 내가 관심 있는 키워드만 골라서 뉴스와 트렌드를 받고 싶을 때

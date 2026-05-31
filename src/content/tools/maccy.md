@@ -17,6 +17,8 @@ icon: "ClipboardList"
 
 Maccy는 macOS 메뉴바에서 동작하는 가벼운 클립보드 매니저입니다. `⌘C`로 복사한 모든 내용의 히스토리를 저장해두고, 단축키(`⇧⌘C`)로 팝업을 띄워 검색·선택·붙여넣기까지 키보드만으로 처리할 수 있습니다.
 
+![Maccy 클립보드 히스토리 팝업 화면](/tool-screenshots/maccy-clipboard-history.webp)
+
 ## 언제 쓰나
 
 - 여러 개를 연속으로 복사한 후 필요한 것만 골라 붙여넣고 싶을 때

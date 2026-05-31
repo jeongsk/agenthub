@@ -16,6 +16,8 @@ icon: "BarChart3"
 
 CodexBar는 macOS 메뉴바에서 AI 코딩 도구의 사용량과 리셋 시점을 보여 주는 모니터링 앱입니다. 여러 제공자의 상태를 빠르게 확인할 수 있습니다.
 
+![CodexBar 메뉴 팝오버 — 제공자 타일, 사용량 바, 리셋 카운트다운](/tool-screenshots/codexbar-menu-popover.webp)
+
 ## 언제 쓰나
 
 - 장시간 작업 전에 남은 사용량과 리셋 시점을 확인하고 싶을 때

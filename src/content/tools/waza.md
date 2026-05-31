@@ -15,6 +15,8 @@ icon: "BrainCircuit"
 
 Waza(技, わざ)는 엔지니어가 일상적으로 하는 사고 과정(요구사항 분석, 코드 리뷰, 버그 추적, 설계, 학습)을 AI 에이전트의 슬래시 커맨드로 만들어 놓은 스킬 모음입니다. Kaku(코드) · Waza(습관) · Kami(문서) 3부작 중 Waza가 두 번째입니다.
 
+![Waza Claude Code 상태바 — 컨텍스트 창과 쿼터 사용량 표시 화면](/tool-screenshots/waza-skills-overview.webp)
+
 ## 언제 쓰나
 
 - AI가 코드만 작성하는 게 아니라, 설계→검토→출시까지 체계적으로 작업하게 하고 싶을 때

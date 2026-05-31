@@ -17,6 +17,8 @@ icon: "Terminal"
 
 DeepSeek Reasonix는 터미널에서 동작하는 DeepSeek-native 코딩 에이전트입니다. 장시간 세션에서 prefix cache 안정성을 유지하도록 설계되어, 코드 작업을 한 번 시작한 뒤 오래 켜 두고 이어가는 워크플로에 잘 맞습니다.
 
+![Reasonix code 모드 — 어시스턴트가 diff 편집 블록을 제안하고 /apply 전까지 디스크에 반영하지 않는 화면](/tool-screenshots/deepseek-reasonix-terminal.svg)
+
 ## 언제 쓰나
 
 - DeepSeek 계열 모델로 코딩 에이전트를 오래 돌리고 싶을 때
@@ -32,3 +34,8 @@ DeepSeek Reasonix는 터미널에서 동작하는 DeepSeek-native 코딩 에이�
 - 스킬, 메모리, 훅, 권한, MCP, 검색, semantic index 지원
 - 데스크톱 클라이언트도 제공하지만 CLI가 기준 인터페이스
 - 긴 작업을 재실행 가능한 코드와 로그로 남기기 쉬움
+
+## 참고
+
+- 현재 활성 개발은 **Go 재작성(main-v2 브랜치)**에서 이루어지고 있습니다. `main` 브랜치(TypeScript v0.x)는 유지보수 모드입니다.
+- `npm install -g reasonix` 설치 명령은 그대로 사용하면 됩니다.

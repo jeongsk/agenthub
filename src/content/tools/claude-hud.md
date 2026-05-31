@@ -16,6 +16,8 @@ icon: "Activity"
 
 Claude Code의 Heads-Up Display(HUD) 플러그인입니다. Claude Code가 작업 중일 때 컨텍스트 창 사용량, 현재 실행 중인 도구, 동작 중인 에이전트, TODO 진행 상황 등을 실시간으로 보여줍니다.
 
+![Claude HUD 실시간 상태 표시 화면](/tool-screenshots/claude-hud-preview.webp)
+
 ## 언제 쓰나
 
 - Claude Code가 지금 무엇을 하고 있는지 한눈에 보고 싶을 때
