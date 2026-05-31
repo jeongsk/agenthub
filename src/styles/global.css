@@ -53,12 +53,13 @@
   --cat-agent-skill: 167 139 250;
   --cat-agent-framework: 129 140 248;
   --cat-agent-harness: 45 212 191;
-  --cat-agent-component: 232 121 249;
+  --cat-agent-infrastructure: 232 121 249;
+  --cat-model-runtime: 251 146 60;
   --cat-desktop-utility: 251 191 36;
   --cat-cli-utility: 148 163 184;
   --cat-plugin: 251 113 133;
   --cat-browser-extension: 253 224 71;
-  --cat-web-app: 52 211 153;
+  --cat-self-hosted-app: 52 211 153;
 
   /* Ambient */
   --glow-opacity: 0.15;
@@ -109,12 +110,13 @@
     --cat-agent-skill: 124 58 237;
     --cat-agent-framework: 79 70 229;
     --cat-agent-harness: 13 148 136;
-    --cat-agent-component: 162 28 175;
+    --cat-agent-infrastructure: 162 28 175;
+    --cat-model-runtime: 234 88 12;
     --cat-desktop-utility: 180 83 9;
     --cat-cli-utility: 71 85 105;
     --cat-plugin: 225 29 72;
     --cat-browser-extension: 161 98 7;
-    --cat-web-app: 5 150 105;
+    --cat-self-hosted-app: 5 150 105;
 
     --glow-opacity: 0.08;
     --page-mesh: var(--grad-light-mesh);
@@ -155,12 +157,13 @@
   --cat-agent-skill: 124 58 237;
   --cat-agent-framework: 79 70 229;
   --cat-agent-harness: 13 148 136;
-  --cat-agent-component: 162 28 175;
+  --cat-agent-infrastructure: 162 28 175;
+  --cat-model-runtime: 234 88 12;
   --cat-desktop-utility: 180 83 9;
   --cat-cli-utility: 71 85 105;
   --cat-plugin: 225 29 72;
   --cat-browser-extension: 161 98 7;
-  --cat-web-app: 5 150 105;
+  --cat-self-hosted-app: 5 150 105;
 
   --glow-opacity: 0.08;
   --page-mesh: var(--grad-light-mesh);

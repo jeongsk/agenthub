@@ -2,7 +2,7 @@
 title: "Claude Music"
 description: "Claude Code 세션 안에서 배경 음악을 재생하는 플러그인입니다. 로파이, 재즈, 클래식, 앰비언트 같은 분위기별 음악과 AI DJ 기능을 함께 쓰고 싶을 때 유용합니다."
 category: "plugin"
-tags: ["claude-code", "music", "plugin", "background-music", "lofi", "dj", "focus", "terminal"]
+tags: ["claude-code", "music", "background-music", "lofi", "dj", "focus", "terminal"]
 githubUrl: "https://github.com/kennethleungty/claude-music"
 githubStars: 13
 author: "kennethleungty"

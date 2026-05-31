@@ -1,7 +1,7 @@
 ---
 title: "OpenStock"
 description: "실시간 주가, 종목 정보, 알림, 차트, 시장 인사이트를 한곳에서 다루는 오픈소스 주식 시장 앱입니다. 비싼 구독형 시장 플랫폼 대신, 웹에서 무료로 포트폴리오와 종목 모니터링을 하고 싶을 때 유용합니다."
-category: "web-app"
+category: "self-hosted-app"
 tags: ["stock-market", "finance", "market-data", "watchlist", "alerts", "tradingview", "nextjs", "web-app"]
 githubUrl: "https://github.com/Open-Dev-Society/OpenStock"
 websiteUrl: "https://openstock-ods.vercel.app"

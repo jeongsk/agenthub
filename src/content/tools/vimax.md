@@ -1,7 +1,7 @@
 ---
 title: "ViMax"
 description: "에이전틱 비디오 생성 프레임워크입니다. 감독, 각본가, 프로듀서, 영상 생성기가 하나로 통합되어, AI 에이전트가 엔드투엔드로 비디오를 기획·제작할 수 있게 해줍니다."
-category: "desktop-utility"
+category: "agent-framework"
 tags: ["video-generation", "agentic-aigc", "ai-video", "multi-agent", "generation"]
 githubUrl: "https://github.com/HKUDS/ViMax"
 githubStars: 8395

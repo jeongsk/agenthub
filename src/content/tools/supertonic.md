@@ -1,7 +1,7 @@
 ---
 title: "Supertonic"
 description: "초고속 온디바이스 다국어 TTS 엔진입니다. ONNX Runtime 기반으로 iOS, Web, Android 등에서 네이티브 수준의 음성 합성을 제공합니다."
-category: "plugin"
+category: "model-runtime"
 tags: ["tts", "text-to-speech", "speech-synthesis", "multilingual", "onnx", "on-device", "voice"]
 githubUrl: "https://github.com/supertone-inc/supertonic"
 githubStars: 11027

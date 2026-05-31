@@ -1,7 +1,7 @@
 ---
 title: "Vibe-Trading"
 description: "개인 맞춤형 트레이딩 AI 에이전트입니다. 다중 에이전트 구조로 시장 분석, 백테스팅, 포트폴리오 관리를 자동화하며 MCP를 지원합니다."
-category: "agent-skill"
+category: "agent-framework"
 tags: ["trading", "algorithmic-trading", "fintech", "multi-agent", "quantitative-finance", "mcp", "ai-agent"]
 githubUrl: "https://github.com/HKUDS/Vibe-Trading"
 githubStars: 9103

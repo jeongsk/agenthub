@@ -2,7 +2,7 @@
 title: "Claude Code Plugins Directory"
 description: "Claude Code용 고품질 플러그인들을 모아 둔 Anthropic 공식 디렉터리입니다. 플러그인을 찾고, 신뢰할 수 있는 출처에서 설치하고, Claude Code 기능을 확장할 때 유용합니다."
 category: "plugin"
-tags: ["claude-code", "plugins", "marketplace", "anthropic", "directory"]
+tags: ["claude-code", "marketplace", "anthropic", "directory"]
 githubUrl: "https://github.com/anthropics/claude-plugins-official"
 githubStars: 28895
 author: "anthropics"

@@ -2,7 +2,7 @@
 title: "gnhf"
 description: "에이전트를 장시간 자율 실행시키는 오케스트레이터입니다. 반복 실행, 커밋, 롤백을 묶어 밤새 작업을 맡길 때 유용합니다."
 category: "agent-harness"
-tags: ["orchestration", "autonomous", "git", "worktree", "agent-harness", "automation"]
+tags: ["orchestration", "autonomous", "git", "worktree", "automation"]
 githubUrl: "https://github.com/kunchenguid/gnhf"
 githubStars: 1853
 author: "kunchenguid"

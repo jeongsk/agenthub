@@ -2,7 +2,7 @@
 title: "Context7"
 description: "AI 코드 에디터와 LLM을 위해 항상 최신 상태의 코드 문서를 제공하는 MCP 서버입니다. Upstash가 개발했으며, 라이브러리/프레임워크 문서를 실시간으로 조회할 수 있게 해줍니다."
 category: "mcp-server"
-tags: ["mcp", "mcp-server", "documentation", "llm", "code-editor", "upstash"]
+tags: ["mcp", "documentation", "llm", "code-editor", "upstash"]
 githubUrl: "https://github.com/upstash/context7"
 githubStars: 56456
 author: "upstash"

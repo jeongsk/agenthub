@@ -15,15 +15,22 @@ const sortedSkills = [...skillEntries]
     return a.data.title.localeCompare(b.data.title, 'ko-KR');
   });
 
+const categoryCounts = new Map<string, number>();
+for (const entry of skillEntries) {
+  categoryCounts.set(entry.data.category, (categoryCounts.get(entry.data.category) ?? 0) + 1);
+}
+
 interface TabDef {
   id: string;
   label: string;
+  description: string;
   icon: any;
+  count: number;
 }
 const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
   const cfg = CATEGORIES[cid];
   const IconCmp = (Icons as any)[cfg.icon] || Icons.Terminal;
-  return { id: cid, label: cfg.label, icon: IconCmp };
+  return { id: cid, label: cfg.label, description: cfg.description, icon: IconCmp, count: categoryCounts.get(cid) ?? 0 };
 });
 ---
 
@@ -42,7 +49,7 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
         오픈소스 도구 디렉토리
       </h1>
       <p class="hero-subtitle">
-        MCP 서버, 에이전트 스킬, 프레임워크, 하네스, 컴포넌트, 데스크톱 유틸리티, CLI 유틸리티, 플러그인, 브라우저 확장을 한곳에서 찾아보세요.
+        에이전트 스킬·프레임워크·하네스·인프라부터 MCP 서버, 모델 런타임, 각종 유틸리티·플러그인까지 한곳에서 찾아보세요.
       </p>
     </section>
 
@@ -62,14 +69,16 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
       </div>
 
       <div class="category-tabs">
-        <button class="tab-btn active" data-category="all" id="tab-all">
+        <button class="tab-btn active" data-category="all" id="tab-all" title="전체 도구 보기">
           <Icons.Compass size={16} />
           <span>전체</span>
+          <span class="tab-count">{skillEntries.length}</span>
         </button>
         {categoryTabs.map((tab) => (
-          <button class="tab-btn" data-category={tab.id} id={`tab-${tab.id}`}>
+          <button class="tab-btn" data-category={tab.id} id={`tab-${tab.id}`} title={tab.description}>
             <tab.icon size={16} />
             <span>{tab.label}</span>
+            <span class="tab-count">{tab.count}</span>
           </button>
         ))}
       </div>
@@ -375,6 +384,22 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
     color: hsl(var(--text-primary));
     border-color: rgb(var(--accent-cyan) / 0.35);
     background: rgb(var(--accent-cyan) / 0.08);
+  }
+  .tab-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    color: hsl(var(--text-muted));
+    background: var(--surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: 9999px;
+    padding: 2px 7px;
+    min-width: 18px;
+    text-align: center;
+  }
+  .tab-btn.active .tab-count {
+    color: hsl(var(--text-primary));
+    border-color: rgb(var(--accent-cyan) / 0.35);
   }
   .section-header {
     display: flex;

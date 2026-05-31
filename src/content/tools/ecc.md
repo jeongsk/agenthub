@@ -2,7 +2,7 @@
 title: "ECC"
 description: "에이전트의 규칙, 메모리, 보안, 리서치, 설치 흐름을 한데 묶어 여러 런타임에서 일관되게 작동하도록 돕는 하네스입니다."
 category: "agent-harness"
-tags: ["agent-harness", "claude-code", "cursor", "codex", "orchestration"]
+tags: ["claude-code", "cursor", "codex", "orchestration"]
 githubUrl: "https://github.com/affaan-m/ECC"
 githubStars: 199774
 author: "affaan-m"

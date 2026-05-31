@@ -2,13 +2,13 @@
 import * as Icons from '@lucide/astro';
 import { ArrowUpRight, Star } from '@lucide/astro';
 import { formatStarCount } from '../lib/github';
-import { CATEGORIES, categoryLabel, categoryColor, categoryBg } from '../lib/registry';
-import { tagToSlug } from '../lib/tags';
+import { CATEGORIES, categoryLabel, categoryColor, categoryBg, type CategoryId } from '../lib/registry';
+import { tagToSlug, canonicalizeTag } from '../lib/tags';
 
 interface Props {
   title: string;
   description: string;
-  category: 'mcp-server' | 'agent-skill' | 'agent-framework' | 'agent-harness' | 'agent-component' | 'desktop-utility' | 'cli-utility' | 'plugin' | 'browser-extension' | 'web-app';
+  category: CategoryId;
   tags: string[];
   author: string;
   compatibleAgents: string[];
@@ -27,6 +27,9 @@ const cfg = CATEGORIES[category];
 const pointColor = cfg?.color ?? 'rgb(var(--cat-cli-utility))';
 const pointBg = cfg?.bg ?? 'var(--surface-subtle)';
 const pointBorder = cfg?.border ?? 'var(--border-subtle)';
+
+// 카테고리명과 겹치는 태그는 숨기고 정규화된 형태로 표시(중복 제거)
+const visibleTags = [...new Set(tags.map(canonicalizeTag).filter(Boolean))];
 ---
 
 <article class="glass-card tool-card">
@@ -57,10 +60,10 @@ const pointBorder = cfg?.border ?? 'var(--border-subtle)';
   </a>
 
   <div class="card-tags">
-    {tags.slice(0, 3).map((tag) => (
+    {visibleTags.slice(0, 3).map((tag) => (
       <a href={`/tags/${tagToSlug(tag)}`} class="tag-chip">#{tag}</a>
     ))}
-    {tags.length > 3 && <span class="tag-chip muted">+{tags.length - 3}</span>}
+    {visibleTags.length > 3 && <span class="tag-chip muted">+{visibleTags.length - 3}</span>}
   </div>
 
   <div class="card-footer">

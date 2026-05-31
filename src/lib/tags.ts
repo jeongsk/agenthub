@@ -5,6 +5,7 @@
  * 정의하고, 페이지/컴포넌트는 항상 여기를 참조합니다. (registry.ts의 카테고리와 동일한 컨벤션)
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { CATEGORY_IDS } from './registry';
 import { blogPosts, type BlogPost } from './blog';
 
 type Skill = CollectionEntry<'skills'>;
@@ -20,6 +21,15 @@ export const TAG_ALIASES: Record<string, string> = {
   'workspaces': 'workspace',
 };
 
+/**
+ * 카테고리 id와 정확히 같은 이름의 태그는 드롭한다.
+ * 태그 = 도메인/기술/플랫폼, 카테고리 = 산출물 종류로 축을 분리해, 같은 이름의
+ * 태그 페이지(/tags/agent-harness)와 카테고리 탭이 어긋나는 혼선을 막는다.
+ * (별칭 적용 후 비교하므로 `plugins`→`plugin`도 함께 드롭된다. `mcp`·`cli`·`web-app`
+ *  처럼 카테고리 id와 다른 형태/도메인 태그는 유지된다.)
+ */
+const DROPPED_TAGS = new Set<string>(CATEGORY_IDS);
+
 /** 인기 태그(클라우드/강조) 컷오프 — 이 횟수 이상 등장한 태그만 1차 노출 */
 export const TAG_THRESHOLD = 3;
 
@@ -32,10 +42,11 @@ export interface TagInfo {
   count: number;
 }
 
-/** 태그 문자열을 정규 태그로 변환(소문자/trim + 별칭 적용) */
+/** 태그 문자열을 정규 태그로 변환(소문자/trim + 별칭 적용). 카테고리명 태그는 ''로 드롭 */
 export function canonicalizeTag(tag: string): string {
   const normalized = tag.toLowerCase().trim();
-  return TAG_ALIASES[normalized] ?? normalized;
+  const aliased = TAG_ALIASES[normalized] ?? normalized;
+  return DROPPED_TAGS.has(aliased) ? '' : aliased;
 }
 
 /** 임의 문자열을 URL-safe slug로 변환(방어적). 현 데이터(소문자 케밥)에선 사실상 항등 */
