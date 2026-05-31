@@ -4,7 +4,7 @@ description: "ConardLi의 오픈소스 에이전트 스킬 모음입니다. 웹 
 category: "agent-skill"
 tags: ["agent-skills", "web-design", "rag", "image-generation", "claude", "skills-pack"]
 githubUrl: "https://github.com/ConardLi/garden-skills"
-githubStars: 5778
+githubStars: 6794
 author: "ConardLi"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]
 featured: false

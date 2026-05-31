@@ -4,7 +4,7 @@ description: "AI-driven development을 위한 에이전트 플랫폼입니다. C
 category: "agent-framework"
 tags: ["ai-development", "agent-platform", "cli", "gui", "sdk", "automation"]
 githubUrl: "https://github.com/OpenHands/OpenHands"
-githubStars: 74658
+githubStars: 75460
 author: "OpenHands"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini"]
 featured: true
@@ -31,5 +31,5 @@ OpenHands는 AI-driven development를 위한 에이전트 플랫폼입니다. CL
 
 ## 참고
 
-- 이 저장소는 단일 도구보다 **에이전트 개발 플랫폼/하네스**에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 자연스럽습니다.
+- 이 저장소는 단일 도구라기보다 **에이전트를 만들고 운영하는 개발 플랫폼/프레임워크**입니다.
+- 그래서 이 레지스트리에서는 `agent-framework`로 분류합니다.

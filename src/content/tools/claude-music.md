@@ -4,7 +4,7 @@ description: "Claude Code 세션 안에서 배경 음악을 재생하는 플러�
 category: "plugin"
 tags: ["claude-code", "music", "plugin", "background-music", "lofi", "dj", "focus", "terminal"]
 githubUrl: "https://github.com/kennethleungty/claude-music"
-githubStars: 14
+githubStars: 13
 author: "kennethleungty"
 installCommand: "/plugin marketplace add kennethleungty/claude-music-marketplace && /plugin install claude-music@claude-music-marketplace"
 compatibleAgents: ["Claude Code"]

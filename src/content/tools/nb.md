@@ -5,7 +5,7 @@ category: "cli-utility"
 tags: ["note-taking", "bookmarks", "knowledge-base", "cli", "markdown", "git", "pandoc", "zettelkasten"]
 githubUrl: "https://github.com/xwmx/nb"
 websiteUrl: "https://xwmx.github.io/nb"
-githubStars: 8182
+githubStars: 8188
 author: "xwmx"
 installCommand: "brew install xwmx/taps/nb"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]

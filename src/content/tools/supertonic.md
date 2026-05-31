@@ -4,7 +4,7 @@ description: "초고속 온디바이스 다국어 TTS 엔진입니다. ONNX Runt
 category: "plugin"
 tags: ["tts", "text-to-speech", "speech-synthesis", "multilingual", "onnx", "on-device", "voice"]
 githubUrl: "https://github.com/supertone-inc/supertonic"
-githubStars: 9869
+githubStars: 11027
 author: "supertone-inc"
 installCommand: "npm install supertonic"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]

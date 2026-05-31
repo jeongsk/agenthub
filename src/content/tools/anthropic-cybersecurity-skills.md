@@ -4,7 +4,7 @@ description: "754개의 구조화된 사이버보안 스킬 모음입니다. MIT
 category: "agent-skill"
 tags: ["cybersecurity", "agent-skills", "mitre-attack", "nist-csf", "security", "threat-intelligence", "devsecops", "penetration-testing", "incident-response"]
 githubUrl: "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
-githubStars: 7570
+githubStars: 12749
 author: "mukul975"
 installCommand: "agentskills clone https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
 compatibleAgents: ["Claude Code", "GitHub Copilot", "Codex CLI", "Cursor", "Gemini CLI"]

@@ -5,7 +5,7 @@ category: "agent-framework"
 tags: ["deepseek", "coding-agent", "terminal", "cli", "mcp", "skills", "memory", "typescript"]
 githubUrl: "https://github.com/esengine/DeepSeek-Reasonix"
 websiteUrl: "https://esengine.github.io/DeepSeek-Reasonix/"
-githubStars: 9592
+githubStars: 14942
 author: "esengine"
 installCommand: "npm install -g reasonix"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]

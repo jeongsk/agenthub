@@ -4,7 +4,7 @@ description: "프로덕션용 LLM 에이전트를 만들 때 필요한 원칙을
 category: "agent-component"
 tags: ["agent-harness", "framework", "context-engineering", "tdd", "llm"]
 githubUrl: "https://github.com/humanlayer/12-factor-agents"
-githubStars: 21936
+githubStars: 22860
 author: "humanlayer"
 installCommand: "git clone https://github.com/humanlayer/12-factor-agents.git"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "Gemini", "OpenCode"]

@@ -4,7 +4,7 @@ description: "에이전트를 장시간 자율 실행시키는 오케스트레�
 category: "agent-harness"
 tags: ["orchestration", "autonomous", "git", "worktree", "agent-harness", "automation"]
 githubUrl: "https://github.com/kunchenguid/gnhf"
-githubStars: 1811
+githubStars: 1853
 author: "kunchenguid"
 installCommand: "npm install -g gnhf"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "GitHub Copilot"]

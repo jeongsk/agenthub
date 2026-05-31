@@ -1,10 +1,10 @@
 ---
 title: "Agent Browser"
 description: "AI 에이전트를 위한 브라우저 자동화 CLI입니다. Rust 기반으로 빠르고 가벼우며, AI 에이전트가 웹 페이지를 탐색하고 상호작용할 수 있게 해줍니다."
-category: "plugin"
+category: "cli-utility"
 tags: ["browser-automation", "cli", "ai-agent", "rust", "web-scraping", "vercel"]
 githubUrl: "https://github.com/vercel-labs/agent-browser"
-githubStars: 34112
+githubStars: 34813
 author: "vercel-labs"
 installCommand: "npm install -g @vercel/agent-browser"
 compatibleAgents: ["Claude", "Gemini", "OpenAI", "Claude Code"]

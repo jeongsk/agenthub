@@ -4,7 +4,7 @@ description: "Codex CLI와 API에서 바로 참고할 수 있는 실전형 Codex
 category: "agent-skill"
 tags: ["agent-skills", "codex", "codex-cli", "skills-pack", "automation", "productivity"]
 githubUrl: "https://github.com/ComposioHQ/awesome-codex-skills"
-githubStars: 11798
+githubStars: 12577
 author: "ComposioHQ"
 installCommand: "git clone https://github.com/ComposioHQ/awesome-codex-skills.git"
 compatibleAgents: ["Codex"]

@@ -4,7 +4,7 @@ description: "AI 에이전트를 위한 코드 에디터입니다. Claude Code, 
 category: "agent-harness"
 tags: ["ai-agents", "claude-code", "codex", "gemini-cli", "opencode", "cursor", "orchestration", "parallel-agents", "desktop-app", "git-worktree", "macos"]
 githubUrl: "https://github.com/superset-sh/superset"
-githubStars: 11084
+githubStars: 11456
 author: "superset-sh"
 compatibleAgents: ["Claude Code", "Codex", "Gemini CLI", "OpenCode", "Cursor", "GitHub Copilot", "Amp Code", "Pi"]
 featured: true

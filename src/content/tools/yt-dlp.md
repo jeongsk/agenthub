@@ -4,7 +4,7 @@ description: "수천 개 사이트에서 오디오와 비디오를 내려받는 
 category: "cli-utility"
 tags: ["downloader", "video", "audio", "cli", "media"]
 githubUrl: "https://github.com/yt-dlp/yt-dlp"
-githubStars: 164966
+githubStars: 166807
 author: "yt-dlp"
 installCommand: "python -m pip install -U yt-dlp"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]
@@ -32,4 +32,4 @@ yt-dlp는 다양한 사이트에서 오디오와 비디오를 내려받는 기�
 ## 참고
 
 - 이 저장소는 단순한 다운로드 스크립트라기보다, *미디어 수집용 실행 도구*에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 무난합니다.
+- 그래서 이 레지스트리에서는 `cli-utility`로 분류합니다.

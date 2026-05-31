@@ -4,7 +4,7 @@ description: "최신 웹 플랫폼 API와 구현 패턴을 에이전트에 주�
 category: "agent-skill"
 tags: ["web-platform", "web-api", "javascript", "css", "accessibility", "performance"]
 githubUrl: "https://github.com/GoogleChrome/modern-web-guidance"
-githubStars: 783
+githubStars: 1074
 author: "GoogleChrome"
 installCommand: "npx modern-web-guidance@latest install"
 compatibleAgents: ["Claude Code", "Cursor", "Gemini", "Codex", "GitHub Copilot"]

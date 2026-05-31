@@ -4,7 +4,7 @@ description: "개발자 머신의 패키지, 확장 프로그램, 개발 도구 
 category: "cli-utility"
 tags: ["security", "inventory", "scanner", "supply-chain", "cli"]
 githubUrl: "https://github.com/perplexityai/bumblebee"
-githubStars: 2447
+githubStars: 4008
 author: "perplexityai"
 installCommand: "go install github.com/perplexityai/bumblebee/cmd/bumblebee@latest"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]

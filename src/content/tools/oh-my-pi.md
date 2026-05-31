@@ -4,7 +4,7 @@ description: "터미널에서 쓰는 에이전트 하네스로, IDE·LSP·브라
 category: "agent-harness"
 tags: ["agent-harness", "terminal", "lsp", "browser", "subagents"]
 githubUrl: "https://github.com/can1357/oh-my-pi"
-githubStars: 6748
+githubStars: 8951
 author: "can1357"
 installCommand: "curl -fsSL https://omp.sh/install | sh"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]

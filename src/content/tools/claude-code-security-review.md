@@ -4,7 +4,7 @@ description: "Claude Code와 GitHub Actions에서 PR 변경분의 보안 취약�
 category: "agent-component"
 tags: ["claude-code", "github-actions", "security", "code-review", "vulnerability", "anthropic"]
 githubUrl: "https://github.com/anthropics/claude-code-security-review"
-githubStars: 4805
+githubStars: 4892
 author: "anthropics"
 installCommand: "Copy .claude/commands/security-review.md into your project's .claude/commands/ folder, or use the GitHub Action in .github/workflows/security.yml"
 compatibleAgents: ["Claude Code"]

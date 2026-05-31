@@ -5,7 +5,7 @@ category: "cli-utility"
 tags: ["macos", "cleaner", "uninstaller", "disk-analysis", "system-monitor", "optimization", "cli", "homebrew"]
 githubUrl: "https://github.com/tw93/Mole"
 websiteUrl: "https://mole.fit"
-githubStars: 53420
+githubStars: 54037
 author: "tw93"
 installCommand: "brew install mole"
 compatibleAgents: []

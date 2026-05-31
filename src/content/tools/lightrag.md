@@ -1,10 +1,10 @@
 ---
 title: "LightRAG"
 description: "[EMNLP2025] 간단하고 빠른 검색 증강 생성(RAG) 프레임워크입니다. 기존 GraphRAG 대비 1% 미만의 토큰 비용으로 동등하거나 더 나은 성능을 제공하며, 지식 그래프 기반 검색을 지원합니다."
-category: "agent-skill"
+category: "agent-framework"
 tags: ["rag", "retrieval-augmented-generation", "knowledge-graph", "llm", "graphrag", "genai"]
 githubUrl: "https://github.com/HKUDS/LightRAG"
-githubStars: 35643
+githubStars: 35992
 author: "HKUDS"
 installCommand: "pip install lightrag-hku"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]

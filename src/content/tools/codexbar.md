@@ -4,7 +4,7 @@ description: "macOS 메뉴바에서 AI 코딩 도구의 사용량과 리셋 시�
 category: "desktop-utility"
 tags: ["macos", "menu-bar", "usage-monitoring", "claude-code", "codex", "privacy"]
 githubUrl: "https://github.com/steipete/CodexBar"
-githubStars: 13205
+githubStars: 13948
 author: "steipete"
 installCommand: "brew install --cask steipete/tap/codexbar"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "Gemini", "GitHub Copilot"]
@@ -30,5 +30,5 @@ CodexBar는 macOS 메뉴바에서 AI 코딩 도구의 사용량과 리셋 시점
 
 ## 참고
 
-- 이 저장소는 개별 기능 스킬보다, 에이전트 주변 환경을 보조하는 **하네스/유틸리티**에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 가장 자연스럽습니다.
+- 이 저장소는 에이전트 스킬이 아니라, 사용량과 리셋 시점을 보여 주는 **macOS 메뉴바 모니터링 유틸리티**입니다.
+- 그래서 이 레지스트리에서는 `desktop-utility`로 분류합니다.

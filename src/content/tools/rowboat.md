@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["ai-agent", "desktop-app", "knowledge-graph", "memory", "email", "calendar", "mcp", "productivity"]
 githubUrl: "https://github.com/rowboatlabs/rowboat"
 websiteUrl: "https://www.rowboatlabs.com"
-githubStars: 14416
+githubStars: 14790
 author: "rowboatlabs"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenAI"]
 icon: "BrainCircuit"

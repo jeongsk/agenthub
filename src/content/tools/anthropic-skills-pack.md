@@ -4,7 +4,7 @@ description: "조사, 글쓰기, 코드리뷰에 바로 쓰기 좋은 공개 Age
 category: "agent-skill"
 tags: ["agent-skills", "research", "writing", "code-review", "productivity"]
 githubUrl: "https://github.com/anthropics/skills"
-githubStars: 139736
+githubStars: 144474
 author: "anthropics"
 installCommand: "git clone https://github.com/anthropics/skills.git"
 compatibleAgents: ["Claude", "Cursor", "Codex"]

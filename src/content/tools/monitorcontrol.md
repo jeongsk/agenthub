@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["macos", "monitor", "brightness", "volume", "ddc", "display", "hardware-control", "osd", "desktop-app", "swift"]
 githubUrl: "https://github.com/MonitorControl/MonitorControl"
 websiteUrl: "https://monitorcontrol.app"
-githubStars: 33291
+githubStars: 33310
 author: "MonitorControl"
 installCommand: "brew install --cask monitorcontrol"
 compatibleAgents: []

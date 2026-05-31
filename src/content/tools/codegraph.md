@@ -5,7 +5,7 @@ category: "mcp-server"
 tags: ["mcp", "code-intelligence", "codebase", "indexing", "knowledge-graph"]
 githubUrl: "https://github.com/colbymchenry/codegraph"
 websiteUrl: "https://colbymchenry.github.io/codegraph/"
-githubStars: 24409
+githubStars: 34886
 author: "colbymchenry"
 installCommand: "npx @colbymchenry/codegraph"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode", "Hermes Agent"]

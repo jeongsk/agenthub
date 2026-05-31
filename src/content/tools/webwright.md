@@ -5,7 +5,7 @@ category: "agent-framework"
 tags: ["browser-agent", "playwright", "web-automation", "terminal", "python", "swe"]
 githubUrl: "https://github.com/microsoft/Webwright"
 websiteUrl: "https://microsoft.github.io/Webwright/"
-githubStars: 807
+githubStars: 4540
 author: "microsoft"
 installCommand: "pip install -e . && playwright install chromium"
 compatibleAgents: ["Claude Code", "Codex", "Hermes Agent", "OpenCode"]

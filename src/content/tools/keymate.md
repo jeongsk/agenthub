@@ -4,7 +4,6 @@ description: "휴대폰을 컴퓨터용 컨트롤 패드로 바꿔주는 데스�
 category: "desktop-utility"
 tags: ["productivity", "remote-control", "shortcuts", "obs", "cross-platform", "macos", "windows", "ios", "android"]
 websiteUrl: "https://keymate.nemostudio.net"
-githubStars: 0
 author: "nemostudio"
 compatibleAgents: []
 icon: "Smartphone"
