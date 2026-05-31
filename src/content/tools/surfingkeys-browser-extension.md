@@ -4,7 +4,7 @@ description: "키보드 중심의 웹 탐색과 조작을 강화하는 오픈소
 category: "browser-extension"
 tags: ["keyboard-navigation", "productivity", "browser-automation", "vim", "open-source"]
 githubUrl: "https://github.com/brookhong/Surfingkeys"
-githubStars: 6091
+githubStars: 6093
 chromeWebStoreUrl: "https://chromewebstore.google.com/detail/surfingkeys/gfbliohnnapiefjpjlpjnehglfpaknnc"
 author: "brookhong"
 installCommand: "git clone https://github.com/brookhong/Surfingkeys.git && cd Surfingkeys && npm install && npm run build"

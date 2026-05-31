@@ -4,7 +4,7 @@ description: "웹페이지를 데스크톱 앱으로 단일 명령어로 변환�
 category: "cli-utility"
 tags: ["tauri", "rust", "desktop-app", "web-to-app", "cross-platform", "macos", "windows", "linux", "packaging"]
 githubUrl: "https://github.com/tw93/Pake"
-githubStars: 49414
+githubStars: 49556
 author: "tw93"
 installCommand: "npm install -g @tw93/pake-cli"
 compatibleAgents: []

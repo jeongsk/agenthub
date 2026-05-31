@@ -5,7 +5,7 @@ category: "agent-framework"
 tags: ["trading-agent", "finance", "ai-trading", "gitops", "uta", "mcp", "workspace", "market-research", "automation"]
 githubUrl: "https://github.com/TraderAlice/OpenAlice"
 websiteUrl: "https://openalice.ai"
-githubStars: 4429
+githubStars: 4628
 author: "TraderAlice"
 featured: false
 icon: "CandlestickChart"

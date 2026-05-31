@@ -1,10 +1,10 @@
 ---
 title: "Hermes Workspace"
 description: "Hermes Agent용 웹 기반 작업 공간입니다. 채팅, 파일, 메모리, 스킬, 터미널을 한곳에서 다루고 싶을 때 유용합니다."
-category: "desktop-utility"
+category: "agent-harness"
 tags: ["hermes-agent", "workspace", "dashboard", "terminal", "memory", "skills"]
 githubUrl: "https://github.com/outsourc-e/hermes-workspace"
-githubStars: 4754
+githubStars: 5114
 author: "outsourc-e"
 installCommand: "curl -fsSL https://raw.githubusercontent.com/outsourc-e/hermes-workspace/main/install.sh | bash"
 compatibleAgents: ["Hermes Agent", "Claude Code", "Codex", "OpenCode", "Gemini"]

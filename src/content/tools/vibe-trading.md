@@ -4,7 +4,7 @@ description: "개인 맞춤형 트레이딩 AI 에이전트입니다. 다중 에
 category: "agent-skill"
 tags: ["trading", "algorithmic-trading", "fintech", "multi-agent", "quantitative-finance", "mcp", "ai-agent"]
 githubUrl: "https://github.com/HKUDS/Vibe-Trading"
-githubStars: 8442
+githubStars: 9103
 author: "HKUDS"
 installCommand: "git clone https://github.com/HKUDS/Vibe-Trading.git && cd Vibe-Trading && pip install -r requirements.txt"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]

@@ -1,11 +1,11 @@
 ---
 title: "Horizon"
 description: "AI로 뉴스와 소스를 모아 일일 브리핑으로 정리하는 오픈소스 뉴스 레이더입니다. Hacker News, RSS, Reddit, Telegram, GitHub 등을 한 파이프라인에서 수집·중복제거·요약해서 개인화된 데일리 브리핑을 만들고 싶을 때 유용합니다."
-category: "agent-framework"
+category: "cli-utility"
 tags: ["news", "briefing", "rss", "hacker-news", "reddit", "telegram", "github", "email", "webhook", "llm"]
 githubUrl: "https://github.com/Thysrael/Horizon"
 websiteUrl: "https://thysrael.github.io/Horizon/"
-githubStars: 5109
+githubStars: 5252
 author: "Thysrael"
 installCommand: "git clone https://github.com/Thysrael/Horizon.git && cd Horizon && uv sync"
 compatibleAgents: ["Claude", "GPT", "Gemini", "DeepSeek", "Ollama"]

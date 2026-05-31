@@ -4,7 +4,7 @@ description: "오픈소스 AI 프로젝트, 모델, 인프라, 도구를 엄선�
 category: "agent-skill"
 tags: ["awesome-list", "open-source-ai", "llm", "models", "inference", "agents", "mlops", "evaluation", "learning", "curation"]
 githubUrl: "https://github.com/alvinreal/awesome-opensource-ai"
-githubStars: 3700
+githubStars: 3706
 author: "alvinreal"
 installCommand: "git clone https://github.com/alvinreal/awesome-opensource-ai.git"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Gemini"]

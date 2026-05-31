@@ -4,7 +4,7 @@ description: "함께 성장하는 AI 에이전트 프레임워크입니다. 900�
 category: "agent-framework"
 tags: ["ai-agent", "agent-framework", "multi-agent", "skills", "plugins", "gateway", "kanban", "hermes", "open-source"]
 githubUrl: "https://github.com/NousResearch/hermes-agent"
-githubStars: 164633
+githubStars: 174234
 author: "NousResearch"
 installCommand: "pip install hermes-agent"
 compatibleAgents: ["OpenAI", "Anthropic", "Google Gemini", "Claude Code", "Codex"]

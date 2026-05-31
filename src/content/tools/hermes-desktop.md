@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["hermes-agent", "desktop-app", "gui", "profiles", "skills", "tools", "memory", "gateway", "scheduling"]
 githubUrl: "https://github.com/fathah/hermes-desktop"
 websiteUrl: "https://hermesagents.cc"
-githubStars: 7456
+githubStars: 8803
 author: "fathah"
 compatibleAgents: ["Hermes Agent"]
 featured: false

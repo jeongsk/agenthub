@@ -4,7 +4,7 @@ description: "AI 에이전트가 뛰어난 개발자처럼 행동하게 만드�
 category: "agent-harness"
 tags: ["agent-skills", "agent-framework", "software-development", "methodology", "coding-agent"]
 githubUrl: "https://github.com/obra/superpowers"
-githubStars: 204150
+githubStars: 213327
 author: "obra"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "GitHub Copilot"]
 featured: true

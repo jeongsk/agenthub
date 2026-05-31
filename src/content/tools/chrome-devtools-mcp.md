@@ -4,7 +4,7 @@ description: "실행 중인 Chrome을 MCP 서버로 제어하고 검사하는 �
 category: "mcp-server"
 tags: ["mcp", "chrome", "devtools", "browser-debugging", "performance"]
 githubUrl: "https://github.com/ChromeDevTools/chrome-devtools-mcp"
-githubStars: 41338
+githubStars: 42390
 author: "ChromeDevTools"
 installCommand: "npx -y chrome-devtools-mcp@latest"
 compatibleAgents: ["Claude Code", "Cursor", "Copilot"]

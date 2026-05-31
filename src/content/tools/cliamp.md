@@ -5,7 +5,7 @@ category: "cli-utility"
 tags: ["music", "audio-player", "terminal", "cli", "streaming", "playlist", "radio", "podcast"]
 githubUrl: "https://github.com/bjarneo/cliamp"
 websiteUrl: "http://www.cliamp.stream"
-githubStars: 2257
+githubStars: 2325
 author: "bjarneo"
 installCommand: "curl -fsSL https://raw.githubusercontent.com/bjarneo/cliamp/HEAD/install.sh | sh"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]

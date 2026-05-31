@@ -4,7 +4,7 @@ description: "Claude Code에 버그 헌팅과 외부 레드팀용 스킬 묶음�
 category: "agent-skill"
 tags: ["claude-code", "security", "bug-bounty", "red-team", "pentesting", "osint", "reporting", "skills-pack", "cybersecurity"]
 githubUrl: "https://github.com/elementalsouls/Claude-BugHunter"
-githubStars: 1343
+githubStars: 1395
 author: "elementalsouls"
 installCommand: "git clone https://github.com/elementalsouls/Claude-BugHunter.git"
 compatibleAgents: ["Claude Code"]

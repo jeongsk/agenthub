@@ -4,7 +4,7 @@ description: "실시간 음성·멀티모달 대화 에이전트를 만드는 Py
 category: "agent-framework"
 tags: ["voice", "multimodal", "agent-framework", "real-time", "python", "conversation"]
 githubUrl: "https://github.com/pipecat-ai/pipecat"
-githubStars: 12447
+githubStars: 12569
 author: "pipecat-ai"
 installCommand: "pip install pipecat-ai"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode"]
@@ -32,5 +32,5 @@ Pipecat은 실시간 음성·멀티모달 대화 에이전트를 만드는 Pytho
 
 ## 참고
 
-- 이 저장소는 단일 기능 도구보다 **에이전트 실행 구조를 만드는 하네스**에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 자연스럽습니다.
+- 이 저장소는 단일 기능 도구라기보다 **실시간 음성·멀티모달 에이전트를 만드는 Python 프레임워크**입니다.
+- 그래서 이 레지스트리에서는 `agent-framework`로 분류합니다.

@@ -4,7 +4,7 @@ description: "Claude Code에서 차단된 웹사이트나 WAF, CAPTCHA, 로그�
 category: "agent-skill"
 tags: ["web-scraping", "fallback", "anti-bot", "claude-code", "search"]
 githubUrl: "https://github.com/fivetaku/insane-search"
-githubStars: 666
+githubStars: 672
 author: "fivetaku"
 installCommand: "/plugin marketplace add https://github.com/fivetaku/gptaku_plugins.git && /plugin install insane-search"
 compatibleAgents: ["Claude Code"]

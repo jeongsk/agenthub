@@ -4,7 +4,7 @@ description: "오픈소스 AI 프레젠테이션 생성기 및 API입니다. Gam
 category: "plugin"
 tags: ["ai-presentation", "powerpoint-generation", "api", "presentation", "productivity"]
 githubUrl: "https://github.com/presenton/presenton"
-githubStars: 6485
+githubStars: 7609
 author: "presenton"
 installCommand: "npm install -g presenton"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]

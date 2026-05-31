@@ -5,7 +5,7 @@ category: "cli-utility"
 tags: ["music", "audio-player", "terminal", "cli", "radio", "youtube", "ai-music", "daemon"]
 githubUrl: "https://github.com/luongnv89/music-cli"
 websiteUrl: "https://music-cli.luongnv.com"
-githubStars: 65
+githubStars: 66
 author: "luongnv89"
 installCommand: "curl -sSL https://raw.githubusercontent.com/luongnv89/music-cli/main/install.sh | bash"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]

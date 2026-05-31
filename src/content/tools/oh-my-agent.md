@@ -4,7 +4,7 @@ description: "프로젝트별 전문화된 에이전트 팀을 구성할 수 있
 category: "agent-harness"
 tags: ["ai-agents", "agent-harness", "multi-agent", "orchestration", "claude-code", "codex", "cursor", "opencode", "serena", "workflow", "cli"]
 githubUrl: "https://github.com/first-fluke/oh-my-agent"
-githubStars: 1011
+githubStars: 1038
 author: "first-fluke"
 installCommand: "curl -fsSL https://raw.githubusercontent.com/first-fluke/oh-my-agent/main/cli/install.sh | bash"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "Gemini CLI", "OpenCode", "GitHub Copilot", "Antigravity", "Serena"]

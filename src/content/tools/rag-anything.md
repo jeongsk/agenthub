@@ -1,10 +1,10 @@
 ---
 title: "RAG-Anything"
 description: "올인원 RAG 프레임워크입니다. 멀티 모달(텍스트, 이미지, 코드 등) 검색 증강 생성을 하나의 통합 인터페이스로 제공합니다."
-category: "agent-skill"
+category: "agent-framework"
 tags: ["rag", "retrieval-augmented-generation", "multi-modal-rag", "llm", "genai"]
 githubUrl: "https://github.com/HKUDS/RAG-Anything"
-githubStars: 20563
+githubStars: 20795
 author: "HKUDS"
 installCommand: "pip install rag-anything"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]

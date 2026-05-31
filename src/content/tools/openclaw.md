@@ -4,7 +4,7 @@ description: "내 기기에서 직접 실행하는 개인 AI 어시스턴트입�
 category: "agent-framework"
 tags: ["ai-assistant", "personal-ai", "multi-channel", "open-source", "local-first", "voice", "canvas", "chat"]
 githubUrl: "https://github.com/openclaw/openclaw"
-githubStars: 374221
+githubStars: 375782
 author: "openclaw"
 installCommand: "openclaw onboard"
 compatibleAgents: ["Claude Code", "Gemini", "OpenAI"]

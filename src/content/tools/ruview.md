@@ -4,7 +4,7 @@ description: "일반 WiFi 신호를 실시간 공간 인텔리전스, 생체 신
 category: "plugin"
 tags: ["spatial-intelligence", "wifi-sensing", "iot", "home-automation", "physical-ai", "esp32", "agentic-ai"]
 githubUrl: "https://github.com/ruvnet/RuView"
-githubStars: 64816
+githubStars: 69225
 author: "ruvnet"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]
 featured: true

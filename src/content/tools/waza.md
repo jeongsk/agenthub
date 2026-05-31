@@ -4,7 +4,7 @@ description: "일상적인 엔지니어링 습관(설계·검토·디버깅·러
 category: "agent-skill"
 tags: ["claude-code", "codex", "engineering-habits", "code-review", "debugging", "design", "learning", "skills"]
 githubUrl: "https://github.com/tw93/Waza"
-githubStars: 5362
+githubStars: 5444
 author: "tw93"
 installCommand: "npx skills add tw93/Waza -a claude-code -g -y"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode"]

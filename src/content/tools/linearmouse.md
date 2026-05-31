@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["macos", "mouse", "trackpad", "scrolling", "pointer-speed", "acceleration", "button-remapping", "profiles", "productivity", "desktop-app"]
 githubUrl: "https://github.com/linearmouse/linearmouse"
 websiteUrl: "https://linearmouse.app"
-githubStars: 6220
+githubStars: 6244
 author: "linearmouse"
 installCommand: "brew install --cask linearmouse"
 compatibleAgents: []

@@ -5,7 +5,7 @@ category: "agent-skill"
 tags: ["react", "code-review", "code-quality", "linting", "agent-skills", "ci", "github-actions"]
 githubUrl: "https://github.com/millionco/react-doctor"
 websiteUrl: "https://react.doctor"
-githubStars: 10858
+githubStars: 11638
 author: "millionco"
 installCommand: "npx react-doctor@latest install"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode"]

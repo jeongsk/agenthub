@@ -4,7 +4,7 @@ description: "CapCut·Canva 대안으로 지향하는 AI 기반 비디오 편집
 category: "desktop-utility"
 tags: ["video-editing", "editor", "ai-assistant", "react", "remotion", "creative"]
 githubUrl: "https://github.com/trykimu/videoeditor"
-githubStars: 1936
+githubStars: 2016
 author: "trykimu"
 installCommand: "docker compose up"
 compatibleAgents: ["Claude Code", "Cursor", "Codex", "OpenCode"]
@@ -32,5 +32,5 @@ VideoEditor는 AI 보조 기능이 들어간 오픈소스 비디오 편집기입
 
 ## 참고
 
-- 이 저장소는 단일 기능 스킬보다 **AI 보조 편집 환경**에 가깝습니다.
-- 그래서 이 레지스트리에서는 `agent-harness`로 분류하는 편이 무난합니다.
+- 이 저장소는 단일 기능 스킬이라기보다 **AI 보조 기능을 갖춘 비디오 편집 애플리케이션**입니다.
+- 그래서 이 레지스트리에서는 `desktop-utility`로 분류합니다.

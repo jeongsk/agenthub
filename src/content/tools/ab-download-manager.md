@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["download-manager", "downloader", "kotlin", "compose-desktop", "cross-platform", "desktop-app", "browser-extension", "windows", "linux", "macos"]
 githubUrl: "https://github.com/amir1376/ab-download-manager"
 websiteUrl: "https://abdownloadmanager.com"
-githubStars: 15678
+githubStars: 15714
 author: "amir1376"
 installCommand: "brew tap amir1376/tap && brew install --cask ab-download-manager"
 compatibleAgents: []

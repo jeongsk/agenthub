@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["macos", "clipboard-manager", "clipboard", "productivity", "menu-bar", "swift", "desktop-app"]
 githubUrl: "https://github.com/p0deje/Maccy"
 websiteUrl: "https://maccy.app"
-githubStars: 20042
+githubStars: 20076
 author: "p0deje"
 installCommand: "brew install maccy"
 compatibleAgents: []

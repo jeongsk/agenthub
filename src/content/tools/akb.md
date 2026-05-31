@@ -4,7 +4,7 @@ description: "에이전트 조직 지식베이스(Agent Knowledgebase)입니다.
 category: "mcp-server"
 tags: ["mcp", "knowledge-base", "knowledge-graph", "agent-memory", "vector-search", "rag", "multi-tenant"]
 githubUrl: "https://github.com/dnotitia/AKB"
-githubStars: 21
+githubStars: 43
 author: "dnotitia"
 installCommand: "git clone https://github.com/dnotitia/AKB.git && cd AKB && pip install -r requirements.txt"
 compatibleAgents: ["Claude Code", "Claude", "Gemini", "OpenAI"]

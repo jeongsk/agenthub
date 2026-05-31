@@ -4,7 +4,7 @@ description: "macOS용 방사형 메뉴 기반 창 관리 앱입니다. 트리�
 category: "desktop-utility"
 tags: ["macos", "window-management", "radial-menu", "productivity", "desktop-app", "swiftui"]
 githubUrl: "https://github.com/MrKai77/Loop"
-githubStars: 10802
+githubStars: 10828
 author: "MrKai77"
 installCommand: "brew install loop"
 compatibleAgents: []

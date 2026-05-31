@@ -4,7 +4,7 @@ description: "macOS 메뉴 막대에서 시스템 상태를 확인하고 팬 제
 category: "desktop-utility"
 tags: ["macos", "menu-bar", "system-monitoring", "fan-control", "sleep", "utility"]
 githubUrl: "https://github.com/jaehwan02/UltraCat"
-githubStars: 9
+githubStars: 93
 author: "jaehwan02"
 compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini"]
 icon: "Activity"
@@ -30,4 +30,4 @@ UltraCat은 macOS 메뉴 막대 유틸리티입니다. 시스템 상태를 모�
 ## 참고
 
 - 이 저장소는 에이전트 스킬이나 브라우저 확장보다 **macOS 데스크톱 유틸리티**에 가깝습니다.
-- 이 레지스트리에서는 기존 분류 중 가장 가까운 `agent-harness`로 정리했습니다.
+- 그래서 이 레지스트리에서는 `desktop-utility`로 분류합니다.
