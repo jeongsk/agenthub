@@ -20,11 +20,14 @@ export interface BlogPost {
   html?: string;
 }
 
-function renderWikiMarkdown(source: string) {
-  const body = source.replace(/^---[\s\S]*?---\n/, '');
+function renderWikiMarkdown(source: string, assetFolder: string) {
+  const body = source
+    .replace(/^---[\s\S]*?---\n/, '')
+    // 블로그 템플릿이 post.title을 이미 <h1>으로 렌더하므로, 본문 선두의 중복 H1을 제거한다.
+    .replace(/^\s*#\s+[^\n]*\n+/, '');
   const translated = body
     .replace(/!\[\[assets\/wiki-pages\/([^\]]+)\]\]/g, (_match: string, fileName: string) => {
-      return `![](/blog-assets/agent-harness-engineering-survey/${fileName})`;
+      return `![](/blog-assets/${assetFolder}/${fileName})`;
     })
     .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
     .replace(/\[\[([^\]]+)\]\]/g, '$1');
@@ -32,8 +35,8 @@ function renderWikiMarkdown(source: string) {
   return marked.parse(translated, { async: false }) as string;
 }
 
-const agentHarnessEngineeringHtml = renderWikiMarkdown(agentHarnessEngineeringSource);
-const aiNativeCompanyHtml = renderWikiMarkdown(aiNativeCompanySource);
+const agentHarnessEngineeringHtml = renderWikiMarkdown(agentHarnessEngineeringSource, 'agent-harness-engineering-survey');
+const aiNativeCompanyHtml = renderWikiMarkdown(aiNativeCompanySource, 'ai-is-not-a-tool-company-os');
 
 export const blogPosts: BlogPost[] = [
   {
@@ -56,75 +59,11 @@ export const blogPosts: BlogPost[] = [
     date: '2026.05.25',
     readTime: '10분',
     category: 'Operations',
-    tags: ['ai-agents', 'harness', 'survey', 'observability', 'governance'],
+    tags: ['ai-agents', 'harness', 'etclovg', 'survey', 'observability', 'governance'],
     html: agentHarnessEngineeringHtml,
-    sections: [
-      {
-        heading: '왜 하네스가 중요해졌나',
-        paragraphs: [
-          '모델이 좋아질수록 병목은 점점 모델 바깥으로 이동합니다. 실제 프로덕션에서는 어떤 프롬프트를 쓰는지보다 어떤 실행 환경, 도구 계약, 컨텍스트 정책, 검증 루프를 두는지가 더 큰 차이를 만듭니다.',
-          '이 글은 2026년 공개된 Agent Harness Engineering 서베이를 바탕으로, 에이전트를 운영 가능한 시스템으로 만드는 핵심 레이어를 압축해 정리한 글입니다.',
-        ],
-      },
-      {
-        heading: '모델이 같아도 점수는 달라집니다',
-        paragraphs: [
-          'LangChain은 `gpt-5.2-codex`를 고정한 상태에서 하네스만 바꿔 Terminal Bench 점수를 52.8에서 66.5까지 끌어올렸습니다. 같은 모델인데도 13점이 넘는 차이가 났다는 사실은, 하네스가 부수 장식이 아니라 성능을 좌우하는 본체라는 점을 보여줍니다.',
-          '즉, "어떤 모델을 쓸까"만 보지 말고 "모델 주변에 어떤 시스템을 둘까"를 같이 봐야 합니다.',
-        ],
-      },
-      {
-        heading: 'ETCLOVG는 하네스를 7계층으로 나눕니다',
-        paragraphs: [
-          '서베이는 하네스를 Execution, Tool, Context, Lifecycle, Observability, Verification, Governance의 7개 관심사로 나눕니다. 이 분해가 중요한 이유는, 프로토타입에서 보이지 않던 운영 이슈가 어느 레이어에서 생기는지 추적할 수 있게 해주기 때문입니다.',
-        ],
-        bullets: [
-          'E — Execution environment: 컨테이너, microVM, 브라우저, OS 권한 경계',
-          'T — Tool interface & protocol: tool schema, MCP, function calling',
-          'C — Context & memory management: retrieval, compaction, long-term memory',
-          'L — Lifecycle & orchestration: 단일/멀티 에이전트 루프, task pipeline',
-          'O — Observability & operations: tracing, latency, 비용, 실패 진단',
-          'V — Verification & evaluation: 벤치마크, 회귀 평가, trajectory capture',
-          'G — Governance & security: 권한 제어, 정책, 감사 추적, guardrails',
-        ],
-      },
-      {
-        heading: '운영에서 특히 비는 영역은 O와 G입니다',
-        paragraphs: [
-          '오픈소스 에이전트 프로젝트는 샌드박스(E), 도구(T), 루프(L), 평가(V)는 비교적 빨리 채웁니다. 반면 관측(O)과 거버넌스(G)는 뒤늦게 붙는 경우가 많습니다.',
-          '하지만 실제 운영으로 넘어가면 O와 G가 없어서 생기는 문제를 제일 먼저 마주칩니다. 누가 무엇을 실행했는지, 어떤 권한이 사용됐는지, 실패가 어디서 났는지를 볼 수 있어야 롤아웃과 복구가 가능합니다.',
-        ],
-      },
-      {
-        heading: '하네스 변경은 시스템 변경으로 다뤄야 합니다',
-        paragraphs: [
-          '프롬프트, 도구, 샌드박스, 검증기, 모니터를 따로 최적화하면 좋아 보이는 변경도 전체 루프와 합쳐졌을 때는 깨질 수 있습니다. 그래서 하네스 변경은 국소 패치가 아니라 시스템 변경으로 테스트해야 합니다.',
-          '실무적으로는 비용·품질·속도, 능력·통제의 균형을 같이 보면서, 어느 지점에서 사람이 개입하고 어느 지점에서 자동화할지 명시해야 합니다.',
-        ],
-      },
-      {
-        heading: '지금 당장 점검할 것',
-        bullets: [
-          '도구 스키마와 권한 범위가 실제 작업에 맞는지 확인하기',
-          '장기 실행 에이전트라면 컨텍스트 압축과 상태 복원 전략을 분리하기',
-          'trace와 outcome score를 같이 남겨 회귀 분석이 가능하게 만들기',
-          'human handoff 시 intent, permissions, artifacts, risk level까지 넘기기',
-        ],
-        paragraphs: [
-          '하네스 엔지니어링은 모델을 대체하는 일이 아니라, 모델이 실제 업무를 안전하게 끝낼 수 있도록 바깥을 설계하는 일입니다.',
-        ],
-      },
-      {
-        heading: '더 읽을거리',
-        paragraphs: [],
-        bullets: [
-          'OpenReview: https://openreview.net/forum?id=eONq7FdiHa',
-          '프로젝트 페이지: https://picrew.github.io/LLM-Harness/',
-          '오픈소스 카탈로그: https://github.com/Picrew/awesome-agent-harness',
-          'LangChain Deep Agents: https://www.langchain.com/blog/improving-deep-agents-with-harness-engineering',
-        ],
-      }
-    ],
+    // 본문은 위 html(마크다운 렌더)로 표시되며, 블로그 템플릿이 html을 우선하므로
+    // sections는 렌더되지 않는다. 죽은 데이터(구버전 링크 포함)를 남기지 않도록 비워 둔다.
+    sections: [],
   },
   {
     slug: 'choosing-mcp-servers',
