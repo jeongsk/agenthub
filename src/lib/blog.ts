@@ -1,6 +1,7 @@
 import { marked } from 'marked';
 import agentHarnessEngineeringSource from '../content/blog/2026-05-25-agent-harness-engineering-blog.md?raw';
 import aiNativeCompanySource from '../content/blog/2026-05-25-ai-is-not-a-tool-company-os.md?raw';
+import hashedKimSeojunSource from '../content/blog/2026-05-30-hashed-kim-seojun-ai-intention.md?raw';
 
 export interface BlogSection {
   heading: string;
@@ -29,6 +30,10 @@ function renderWikiMarkdown(source: string, assetFolder: string) {
     .replace(/!\[\[assets\/wiki-pages\/([^\]]+)\]\]/g, (_match: string, fileName: string) => {
       return `![](/blog-assets/${assetFolder}/${fileName})`;
     })
+    // 노트의 상대 스크린샷 경로(screenshots/...)를 발행용 절대 경로로 변환
+    .replace(/\]\(screenshots\//g, `](/blog-assets/${assetFolder}/`)
+    // Obsidian 콜아웃(> [!type] 제목)을 marked가 깔끔히 렌더하도록 굵은 제목 + 본문 분리로 변환
+    .replace(/^> \[![a-zA-Z]+\]\s*(.+)$/gm, '> **$1**\n>')
     .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
     .replace(/\[\[([^\]]+)\]\]/g, '$1');
 
@@ -37,8 +42,21 @@ function renderWikiMarkdown(source: string, assetFolder: string) {
 
 const agentHarnessEngineeringHtml = renderWikiMarkdown(agentHarnessEngineeringSource, 'agent-harness-engineering-survey');
 const aiNativeCompanyHtml = renderWikiMarkdown(aiNativeCompanySource, 'ai-is-not-a-tool-company-os');
+const hashedKimSeojunHtml = renderWikiMarkdown(hashedKimSeojunSource, 'hashed-kim-seojun-ai-intention');
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'hashed-kim-seojun-ai-intention',
+    title: "AI가 실행하는 시대, 인간에게 남는 건 '의도'",
+    description:
+      '해시드 김서준 대표가 바이브 코딩을 직접 경험한 뒤 그린 AI 시대 — 창업·VC·대학·회사의 해체와 에이전트 경제, 그리고 사람에게 남는 건 의도뿐이라는 대담을 스크린샷과 함께 정리했습니다.',
+    date: '2026.05.30',
+    readTime: '18분',
+    category: 'Operations',
+    tags: ['ai-agents', 'agent-economy', 'vibe-coding', 'blockchain', 'startup', 'future-of-work'],
+    html: hashedKimSeojunHtml,
+    sections: [],
+  },
   {
     slug: 'ai-is-not-a-tool-company-os',
     title: 'AI는 도구가 아니라 운영체제다',
