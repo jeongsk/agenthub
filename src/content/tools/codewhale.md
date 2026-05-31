@@ -16,6 +16,8 @@ icon: "Shell"
 
 CodeWhale는 터미널에서 실행되는 DeepSeek 모델 전용 코딩 에이전트입니다. Rust로 작성되어 가볍고 빠르며, TUI(터미널 UI)를 통해 직관적인 코드 생성 및 편집 환경을 제공합니다. DeepSeek 모델에 특화되어 있어 다른 코딩 에이전트보다 DeepSeek과의 호환성과 성능이 뛰어납니다.
 
+![CodeWhale — Rust 기반 TUI 코딩 에이전트 터미널 화면](/tool-screenshots/codewhale-screenshot.webp)
+
 ## 언제 쓰나
 
 - DeepSeek 모델을 활용한 코딩 에이전트가 필요할 때

@@ -16,6 +16,8 @@ icon: "Clapperboard"
 
 VideoEditor는 AI 보조 기능이 들어간 오픈소스 비디오 편집기입니다. 멀티트랙 편집, 실시간 미리보기, 빠른 내보내기, 미디어 정리 기능을 한데 묶어 영상 편집 흐름을 단순하게 해 줍니다.
 
+![VideoEditor 비디오 편집기 메인 UI](/tool-screenshots/videoeditor-ui.webp)
+
 ## 언제 쓰나
 
 - AI 도움을 받으면서 영상 편집을 하고 싶을 때

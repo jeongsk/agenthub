@@ -16,6 +16,8 @@ icon: "MonitorCog"
 
 Hermes Desktop은 Hermes Agent를 위한 데스크톱 동반 앱입니다. 설치와 초기 설정부터 채팅, 세션, 프로필, 메모리, 스킬, 도구, 스케줄, 게이트웨이까지 한 화면에서 관리할 수 있어서, CLI를 직접 만지기보다 GUI로 운영하고 싶은 사용자에게 맞습니다.
 
+![Hermes Desktop 채팅 화면](/tool-screenshots/hermes-desktop-chat.webp)
+
 ## 언제 쓰나
 
 - Hermes Agent를 처음 설치하고 설정하는 과정을 GUI로 따라가고 싶을 때

@@ -15,6 +15,8 @@ icon: "Sprout"
 
 ConardLi의 오픈소스 에이전트 스킬 컬렉션입니다. 웹 디자인, 지식 검색(RAG), 이미지 생성(GPT Image 2 API 기반) 등 다양한 영역의 스킬을 포함합니다.
 
+![Garden Skills 웹 디자인 스킬 실행 결과](/tool-screenshots/garden-skills-web-design.webp)
+
 ## 언제 쓰나
 
 - AI 에이전트에 웹 디자인 능력을 추가하고 싶을 때

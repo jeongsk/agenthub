@@ -16,6 +16,8 @@ icon: "Monitor"
 
 오픈소스 AI 프레젠테이션 생성기입니다. AI 에이전트가 API를 통해 슬라이드 덱을 자동으로 만들 수 있게 해주며, Gamma, Beautiful AI, Decktopus의 오픈소스 대안 역할을 합니다.
 
+![Presenton 데스크톱 앱 화면: AI가 자동 생성한 슬라이드 덱을 편집하는 UI](/tool-screenshots/presenton-banner.webp)
+
 ## 언제 쓰나
 
 - AI 에이전트가 회의 자료나 보고서용 슬라이드를 자동 생성하게 하고 싶을 때

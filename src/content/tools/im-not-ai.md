@@ -15,7 +15,7 @@ icon: "Sparkles"
 
 Humanize KR은 Claude Code에서 한국어 AI 문체를 자연스럽게 다듬는 스킬 번들입니다. 의미는 유지하면서 번역투, 과도한 영어식 표현, 기계적인 구조를 줄여 더 자연스러운 한국어로 바꿔 주기 때문에, 초안을 사람 톤으로 정리하고 싶을 때 유용합니다.
 
-![Humanize KR social preview](/tool-screenshots/im-not-ai-social-preview.png)
+![Humanize KR social preview](/tool-screenshots/im-not-ai-social-preview.webp)
 
 ## 언제 쓰나
 

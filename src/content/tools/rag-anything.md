@@ -16,6 +16,8 @@ icon: "Search"
 
 RAG-Anything은 올인원 RAG(Retrieval-Augmented Generation) 프레임워크입니다. 텍스트, 이미지, 코드 등 여러 모달리티에 걸친 검색 증강 생성을 하나의 통합 인터페이스로 제공합니다.
 
+![RAG-Anything 멀티모달 RAG 아키텍처 다이어그램](/tool-screenshots/rag-anything-framework.webp)
+
 ## 언제 쓰나
 
 - AI 에이전트에 멀티 모달 RAG 기능을 추가하고 싶을 때 (텍스트 + 이미지 + 코드)

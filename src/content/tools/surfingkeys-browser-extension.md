@@ -17,6 +17,8 @@ icon: "Keyboard"
 
 Surfingkeys는 키보드만으로 웹 페이지를 빠르게 탐색하고 조작할 수 있게 해 주는 확장입니다.
 
+![Surfingkeys 키보드 단축키 도움말 오버레이 화면](/tool-screenshots/surfingkeys-keybindings.webp)
+
 ## 핵심 용도
 
 - 키보드 중심 웹 탐색

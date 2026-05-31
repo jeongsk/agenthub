@@ -16,6 +16,8 @@ icon: "Zap"
 
 PortKiller는 개발 중 자주 마주치는 포트 충돌을 빠르게 정리해 주는 데스크톱 앱입니다. 로컬 리스닝 포트, Kubernetes port-forward 세션, Cloudflare Tunnel 연결을 한곳에서 보고, 필요하면 점유 프로세스를 바로 종료할 수 있습니다.
 
+![PortKiller macOS 화면: 로컬 포트, Kubernetes 포트포워드, Cloudflare Tunnel 상태를 한눈에 보여주는 메뉴바 앱](/tool-screenshots/port-killer-macos.webp)
+
 ## 언제 쓰나
 
 - `3000`, `5173` 같은 개발 포트가 이미 사용 중일 때

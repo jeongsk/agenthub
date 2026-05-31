@@ -16,6 +16,8 @@ icon: "Globe"
 
 CloakBrowser는 일반적인 브라우저 자동화보다 더 강한 탐지 회피 특성을 갖춘 Chromium 기반 런타임입니다. Playwright나 Puppeteer와 비슷한 방식으로 호출할 수 있으면서도, 브라우저 지문과 자동화 신호를 더 적극적으로 조정하는 쪽에 초점이 있습니다.
 
+![CloakBrowser — Cloudflare Turnstile 통과 테스트 데모](/tool-screenshots/cloakbrowser-turnstile.webp)
+
 ## 핵심 포인트
 
 - **Playwright/Puppeteer 호환성**: 기존 자동화 코드를 크게 바꾸지 않고 연결하기 쉽습니다.

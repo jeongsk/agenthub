@@ -6,7 +6,7 @@ tags: ["mcp", "knowledge-base", "knowledge-graph", "agent-memory", "vector-searc
 githubUrl: "https://github.com/dnotitia/AKB"
 githubStars: 43
 author: "dnotitia"
-installCommand: "git clone https://github.com/dnotitia/AKB.git && cd AKB && pip install -r requirements.txt"
+installCommand: "git clone https://github.com/dnotitia/AKB.git && cd AKB && docker compose up -d"
 compatibleAgents: ["Claude Code", "Claude", "Gemini", "OpenAI"]
 featured: false
 icon: "Database"
@@ -15,6 +15,8 @@ icon: "Database"
 # AKB (Agent Knowledgebase)
 
 AKB는 AI 에이전트를 위한 조직 지식베이스(Agent Knowledgebase)입니다. 보관함(vault) 단위로 문서, 테이블, 파일을 URI 그래프로 연결하고, MCP(Model Context Protocol)로 제공합니다. 다중 테넌트(multi-tenant)를 지원하며 PostgreSQL + pgvector 기반의 벡터 검색을 내장하고 있습니다.
+
+![AKB 에이전트 지식 저장소 아키텍처 개요](/tool-screenshots/akb-knowledge-vault.webp)
 
 ## 언제 쓰나
 

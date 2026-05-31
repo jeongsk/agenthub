@@ -18,6 +18,8 @@ Kaku(書く, かく)는 AI 코딩 워크플로에 최적화된 macOS 터미널 �
 
 Kaku(코드) · Waza(습관) · Kami(문서) 3부작 중 Kaku가 첫 번째입니다.
 
+![Kaku 터미널 에뮬레이터 화면](/tool-screenshots/kaku-screenshot.webp)
+
 ## 언제 쓰나
 
 - AI 코딩 도구(Claude Code, Codex 등)와 함께 쓸 터미널이 필요할 때

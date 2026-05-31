@@ -17,6 +17,8 @@ icon: "FileText"
 
 HOP는 HWP/HWPX 문서를 열고 편집할 수 있는 오픈소스 크로스플랫폼 데스크톱 앱입니다. 문서 파싱과 렌더링은 [rhwp](https://github.com/edwardkim/rhwp) 엔진을 기반으로 하며, HOP는 그 위에 파일 열기·저장·PDF 내보내기·인쇄·파일 연결 같은 OS 통합 기능을 제공합니다.
 
+![HOP에서 HWP 문서를 열고 편집하는 화면](/tool-screenshots/hop-editor.webp)
+
 ## 언제 쓰나
 
 - 한컴오피스가 설치되지 않은 Mac/Windows/Linux에서 HWP 문서를 열어야 할 때

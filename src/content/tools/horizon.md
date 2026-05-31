@@ -17,6 +17,8 @@ icon: "Radar"
 
 Horizon은 AI 기반 뉴스 레이더입니다. 관심 있는 소스를 모아두면 매일 새 글을 수집하고, 중복을 제거하고, 점수를 매기고, 배경 설명과 커뮤니티 반응까지 붙여서 데일리 브리핑으로 정리해 줍니다.
 
+![Horizon이 생성한 데일리 브리핑 화면](/tool-screenshots/horizon-daily-briefing.webp)
+
 ## 언제 쓰나
 
 - Hacker News, RSS, Reddit, Telegram, GitHub 같은 소스를 한 번에 모니터링하고 싶을 때

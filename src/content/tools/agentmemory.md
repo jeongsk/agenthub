@@ -6,7 +6,7 @@ tags: ["memory", "agent-memory", "persistent-memory", "claude-code", "codex", "c
 githubUrl: "https://github.com/rohitg00/agentmemory"
 githubStars: 20055
 author: "rohitg00"
-installCommand: "npm install agentmemory"
+installCommand: "npm install -g @agentmemory/agentmemory"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "GitHub Copilot", "Hermes Agent", "OpenClaw"]
 featured: true
 icon: "Database"
@@ -15,6 +15,8 @@ icon: "Database"
 # AgentMemory
 
 AgentMemory는 AI 코딩 에이전트를 위한 1위 영속적 메모리 시스템입니다. 에이전트가 대화 세션을 넘어 정보를 기억하고, 프로젝트 맥락을 유지하며, 시간이 지나도 학습한 내용을 잊지 않도록 설계되었습니다.
+
+![AgentMemory 터미널 데모](/tool-screenshots/agentmemory-demo.webp)
 
 ## 언제 쓰나
 

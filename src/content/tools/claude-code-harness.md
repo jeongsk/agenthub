@@ -16,6 +16,8 @@ icon: "Workflow"
 
 Claude Code Harness는 Claude Code를 단순한 코드 실행 도구가 아니라, 계획→작업→리뷰→출시의 검증 루프로 묶어 주는 하네스입니다. 작은 작업부터 릴리스 준비까지 같은 흐름으로 관리할 수 있게 해 줍니다.
 
+![Claude Code Harness plan→work→review→release 운영 루프 다이어그램](/tool-screenshots/claude-code-harness-loop.webp)
+
 ## 언제 쓰나
 
 - Claude Code 작업을 더 구조적으로 진행하고 싶을 때

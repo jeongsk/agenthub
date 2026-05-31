@@ -16,6 +16,8 @@ icon: "BookMarked"
 
 Claude Obsidian은 Claude Code와 Obsidian을 연결하는 지식 동반자입니다. Karpathy의 LLM Wiki 패턴을 기반으로 영속적인 위키 저장소를 운영하며, Claude Code의 슬래시 명령어(/wiki, /save, /autoresearch)로 지식을 축적하고 검색합니다.
 
+![Claude Obsidian — Obsidian 볼트와 Claude Code가 연동되는 지식 관리 데모](/tool-screenshots/claude-obsidian-cover.webp)
+
 ## 언제 쓰나
 
 - Claude Code가 작업 중 얻은 지식을 Obsidian에 자동 저장하게 하고 싶을 때

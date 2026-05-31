@@ -14,6 +14,8 @@ icon: "Activity"
 
 UltraCat은 macOS 메뉴 막대 유틸리티입니다. 시스템 상태를 모니터링하고, 팬 제어와 절전 설정을 다룰 수 있습니다.
 
+![UltraCat 시스템 모니터링 화면](/tool-screenshots/ultracat-monitoring.webp)
+
 ## 언제 쓰나
 
 - 메뉴 막대에서 시스템 상태를 빠르게 확인하고 싶을 때

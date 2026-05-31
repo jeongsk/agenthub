@@ -16,6 +16,8 @@ icon: "Paintbrush"
 
 Mole는 macOS에서 시스템 청소, 앱 삭제, 디스크 분석, 성능 최적화, 실시간 모니터링을 커맨드 하나로 처리하는 CLI 도구입니다. CleanMyMac, AppCleaner, DaisyDisk, iStat Menus의 핵심 기능을 하나의 바이너리로 통합했습니다.
 
+![Mole 디스크 정리 및 시스템 분석 화면](/tool-screenshots/mole-disk-cleanup-ui.webp)
+
 ## 언제 쓰나
 
 - 맥 저장공간이 부족할 때 캐시/로그/임시 파일을 한 번에 정리하고 싶을 때
