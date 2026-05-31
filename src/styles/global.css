@@ -1,27 +1,166 @@
 /* Global Design System - Vibrant Gradient & Glassmorphic */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
+/* ============================================================
+   THEME TOKENS
+   - 기본(:root) = 다크. data-theme="dark"도 여기로 폴백.
+   - 시스템 모드(속성 없음) + 라이트 OS → @media 블록.
+   - 명시 라이트(data-theme="light") → 전용 블록.
+   ⚠️ LIGHT TOKENS: 아래 두 라이트 블록(@media :root:not([data-theme]) 와
+      :root[data-theme="light"])은 값이 동일해야 한다 — 함께 동기화할 것.
+   ============================================================ */
 :root {
-  /* HSL Color Palette */
+  color-scheme: dark;
+
+  /* Primitives — HSL 삼중값 */
   --bg-base: 224 25% 6%;
   --bg-card: 224 25% 10%;
   --border-light: 224 20% 20%;
   --text-primary: 0 0% 98%;
   --text-secondary: 220 14% 75%;
   --text-muted: 220 10% 55%;
-  
-  /* Vibrant Point Colors */
+
+  /* Vibrant Point Colors (테마 무관 — 그라데이션/글로우용) */
   --cyan-point: 180 100% 50%;
   --indigo-point: 239 84% 67%;
   --violet-point: 271 91% 65%;
   --rose-point: 330 98% 60%;
-  
-  /* Gradients */
+
+  /* Accent channels (RGB) — 오버레이/링크용. rgb(var(--accent-cyan) / a) */
+  --accent-cyan: 6 182 212;        /* cyan-500 — 글로우/보더/오버레이 */
+  --accent-cyan-link: 34 211 238;  /* cyan-400 — 링크 텍스트/hover */
+  --accent-rose: 251 113 133;      /* rose-400 */
+
+  /* Semantic surfaces & borders */
+  --surface-card: rgba(255, 255, 255, 0.02);
+  --surface-card-hover: rgba(255, 255, 255, 0.04);
+  --surface-panel: rgba(255, 255, 255, 0.025);
+  --surface-input: rgba(255, 255, 255, 0.02);
+  --surface-input-focus: rgba(255, 255, 255, 0.05);
+  --surface-subtle: rgba(255, 255, 255, 0.03);
+  --surface-subtle-hover: rgba(255, 255, 255, 0.1);
+  --surface-footer: rgba(10, 15, 30, 0.6);
+  --surface-code: rgba(0, 0, 0, 0.28);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+  --shadow-card: rgba(0, 0, 0, 0.25);
+  --shadow-card-strong: rgba(0, 0, 0, 0.4);
+
+  /* Category accent text/icon colors (배지·아이콘) — bg/border는 faint라 공용 */
+  --cat-mcp-server: 34 211 238;
+  --cat-agent-skill: 167 139 250;
+  --cat-agent-framework: 129 140 248;
+  --cat-agent-harness: 45 212 191;
+  --cat-agent-component: 232 121 249;
+  --cat-desktop-utility: 251 191 36;
+  --cat-cli-utility: 148 163 184;
+  --cat-plugin: 251 113 133;
+  --cat-browser-extension: 253 224 71;
+
+  /* Ambient */
+  --glow-opacity: 0.15;
   --grad-primary: linear-gradient(135deg, hsl(var(--cyan-point)) 0%, hsl(var(--indigo-point)) 50%, hsl(var(--violet-point)) 100%);
   --grad-dark-mesh: radial-gradient(at 0% 0%, hsla(244, 55%, 15%, 0.5) 0px, transparent 50%),
                     radial-gradient(at 100% 0%, hsla(295, 45%, 12%, 0.4) 0px, transparent 50%),
                     radial-gradient(at 100% 100%, hsla(190, 60%, 10%, 0.5) 0px, transparent 50%),
                     radial-gradient(at 0% 100%, hsla(230, 50%, 8%, 0.5) 0px, transparent 50%);
+  --grad-light-mesh: radial-gradient(at 0% 0%, hsla(244, 60%, 92%, 0.5) 0px, transparent 50%),
+                     radial-gradient(at 100% 0%, hsla(295, 50%, 94%, 0.4) 0px, transparent 50%),
+                     radial-gradient(at 100% 100%, hsla(190, 65%, 92%, 0.5) 0px, transparent 50%),
+                     radial-gradient(at 0% 100%, hsla(230, 55%, 95%, 0.5) 0px, transparent 50%);
+  --page-mesh: var(--grad-dark-mesh);
+}
+
+/* LIGHT TOKENS (시스템 모드 + 라이트 OS) — 아래 [data-theme="light"]와 동기화 */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --bg-base: 220 33% 97%;
+    --bg-card: 0 0% 100%;
+    --border-light: 224 20% 86%;
+    --text-primary: 224 32% 13%;
+    --text-secondary: 224 14% 34%;
+    --text-muted: 224 10% 46%;
+
+    --accent-cyan: 8 145 178;
+    --accent-cyan-link: 14 116 144;
+    --accent-rose: 225 29 72;
+
+    --surface-card: rgba(255, 255, 255, 0.72);
+    --surface-card-hover: rgba(255, 255, 255, 0.95);
+    --surface-panel: rgba(255, 255, 255, 0.74);
+    --surface-input: rgba(255, 255, 255, 0.88);
+    --surface-input-focus: rgba(255, 255, 255, 1);
+    --surface-subtle: rgba(20, 30, 60, 0.04);
+    --surface-subtle-hover: rgba(20, 30, 60, 0.08);
+    --surface-footer: rgba(245, 247, 252, 0.75);
+    --surface-code: rgba(20, 30, 60, 0.05);
+    --border-subtle: rgba(20, 30, 60, 0.09);
+    --border-strong: rgba(20, 30, 60, 0.16);
+    --scrollbar-thumb: rgba(20, 30, 60, 0.18);
+    --scrollbar-thumb-hover: rgba(20, 30, 60, 0.3);
+    --shadow-card: rgba(20, 30, 60, 0.08);
+    --shadow-card-strong: rgba(20, 30, 60, 0.14);
+
+    --cat-mcp-server: 8 145 178;
+    --cat-agent-skill: 124 58 237;
+    --cat-agent-framework: 79 70 229;
+    --cat-agent-harness: 13 148 136;
+    --cat-agent-component: 162 28 175;
+    --cat-desktop-utility: 180 83 9;
+    --cat-cli-utility: 71 85 105;
+    --cat-plugin: 225 29 72;
+    --cat-browser-extension: 161 98 7;
+
+    --glow-opacity: 0.08;
+    --page-mesh: var(--grad-light-mesh);
+  }
+}
+
+/* EXPLICIT LIGHT — 위 @media 블록과 값 동일하게 유지 */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-base: 220 33% 97%;
+  --bg-card: 0 0% 100%;
+  --border-light: 224 20% 86%;
+  --text-primary: 224 32% 13%;
+  --text-secondary: 224 14% 34%;
+  --text-muted: 224 10% 46%;
+
+  --accent-cyan: 8 145 178;
+  --accent-cyan-link: 14 116 144;
+  --accent-rose: 225 29 72;
+
+  --surface-card: rgba(255, 255, 255, 0.72);
+  --surface-card-hover: rgba(255, 255, 255, 0.95);
+  --surface-panel: rgba(255, 255, 255, 0.74);
+  --surface-input: rgba(255, 255, 255, 0.88);
+  --surface-input-focus: rgba(255, 255, 255, 1);
+  --surface-subtle: rgba(20, 30, 60, 0.04);
+  --surface-subtle-hover: rgba(20, 30, 60, 0.08);
+  --surface-footer: rgba(245, 247, 252, 0.75);
+  --surface-code: rgba(20, 30, 60, 0.05);
+  --border-subtle: rgba(20, 30, 60, 0.09);
+  --border-strong: rgba(20, 30, 60, 0.16);
+  --scrollbar-thumb: rgba(20, 30, 60, 0.18);
+  --scrollbar-thumb-hover: rgba(20, 30, 60, 0.3);
+  --shadow-card: rgba(20, 30, 60, 0.08);
+  --shadow-card-strong: rgba(20, 30, 60, 0.14);
+
+  --cat-mcp-server: 8 145 178;
+  --cat-agent-skill: 124 58 237;
+  --cat-agent-framework: 79 70 229;
+  --cat-agent-harness: 13 148 136;
+  --cat-agent-component: 162 28 175;
+  --cat-desktop-utility: 180 83 9;
+  --cat-cli-utility: 71 85 105;
+  --cat-plugin: 225 29 72;
+  --cat-browser-extension: 161 98 7;
+
+  --glow-opacity: 0.08;
+  --page-mesh: var(--grad-light-mesh);
 }
 
 /* Base resets & layouts */
@@ -58,7 +197,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--grad-dark-mesh);
+  background: var(--page-mesh);
   z-index: -2;
 }
 
@@ -69,7 +208,7 @@ body::before {
   height: 500px;
   border-radius: 50%;
   filter: blur(140px);
-  opacity: 0.15;
+  opacity: var(--glow-opacity);
   z-index: -1;
   pointer-events: none;
 }
@@ -88,40 +227,40 @@ body::before {
 
 /* Glassmorphism System */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--surface-panel);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 var(--shadow-card-strong);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
   border-radius: 20px;
-  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 24px 0 var(--shadow-card);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
   transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), 
-              0 0 20px 2px rgba(6, 182, 212, 0.15);
+  background: var(--surface-card-hover);
+  border-color: var(--border-strong);
+  box-shadow: 0 12px 40px 0 var(--shadow-card-strong),
+              0 0 20px 2px rgb(var(--accent-cyan) / 0.15);
 }
 
 /* Interactive elements & inputs */
 .glass-input {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-input);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  color: white;
+  color: hsl(var(--text-primary));
   padding: 12px 18px;
   font-family: inherit;
   font-size: 1rem;
@@ -129,9 +268,9 @@ body::before {
   outline: none;
 }
 .glass-input:focus {
-  border-color: hsl(var(--cyan-point));
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgb(var(--accent-cyan));
+  box-shadow: 0 0 15px rgb(var(--accent-cyan) / 0.25);
+  background: var(--surface-input-focus);
 }
 
 /* Buttons and Gradients */
@@ -148,20 +287,20 @@ body::before {
   align-items: center;
   gap: 8px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 4px 15px rgb(var(--accent-cyan) / 0.3);
 }
 .btn-grad:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+  box-shadow: 0 8px 25px rgb(var(--accent-cyan) / 0.4);
 }
 .btn-grad:active {
   transform: translateY(0);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-subtle);
   color: hsl(var(--text-primary));
   font-family: 'Outfit', sans-serif;
   font-weight: 600;
@@ -174,8 +313,8 @@ body::before {
   transition: all 0.3s ease;
 }
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--surface-subtle-hover);
+  border-color: var(--border-strong);
   transform: translateY(-2px);
 }
 
@@ -197,8 +336,8 @@ body::before {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: var(--badge-bg, rgba(255, 255, 255, 0.04));
-  border: 1px solid var(--badge-border, rgba(255, 255, 255, 0.08));
+  background: var(--badge-bg, var(--surface-subtle));
+  border: 1px solid var(--badge-border, var(--border-subtle));
   color: var(--badge-color, hsl(var(--text-secondary)));
 }
 
@@ -227,12 +366,12 @@ body::before {
   background: hsl(var(--bg-base));
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--scrollbar-thumb);
   border-radius: 5px;
   border: 2px solid hsl(var(--bg-base));
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Blog links are card surfaces, not inline blue browser links. */
@@ -256,7 +395,7 @@ a.post-card-link h3 {
 
 a.featured-copy-link:hover h2,
 a.post-card-link:hover h3 {
-  color: rgb(34, 211, 238);
+  color: rgb(var(--accent-cyan-link));
 }
 
 a.featured-copy-link .featured-read-more,
@@ -264,6 +403,6 @@ a.post-card-link .read-more {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: rgb(34, 211, 238);
+  color: rgb(var(--accent-cyan-link));
   text-decoration: none;
 }

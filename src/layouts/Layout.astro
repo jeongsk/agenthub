@@ -20,6 +20,20 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Theme: 명시 모드(light/dark)만 data-theme 설정. 시스템 모드는 CSS @media가 처리. -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('agenthub:theme');
+          if (t === 'light' || t === 'dark') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="theme-color" content="#0c0e14" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f3f5fa" media="(prefers-color-scheme: light)" />
     
     <!-- SEO Optimization -->
     <title>{title}</title>

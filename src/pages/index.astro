@@ -293,7 +293,7 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
     border-radius: 9999px;
     background: rgba(244, 63, 94, 0.08);
     border: 1px solid rgba(244, 63, 94, 0.25);
-    color: rgb(251, 113, 133);
+    color: rgb(var(--accent-rose));
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 24px;
@@ -338,21 +338,21 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-subtle);
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--surface-subtle);
     color: hsl(var(--text-secondary));
     cursor: pointer;
     transition: all 0.2s ease;
   }
   .search-clear-btn:hover,
   .search-clear-btn:focus-visible {
-    color: white;
-    border-color: rgba(6, 182, 212, 0.35);
-    background: rgba(6, 182, 212, 0.16);
+    color: hsl(var(--text-primary));
+    border-color: rgb(var(--accent-cyan) / 0.35);
+    background: rgb(var(--accent-cyan) / 0.16);
   }
   .search-clear-btn:focus-visible {
-    outline: 2px solid rgba(6, 182, 212, 0.5);
+    outline: 2px solid rgb(var(--accent-cyan) / 0.5);
     outline-offset: 2px;
   }
   .search-clear-btn[hidden] { display: none; }
@@ -361,8 +361,8 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    background: var(--surface-subtle);
     color: hsl(var(--text-secondary));
     border-radius: 10px;
     padding: 10px 12px;
@@ -372,9 +372,9 @@ const categoryTabs: TabDef[] = CATEGORY_IDS.map((cid) => {
     min-width: 0;
   }
   .tab-btn.active, .tab-btn:hover {
-    color: white;
-    border-color: rgba(6, 182, 212, 0.35);
-    background: rgba(6, 182, 212, 0.08);
+    color: hsl(var(--text-primary));
+    border-color: rgb(var(--accent-cyan) / 0.35);
+    background: rgb(var(--accent-cyan) / 0.08);
   }
   .section-header {
     display: flex;

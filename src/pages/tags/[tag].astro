@@ -119,7 +119,7 @@ const summary = summaryParts.join(' · ') || '항목이 없습니다';
     transition: color 0.2s ease;
     margin-bottom: 24px;
   }
-  .back-link:hover { color: white; }
+  .back-link:hover { color: hsl(var(--text-primary)); }
 
   .tag-hero { margin-bottom: 22px; }
   .tag-title {
@@ -129,7 +129,7 @@ const summary = summaryParts.join(' · ') || '항목이 없습니다';
     margin-bottom: 8px;
     overflow-wrap: anywhere;
   }
-  .tag-hash { color: hsl(var(--cyan-point)); }
+  .tag-hash { color: rgb(var(--accent-cyan-link)); }
   .tag-subtitle { color: hsl(var(--text-secondary)); font-size: 1.05rem; }
 
   .related-section {
@@ -148,17 +148,17 @@ const summary = summaryParts.join(' · ') || '항목이 없습니다';
   .related-chip {
     font-size: 0.8rem;
     color: hsl(var(--text-secondary));
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: var(--surface-subtle);
+    border: 1px solid var(--border-subtle);
     border-radius: 7px;
     padding: 5px 9px;
     text-decoration: none;
     transition: all 0.2s ease;
   }
   .related-chip:hover {
-    color: white;
-    border-color: rgba(6, 182, 212, 0.35);
-    background: rgba(6, 182, 212, 0.08);
+    color: hsl(var(--text-primary));
+    border-color: rgb(var(--accent-cyan) / 0.35);
+    background: rgb(var(--accent-cyan) / 0.08);
   }
 
   .section-header {
@@ -197,19 +197,19 @@ const summary = summaryParts.join(' · ') || '항목이 없습니다';
     font-size: 0.72rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: rgb(34, 211, 238);
-    background: rgba(6, 182, 212, 0.1);
-    border: 1px solid rgba(6, 182, 212, 0.3);
+    color: rgb(var(--accent-cyan-link));
+    background: rgb(var(--accent-cyan) / 0.1);
+    border: 1px solid rgb(var(--accent-cyan) / 0.3);
     border-radius: 9999px;
     padding: 4px 10px;
   }
   .blog-row-title {
     font-size: 1.1rem;
-    color: white;
+    color: hsl(var(--text-primary));
     line-height: 1.35;
     transition: color 0.2s ease;
   }
-  .blog-row:hover .blog-row-title { color: rgb(34, 211, 238); }
+  .blog-row:hover .blog-row-title { color: rgb(var(--accent-cyan-link)); }
   .blog-row-desc {
     font-size: 0.9rem;
     color: hsl(var(--text-secondary));
