@@ -5,7 +5,7 @@ category: "agent-skill"
 tags: ["frontend", "design", "ui", "taste", "skills-pack"]
 githubUrl: "https://github.com/Leonxlnx/taste-skill"
 websiteUrl: "https://tasteskill.dev"
-githubStars: 29884
+githubStars: 31454
 author: "Leonxlnx"
 installCommand: "npx skills add https://github.com/Leonxlnx/taste-skill"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]
