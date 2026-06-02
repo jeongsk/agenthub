@@ -1,11 +1,11 @@
 ---
 title: "herdr"
-description: "터미널에서 여러 에이전트를 워크스페이스·탭·패널로 묶어 보여 주는 에이전트 멀티플렉서입니다. 실행 중인 에이전트를 한눈에 보고 재접속할 때 유용합니다."
+description: "터미널 안에서 여러 AI 에이전트를 실제 패널·탭·워크스페이스로 띄우고, detach/reattach와 원격 접속까지 지원하는 에이전트 멀티플렉서입니다. 실행 중인 에이전트를 한눈에 보고 다시 붙어 작업을 이어갈 때 유용합니다."
 category: "agent-harness"
-tags: ["terminal", "multiplexer", "agents", "workspace", "orchestration", "cli"]
+tags: ["terminal", "multiplexer", "agent-runtime", "agents", "workspace", "orchestration", "cli"]
 githubUrl: "https://github.com/ogulcancelik/herdr"
 websiteUrl: "https://herdr.dev"
-githubStars: 3411
+githubStars: 3788
 author: "ogulcancelik"
 installCommand: "curl -fsSL https://herdr.dev/install.sh | sh"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]
