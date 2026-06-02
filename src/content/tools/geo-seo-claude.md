@@ -4,7 +4,7 @@ description: "Claude Code용 GEO-first SEO 스킬 팩입니다. AI 검색(ChatGP
 category: "agent-skill"
 tags: ["geo", "seo", "claude-code", "ai-search", "content-optimization", "schema", "robots", "llms-txt"]
 githubUrl: "https://github.com/zubair-trabzada/geo-seo-claude"
-githubStars: 7789
+githubStars: 7809
 author: "zubair-trabzada"
 installCommand: "curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/geo-seo-claude/main/install.sh | bash"
 compatibleAgents: ["Claude Code"]
