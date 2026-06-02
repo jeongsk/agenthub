@@ -1,19 +1,19 @@
 ---
 title: "Hermes Desktop"
-description: "Hermes Agent의 설정, 세션, 프로필, 메모리, 스킬, 도구, 스케줄, 메시징 게이트웨이를 한곳에서 관리하는 네이티브 데스크톱 앱입니다. CLI를 직접 다루기보다 GUI로 설치·구성·운영하고 싶을 때 유용합니다."
+description: "Hermes Agent를 macOS, Windows, Linux에서 사용할 수 있게 해 주는 네이티브 데스크톱 앱입니다. 대화, 세션, 프로필, 메모리, 스킬, 도구, 스케줄, 게이트웨이를 GUI로 관리할 수 있습니다."
 category: "desktop-utility"
-tags: ["hermes-agent", "desktop-app", "electron", "gui", "agent-management", "messaging"]
-githubUrl: "https://github.com/fathah/hermes-desktop"
-websiteUrl: "https://hermesagents.cc/"
-githubStars: 8874
-author: "fathah"
+tags: ["hermes-agent", "desktop-app", "gui", "agent-management", "messaging", "cross-platform", "macos", "windows", "linux"]
+githubUrl: "https://github.com/NousResearch/hermes-agent"
+websiteUrl: "https://hermes-agent.nousresearch.com/desktop"
+githubStars: 177284
+author: "NousResearch"
 compatibleAgents: ["Hermes Agent"]
 icon: "MonitorSmartphone"
 ---
 
 # Hermes Desktop
 
-`Hermes Desktop`는 Hermes Agent를 위한 네이티브 데스크톱 컴패니언 앱입니다. 로컬 또는 원격 Hermes 백엔드를 연결해 채팅, 세션 검색, 프로필 전환, 메모리 관리, 스킬·도구 설정, 스케줄 작업, 메시징 게이트웨이까지 GUI에서 다룰 수 있게 해 줍니다. CLI 중심의 Hermes 운영을 시각적인 워크스페이스로 옮기고 싶을 때 적합합니다.
+`Hermes Desktop`는 Hermes Agent의 네이티브 데스크톱 앱입니다. macOS, Windows, Linux에서 로컬 또는 원격 Hermes 백엔드에 연결해 대화, 세션 검색, 프로필 전환, 메모리 관리, 스킬·도구 설정, 스케줄 작업, 메시징 게이트웨이까지 GUI에서 다룰 수 있게 해 줍니다. CLI 중심의 운영을 시각적인 워크스페이스로 옮기고 싶을 때 적합합니다.
 
 ## 언제 쓰나
 
@@ -25,6 +25,7 @@ icon: "MonitorSmartphone"
 
 ## 핵심 특징
 
+- **크로스 플랫폼 데스크톱 앱**: macOS, Windows, Linux에서 실행할 수 있습니다.
 - **첫 실행 설치 마법사**: Hermes Agent 설치와 의존성 확인을 GUI로 안내합니다.
 - **로컬/원격 모드**: 로컬 `~/.hermes` 설치를 쓰거나 원격 Hermes API 서버에 연결할 수 있습니다.
 - **다중 제공자 지원**: OpenAI, Anthropic, Gemini, OpenRouter 등 여러 모델 제공자를 설정합니다.
