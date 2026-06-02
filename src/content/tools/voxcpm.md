@@ -5,7 +5,7 @@ category: "model-runtime"
 tags: ["tts", "text-to-speech", "voice-cloning", "voice-design", "multilingual"]
 githubUrl: "https://github.com/OpenBMB/VoxCPM"
 websiteUrl: "https://voxcpm.com"
-githubStars: 23231
+githubStars: 25068
 author: "OpenBMB"
 installCommand: "pip install voxcpm"
 compatibleAgents: ["Claude", "Gemini", "OpenAI"]
