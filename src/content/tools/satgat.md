@@ -5,7 +5,7 @@ category: "cli-utility"
 tags: ["korean-docs", "document-design", "ai-writing", "nextjs", "cli", "skill"]
 githubUrl: "https://github.com/unclejobs-ai/satgat"
 websiteUrl: "https://satgat.vercel.app"
-githubStars: 9
+githubStars: 23
 author: "unclejobs-ai"
 compatibleAgents: ["Claude Code", "Codex", "Gemini"]
 icon: "FileSignature"
