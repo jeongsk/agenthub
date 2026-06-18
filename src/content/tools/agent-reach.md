@@ -2,9 +2,9 @@
 title: "Agent Reach"
 description: "AI 에이전트가 웹, GitHub, YouTube, Reddit, X 같은 공개 소스를 CLI로 검색·수집하도록 도와주는 도구 모음입니다. 에이전트에 인터넷 읽기 능력을 붙이고 싶을 때 유용합니다."
 category: "cli-utility"
-tags: ["agent", "cli", "search", "social-media", "web", "scraping", "research"]
+tags: ["agent", "cli", "search", "social-media", "web", "scraping", "research", "ai-search", "youtube", "reddit", "twitter", "github", "mcp"]
 githubUrl: "https://github.com/Panniantong/Agent-Reach"
-githubStars: 23146
+githubStars: 25652
 author: "Panniantong"
 installCommand: "pipx install https://github.com/Panniantong/agent-reach/archive/main.zip && agent-reach install --env=auto"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]
