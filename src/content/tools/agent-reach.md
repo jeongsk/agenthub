@@ -4,7 +4,7 @@ description: "AI 에이전트가 웹, GitHub, YouTube, Reddit, X 같은 공개 �
 category: "cli-utility"
 tags: ["agent", "cli", "search", "social-media", "web", "scraping", "research", "ai-search", "youtube", "reddit", "twitter", "github", "mcp"]
 githubUrl: "https://github.com/Panniantong/Agent-Reach"
-githubStars: 25652
+githubStars: 34327
 author: "Panniantong"
 installCommand: "pipx install https://github.com/Panniantong/agent-reach/archive/main.zip && agent-reach install --env=auto"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent"]

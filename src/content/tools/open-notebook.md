@@ -5,7 +5,7 @@ category: "desktop-utility"
 tags: ["notebooklm", "note-taking", "self-hosted", "rag", "research", "multi-model", "pdf", "podcast", "web-app"]
 githubUrl: "https://github.com/lfnovo/open-notebook"
 websiteUrl: "https://www.open-notebook.ai"
-githubStars: 24465
+githubStars: 31576
 author: "lfnovo"
 installCommand: "docker compose up"
 compatibleAgents: []
@@ -38,5 +38,3 @@ Open Notebook은 NotebookLM의 오픈소스·셀프호스팅 대안입니다. PD
 
 ## 참고
 
-- GitHub 저장소 기준으로 검증한 오픈소스 레지스트리 항목입니다.
-- 제품 사이트가 따로 있어 `websiteUrl`도 함께 넣었습니다.

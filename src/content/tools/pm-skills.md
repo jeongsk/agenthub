@@ -4,7 +4,7 @@ description: "제품 관리자를 위한 100개 이상의 에이전틱 스킬과
 category: "agent-skill"
 tags: ["product-management", "agent-skills", "claude-code", "claude-cowork", "pm", "skills-marketplace", "commands"]
 githubUrl: "https://github.com/phuryn/pm-skills"
-githubStars: 11760
+githubStars: 19578
 author: "phuryn"
 installCommand: "claude plugin marketplace add phuryn/pm-skills"
 compatibleAgents: ["Claude Code", "Claude Cowork"]

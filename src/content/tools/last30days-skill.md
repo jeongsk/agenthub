@@ -4,7 +4,7 @@ description: "Reddit, X, YouTube, HN, Polymarket, 웹을 한 번에 훑어 최�
 category: "agent-skill"
 tags: ["research", "trend-analysis", "social-media", "search", "agent-skill", "web", "briefing"]
 githubUrl: "https://github.com/mvanhorn/last30days-skill"
-githubStars: 30921
+githubStars: 44386
 author: "mvanhorn"
 installCommand: "npx skills add mvanhorn/last30days-skill -g"
 compatibleAgents: ["Claude Code", "Codex", "Gemini", "Hermes Agent"]

@@ -5,7 +5,7 @@ category: "agent-infrastructure"
 tags: ["context-compression", "token-optimization", "mcp", "rag", "proxy", "claude-code", "cursor", "codex", "local-first"]
 githubUrl: "https://github.com/chopratejas/headroom"
 websiteUrl: "https://headroom-docs.vercel.app/docs"
-githubStars: 4645
+githubStars: 34255
 author: "chopratejas"
 installCommand: "pip install \"headroom-ai[all]\""
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "Gemini", "OpenCode"]

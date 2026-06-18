@@ -4,7 +4,7 @@ description: "AI 에이전트 skill을 설치하기 전에 숨은 지시문, 데
 category: "cli-utility"
 tags: ["security", "skill-audit", "ai-agents", "scanner", "cli", "vulnerability"]
 githubUrl: "https://github.com/NVIDIA/SkillSpector"
-githubStars: 680
+githubStars: 7913
 author: "NVIDIA"
 installCommand: "pip install git+https://github.com/NVIDIA/skillspector.git"
 compatibleAgents: ["Claude Code", "Codex", "Gemini", "Cursor", "OpenCode"]
