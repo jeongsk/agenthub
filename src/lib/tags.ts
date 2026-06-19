@@ -4,9 +4,10 @@
  * 모든 태그 관련 로직(정규화/별칭, slug 변환, 집계, 관련 태그)은 이 파일에서만
  * 정의하고, 페이지/컴포넌트는 항상 여기를 참조합니다. (registry.ts의 카테고리와 동일한 컨벤션)
  */
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { type CollectionEntry } from 'astro:content';
 import { CATEGORY_IDS } from './registry';
 import { blogPosts, type BlogPost } from './blog';
+import { getResolvedSkills } from './skills';
 
 type Skill = CollectionEntry<'skills'>;
 
@@ -67,7 +68,7 @@ let _skillsCache: Skill[] | null = null;
 let _tagsCache: TagInfo[] | null = null;
 
 async function loadSkills(): Promise<Skill[]> {
-  if (!_skillsCache) _skillsCache = await getCollection('skills');
+  if (!_skillsCache) _skillsCache = await getResolvedSkills();
   return _skillsCache;
 }
 

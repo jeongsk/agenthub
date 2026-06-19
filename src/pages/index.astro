@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import * as Icons from '@lucide/astro';
-import { getCollection } from 'astro:content';
 import { CATEGORIES, CATEGORY_IDS } from '../lib/registry';
+import { getResolvedSkills } from '../lib/skills';
 
-const skillEntries = await getCollection('skills');
+const skillEntries = await getResolvedSkills();
 const sortedSkills = [...skillEntries]
   .sort((a, b) => {
     if (a.data.featured && !b.data.featured) return -1;

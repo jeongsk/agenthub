@@ -1,5 +1,9 @@
 ---
-import { Heart, Cpu } from '@lucide/astro';
+import { Heart, Cpu, Star } from '@lucide/astro';
+import { starsUpdatedAt } from '../lib/skills';
+
+const updatedAt = starsUpdatedAt();
+const starsDate = updatedAt ? updatedAt.slice(0, 10) : null;
 ---
 
 <footer class="main-footer">
@@ -35,7 +39,10 @@ import { Heart, Cpu } from '@lucide/astro';
       <a href="https://pages.cloudflare.com" target="_blank" rel="noopener noreferrer" class="footer-stack-link">Cloudflare Pages</a>로 구동됩니다.
     </p>
     <p class="made-with">
-      <Heart size={12} class="heart-icon" /> 에이전트 시대를 위해 만들어졌습니다.
+      {starsDate && (
+        <span class="stars-asof"><Star size={12} class="star-icon" /> GitHub stars 기준: {starsDate}</span>
+      )}
+      <span><Heart size={12} class="heart-icon" /> 에이전트 시대를 위해 만들어졌습니다.</span>
     </p>
   </div>
 </footer>
@@ -122,7 +129,18 @@ import { Heart, Cpu } from '@lucide/astro';
   .made-with {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+
+  .made-with span {
+    display: inline-flex;
+    align-items: center;
     gap: 4px;
+  }
+
+  .star-icon {
+    color: rgb(var(--accent-cyan-link));
   }
 
   .heart-icon {

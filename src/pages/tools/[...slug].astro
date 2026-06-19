@@ -1,14 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { ArrowLeft, Copy, ExternalLink, Globe, Star } from '@lucide/astro';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import GitHub from '../../components/icons/GitHub.astro';
 import { formatStarCount } from '../../lib/github';
 import { categoryLabel, isGitHubUrl, CATEGORIES } from '../../lib/registry';
 import { tagToSlug } from '../../lib/tags';
+import { getResolvedSkills } from '../../lib/skills';
 
 export async function getStaticPaths() {
-  const skills = await getCollection('skills');
+  const skills = await getResolvedSkills();
   return skills.map((skill) => ({
     params: { slug: skill.id },
     props: { skill },

@@ -1,0 +1,45 @@
+name: Update GitHub stars
+
+# 매일 GitHub star 수를 수집해 src/data/stars.json 을 커밋한다.
+# 커밋이 main 에 push 되면 Cloudflare Pages 가 자동으로 빌드·배포한다.
+on:
+  schedule:
+    # 매일 18:00 UTC (한국시간 03:00). cron 은 UTC 기준이며 부하 시 지연될 수 있음.
+    - cron: '0 18 * * *'
+  workflow_dispatch: {} # 수동 실행 허용
+
+# 기본 GITHUB_TOKEN 으로 fetch(공개 stargazerCount) + 커밋 push 모두 처리. 추가 시크릿 불필요.
+permissions:
+  contents: write
+
+# 동시 실행 방지(이전 실행 취소).
+concurrency:
+  group: update-stars
+  cancel-in-progress: true
+
+jobs:
+  update-stars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch stars
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run update:stars
+
+      - name: Commit if changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet -- src/data/stars.json; then
+            echo "변경 없음 — 커밋 skip"
+          else
+            git add src/data/stars.json
+            git commit -m 'chore: update github stars'
+            git push
+          fi
