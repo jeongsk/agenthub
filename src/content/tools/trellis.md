@@ -16,7 +16,7 @@ icon: "Workflow"
 
 Trellis는 에이전트 코딩을 팀 규모에서 안정적으로 굴리기 위한 하네스입니다. `.trellis/spec/`, `.trellis/tasks/`, `.trellis/workspace/`를 중심으로 PRD, 작업 상태, 프로젝트 메모리, 검증 과정을 정리해 줍니다.
 
-![Trellis 데모 워크플로](/tool-screenshots/trellis-demo.gif)
+<video src="/tool-screenshots/trellis-demo.mp4" autoplay loop muted playsinline controls aria-label="Trellis 데모 워크플로"></video>
 
 ## 언제 쓰나
 
