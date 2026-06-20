@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { tag } = Astro.props;
 const slug = Astro.params.tag!;
 const tools = await getToolsByTag(slug);
-const posts = getBlogPostsByTag(slug);
+const posts = await getBlogPostsByTag(slug);
 const related = await getRelatedTags(slug, 8);
 
 const total = tools.length + posts.length;

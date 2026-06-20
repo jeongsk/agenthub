@@ -1,15 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { ArrowLeft, CalendarDays, Clock3, Newspaper } from '@lucide/astro';
-import { blogPosts, type BlogPost } from '../../lib/blog';
+import { getBlogPosts, type BlogPost } from '../../lib/blog';
 import { tagToSlug } from '../../lib/tags';
 
 interface Props {
   post: BlogPost;
 }
 
-export function getStaticPaths() {
-  return blogPosts.map((post) => ({
+export async function getStaticPaths() {
+  const posts = await getBlogPosts();
+  return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
   }));
@@ -51,25 +52,7 @@ const { post } = Astro.props;
       </header>
 
       <div class="article-body glass-card markdown-body">
-        {post.html ? (
-          <div class="markdown-content" set:html={post.html} />
-        ) : (
-          post.sections.map((section) => (
-            <section>
-              <h2>{section.heading}</h2>
-              {section.paragraphs.map((paragraph) => (
-                <p>{paragraph}</p>
-              ))}
-              {section.bullets && (
-                <ul>
-                  {section.bullets.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-              )}
-            </section>
-          ))
-        )}
+        <div class="markdown-content" set:html={post.html} />
       </div>
     </article>
   </div>

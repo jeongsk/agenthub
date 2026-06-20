@@ -1,12 +1,10 @@
 ---
-title: "프롬프트 다음, 컨텍스트 다음은 '하네스'다 — Agent Harness Engineering 서베이 정리"
-tags: [ai-agents, harness, etclovg, survey, observability, governance]
-created: 2026-05-25
-updated: 2026-05-25
-modified: 2026-05-25
-source_url: https://picrew.github.io/LLM-Harness/
-publish: true
-embedding_ready: false
+title: "프롬프트 다음, 컨텍스트 다음은 '하네스'다"
+description: "모델이 좋아질수록 성능의 병목은 모델 바깥의 '하네스'로 옮겨갑니다. 같은 모델로 하네스만 바꿔 벤치마크를 13점 올린 사례에서 출발해, Agent Harness Engineering 서베이의 ETCLOVG 7계층 분류와 실전 점검 포인트를 정리했습니다."
+date: "2026.05.25"
+readTime: "10분"
+category: "Operations"
+tags: ["ai-agents", "harness", "etclovg", "survey", "observability", "governance"]
 ---
 
 # 프롬프트 다음, 컨텍스트 다음은 '하네스'다 — Agent Harness Engineering 서베이 정리

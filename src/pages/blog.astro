@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { ArrowRight, BookOpenText, CalendarDays, Clock3, Newspaper, Sparkles } from '@lucide/astro';
-import { blogPosts as posts } from '../lib/blog';
+import { getBlogPosts } from '../lib/blog';
 
+const posts = await getBlogPosts();
 const featuredPost = posts[0];
 ---
 
@@ -99,7 +100,7 @@ const featuredPost = posts[0];
     <section class="editor-note glass-panel">
       <Newspaper size={18} />
       <p>
-        블로그 글은 현재 정적 목록으로 제공됩니다. 추후 <code>src/content/blog</code> 컬렉션으로 옮기면 Markdown 기반 발행 흐름으로 자연스럽게 확장할 수 있습니다.
+        블로그 글은 <code>src/content/blog</code> 콘텐츠 컬렉션으로 관리됩니다. frontmatter를 갖춘 Markdown 파일 하나를 추가해 Pull Request를 올리면 새 글이 발행됩니다.
       </p>
     </section>
   </div>

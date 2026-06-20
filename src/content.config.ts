@@ -21,6 +21,20 @@ const skillsCollection = defineCollection({
   }),
 });
 
+const blogCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.string(), // 'YYYY.MM.DD' — 표시 및 정렬(문자열 내림차순) 기준
+    readTime: z.string(),
+    category: z.string(),
+    tags: z.array(z.string()),
+    featured: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   'skills': skillsCollection,
+  'blog': blogCollection,
 };

@@ -6,8 +6,9 @@
  */
 import { type CollectionEntry } from 'astro:content';
 import { CATEGORY_IDS } from './registry';
-import { blogPosts, type BlogPost } from './blog';
+import { type BlogPost } from './blog';
 import { getResolvedSkills } from './skills';
+import { getBlogPosts } from './blog';
 
 type Skill = CollectionEntry<'skills'>;
 
@@ -98,8 +99,9 @@ export async function getAllTags(): Promise<TagInfo[]> {
   const skills = await loadSkills();
   const counts = new Map<string, number>();
 
+  const posts = await getBlogPosts();
   for (const skill of skills) tallyTags(counts, skill.data.tags);
-  for (const post of blogPosts) tallyTags(counts, post.tags);
+  for (const post of posts) tallyTags(counts, post.tags);
 
   _tagsCache = Array.from(counts.entries())
     .map(([tag, count]) => ({ tag, slug: slugify(tag), count }))
@@ -115,9 +117,10 @@ export async function getToolsByTag(slug: string): Promise<Skill[]> {
     .sort(compareSkills);
 }
 
-/** 특정 태그 slug를 가진 블로그 글 목록(blogPosts 배열 순서 = 최신순) */
-export function getBlogPostsByTag(slug: string): BlogPost[] {
-  return blogPosts.filter((post) => post.tags.some((raw) => tagToSlug(raw) === slug));
+/** 특정 태그 slug를 가진 블로그 글 목록(최신순) */
+export async function getBlogPostsByTag(slug: string): Promise<BlogPost[]> {
+  const posts = await getBlogPosts();
+  return posts.filter((post) => post.tags.some((raw) => tagToSlug(raw) === slug));
 }
 
 /** 주어진 태그와 같은 도구에 함께 등장한 관련 태그(동시 출현 빈도 상위) */
@@ -134,8 +137,9 @@ export async function getRelatedTags(slug: string, limit = 8): Promise<TagInfo[]
     }
   };
 
+  const posts = await getBlogPosts();
   for (const skill of skills) scan(skill.data.tags);
-  for (const post of blogPosts) scan(post.tags);
+  for (const post of posts) scan(post.tags);
 
   return Array.from(counts.entries())
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
