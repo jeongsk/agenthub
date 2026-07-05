@@ -2,13 +2,13 @@
 title: "Ponytail"
 description: "AI 에이전트가 과설계를 피하고 기존 코드, 표준 라이브러리, 네이티브 기능을 먼저 재사용하도록 만드는 경량 개발 규칙·스킬·플러그인 모음입니다."
 category: "agent-skill"
-tags: ["agent-skill", "prompt-engineering", "yagni", "code-review", "developer-tools", "plugin"]
+tags: ["agent-skill", "prompt-engineering", "yagni", "code-review", "developer-tools"]
 githubUrl: "https://github.com/DietrichGebert/ponytail"
-websiteUrl: "https://github.com/DietrichGebert/ponytail"
-githubStars: 55004
+websiteUrl: "https://ponytail.dev"
+githubStars: 74371
 author: "DietrichGebert"
 installCommand: "npm install @dietrichgebert/ponytail"
-compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini", "GitHub Copilot CLI", "Cursor", "Windsurf", "Cline", "Kiro"]
+compatibleAgents: ["Claude Code", "Codex", "OpenCode", "Gemini", "GitHub Copilot CLI", "Cursor", "Windsurf", "Cline", "Kiro", "Swival", "OpenClaw"]
 featured: false
 icon: "Scissors"
 ---
