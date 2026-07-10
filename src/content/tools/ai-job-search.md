@@ -4,8 +4,9 @@ description: "Claude Code 기반 AI 구직 워크플로 프레임워크입니다
 category: "agent-skill"
 tags: ["job-search", "career", "claude-code", "resume", "cover-letter", "interview", "workflow", "job-application"]
 githubUrl: "https://github.com/MadsLorentzen/ai-job-search"
-githubStars: 1326
+githubStars: 10646
 author: "MadsLorentzen"
+installCommand: "gh repo fork MadsLorentzen/ai-job-search --clone"
 compatibleAgents: ["Claude Code"]
 featured: false
 icon: "Briefcase"
@@ -35,4 +36,6 @@ AI Job Search는 Claude Code를 기반으로 한 구직 지원 워크플로 프�
 ## 참고
 
 - 이 저장소는 구직용 에이전트 워크플로와 프롬프트/스킬 구조가 핵심이므로 `agent-skill`로 분류했습니다.
+- 핵심 워크플로는 언어·국가에 독립적이지만, 포함된 Jobindex/Jobnet/Akademikernes Jobbank 등 포털 검색 스킬은 덴마크 시장 중심입니다. 다른 국가에서는 `/add-portal`로 현지 잡보드 스킬을 추가하는 방식이 전제되어 있습니다.
+- Claude Code CLI, Python 3.10+, Bun, LaTeX 배포판(`lualatex`, `xelatex`)이 필요하며, `pdftotext`/poppler는 ATS 텍스트 레이어 검증용 선택 의존성입니다.
 - GitHub 저장소 기준으로 검증한 레지스트리 항목입니다.
