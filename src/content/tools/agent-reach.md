@@ -4,9 +4,9 @@ description: "AI 에이전트에게 인터넷 접근 능력을 한 번에 부여
 category: "agent-infrastructure"
 tags: ["agent", "cli", "search", "social-media", "web", "scraping", "research", "ai-search", "youtube", "reddit", "twitter", "github", "mcp", "agent-infrastructure", "free-api", "bilibili", "xiaohongshu"]
 githubUrl: "https://github.com/Panniantong/Agent-Reach"
-githubStars: 51734
+githubStars: 54917
 author: "Panniantong"
-installCommand: "pip install agent-reach && agent-reach install"
+installCommand: "pipx install https://github.com/Panniantong/agent-reach/archive/main.zip && agent-reach install --env=auto"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent", "OpenClaw", "Windsurf"]
 icon: "Globe"
 ---
@@ -22,7 +22,7 @@ Agent Reach는 또 하나의 웹 스크래핑 도구가 아닙니다. **선정·
 ## 주요 특징
 
 - **15+ 채널 지원**: 웹(일반 렌더링 + Jina Reader), YouTube(자막+검색), Twitter/X(트윗 읽기+검색+타임라인), Reddit(검색+게시글+댓글), GitHub(공개/비공개 저장소), Bilibili(검색+영상 상세), Xiaohongshu(검색+읽기), Facebook(검색+피드+그룹), Instagram(검색+프로필+익스플로어), LinkedIn, RSS, V2EX, 雪球, 小宇宙
-- **완전 무료**: 모든 도구와 API가 무료입니다. 유일한 잠재비는 서버 배포 시 에이전트($1/월)이며, 로컬 사용 시 필요 없음
+- **완전 무료**: 모든 도구와 API가 무료입니다. 서버에서 일부 플랫폼에 접근할 때 선택적으로 주거용 프록시(~$1/월)가 필요할 수 있으며, 로컬 사용 시에는 보통 필요 없습니다
 - **다중 백엔드 라우팅**: 각 채널별로 우선순위 있는 백엔드 리스트. 하나가 막히면 다음 백엔드로 자동 전환
 - **자가 진단**: `agent-reach doctor`로 각 채널 상태와 현재 사용 중인 백엔드를 한눈에 확인
 - **보안 우선**: 쿠키/토큰은 로컬에만 저장(file mode 600), 안전 모드(--safe) 지원, 완전 오픈소스
@@ -38,8 +38,11 @@ Agent Reach는 또 하나의 웹 스크래핑 도구가 아닙니다. **선정·
 ## 설치
 
 ```
-pip install agent-reach && agent-reach install
+pipx install https://github.com/Panniantong/agent-reach/archive/main.zip
+agent-reach install --env=auto
 ```
+
+설치 전 변경 내용을 확인하려면 `agent-reach install --env=auto --dry-run`, 시스템 패키지를 자동 설치하지 않으려면 `--safe`를 사용할 수 있습니다. 설치 후에는 `agent-reach doctor`로 채널별 상태와 활성 백엔드를 점검합니다.
 
 또는 Agent에게 다음 문장을 붙여넣으면 자동 설치됩니다:
 ```
@@ -50,4 +53,4 @@ pip install agent-reach && agent-reach install
 
 - **Cookie 로그인이 필요한 플랫폼**(Twitter, Xiaohongshu, Reddit, Facebook, Instagram 등)은 전용 부계정 사용을 권장합니다. 플랫폼이 비정상 API 호출을 감지해 계정을 제한/차단할 수 있습니다.
 - OpenClaw 사용자는 설치 전 `exec` 권한을 활성화해야 합니다(`openclaw config set tools.profile "coding"`).
-- **Agent Reach는 읽기 전용 레이어입니다.** 로그인 후 웹 조작, 폼 제출, 브라우저 자동화가 필요한 작업은 BrowserAct 같은 브라우저 자동화 도구와 함께 사용하세요.
+- **주로 읽기·검색을 위한 레이어입니다.** 로그인 후 웹 조작, 폼 제출, 다중 계정·브라우저 세션 자동화가 필요한 작업은 별도의 브라우저 자동화 도구와 함께 사용하세요.
