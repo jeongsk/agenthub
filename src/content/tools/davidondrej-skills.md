@@ -4,7 +4,7 @@ description: "에이전트 오케스트레이션, 웹 리서치, 문서화, 스�
 category: "agent-skill"
 tags: ["agent-skills", "agent-orchestration", "research", "web", "documentation", "skill-authoring", "ops", "workflow", "youtube", "deep-research"]
 githubUrl: "https://github.com/davidondrej/skills"
-githubStars: 2287
+githubStars: 2320
 author: "davidondrej"
 installCommand: "npx skills add davidondrej/skills"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "Gemini CLI", "OpenCode", "Windsurf", "Hermes Agent"]

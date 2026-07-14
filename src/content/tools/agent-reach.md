@@ -4,7 +4,7 @@ description: "AI 에이전트에게 인터넷 접근 능력을 한 번에 부여
 category: "agent-infrastructure"
 tags: ["agent", "cli", "search", "social-media", "web", "scraping", "research", "ai-search", "youtube", "reddit", "twitter", "github", "mcp", "agent-infrastructure", "free-api", "bilibili", "xiaohongshu"]
 githubUrl: "https://github.com/Panniantong/Agent-Reach"
-githubStars: 54917
+githubStars: 54989
 author: "Panniantong"
 installCommand: "pipx install https://github.com/Panniantong/agent-reach/archive/main.zip && agent-reach install --env=auto"
 compatibleAgents: ["Claude Code", "Codex", "Cursor", "OpenCode", "Hermes Agent", "OpenClaw", "Windsurf"]
