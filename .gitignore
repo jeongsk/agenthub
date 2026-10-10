@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # dogfood
 dogfood-output/
+
+# temporary screenshots
+tmp-shot/
